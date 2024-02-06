@@ -14,6 +14,7 @@ M.treesitter = {
     "json",
     "yaml",
     "bash",
+    "go",
     "markdown",
     "markdown_inline",
   },
@@ -40,6 +41,9 @@ M.mason = {
 
     -- python stuff
     "pyright",
+
+    -- golang stuff
+    "gopls",
   },
 }
 
