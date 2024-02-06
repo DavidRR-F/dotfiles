@@ -23,15 +23,3 @@ $ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ```cmd
 mklink /D %LOCALAPPDATA%\nvim C:\Users\yourusername\.dotfiles\nvim
 ```
-
-#### Structure
-
-```bash
-dotfiles/
-└── nvim/
-    ├── init.lua         # Entry point for Neovim configuration
-    ├── lua/
-    │   ├── core/        # Core configurations
-    │   └── plugins/     # Plugin configurations
-    └── README.md        # Documentation
-```
