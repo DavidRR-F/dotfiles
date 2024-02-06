@@ -9,7 +9,11 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-    "c",
+    "python",
+    "regex",
+    "json",
+    "yaml",
+    "bash",
     "markdown",
     "markdown_inline",
   },
@@ -34,9 +38,8 @@ M.mason = {
     "deno",
     "prettier",
 
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
+    -- python stuff
+    "pyright",
   },
 }
 

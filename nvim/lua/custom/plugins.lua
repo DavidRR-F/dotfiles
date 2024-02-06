@@ -51,6 +51,7 @@ local plugins = {
     'Exafunction/codeium.vim',
     event = 'BufEnter'
   }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
