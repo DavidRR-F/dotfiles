@@ -3,7 +3,7 @@ return {
   run = ":TSUpdate",
   config = function()
     require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "python", "dockerfile", "html", "regex" }, -- Add the languages here
+      ensure_installed = { "python", "dockerfile", "html", "regex", "go", "lua" }, -- Add the languages here
       sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
       highlight = {
         enable = true, -- Enable Tree-sitter based highlighting

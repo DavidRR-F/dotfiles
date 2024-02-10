@@ -12,9 +12,12 @@ return {
         require('mason').setup()
         local mason_lspconfig = require 'mason-lspconfig'
         mason_lspconfig.setup {
-            ensure_installed = { "pyright" }
+            ensure_installed = { "pyright", "gopls" }
         }
         require("lspconfig").pyright.setup {
+            capabilities = capabilities,
+        }
+        require("lspconfig").gopls.setup {
             capabilities = capabilities,
         }
         end,
