@@ -11,27 +11,7 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load()
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
-                ['<C-g>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.expandable() then
-                        luasnip.expand()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
-                    else
-                        fallback()  -- Use the original <Tab> functionality if no completion is available
-                    end
-                end, { 'i', 's' }),
-        
-                ['<S-g>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()  -- Use the original <S-Tab> functionality if no completion is available
-                    end
-                end, { 'i', 's' }),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
             snippets = {
                 expand = function(args)

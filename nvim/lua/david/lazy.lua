@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
-  { import = "david.plugins" }
+  { import = "david.plugins" },
+  {"Mofiqul/vscode.nvim"},
 }
 
 require("lazy").setup(plugins, {
