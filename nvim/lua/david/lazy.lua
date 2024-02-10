@@ -17,9 +17,6 @@ local plugins = {
 }
 
 require("lazy").setup(plugins, {
-    install = {
-      colorscheme = { "nightfly" },
-    },
     checker = {
       enabled = true,
       notify = false,

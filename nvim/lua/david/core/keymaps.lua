@@ -1,6 +1,8 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+vim.o.clipboard = "unnamedplus"
+
 local keymap = vim.keymap -- for conciseness
 
 -- use jk to exit insert mode
