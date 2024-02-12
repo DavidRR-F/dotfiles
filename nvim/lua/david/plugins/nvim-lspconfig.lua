@@ -16,6 +16,17 @@ return {
         }
         require("lspconfig").pyright.setup {
             capabilities = capabilities,
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode = "off",
+                        diagnosticSeverityOverrides = {
+                          reportGeneralTypeIssues = "none", -- Ignore general type issues
+                          reportOptionalMemberAccess = "none", -- Ignore optional member access issues
+                        }
+                    }
+                }
+            }
         }
         require("lspconfig").gopls.setup {
             capabilities = capabilities,

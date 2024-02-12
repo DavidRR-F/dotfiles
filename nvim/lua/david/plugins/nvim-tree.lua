@@ -8,7 +8,7 @@ end
 
 return {
     "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "Mofiqul/vscode.nvim" },
     -- optionally enable 24-bit colour
     config = function()
         vim.g.loaded_netrw = 1
@@ -19,7 +19,7 @@ return {
         autocmd VimEnter * wincmd p
         ]], false)
         vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
-        vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+        vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])  
         local nvimtree = require("nvim-tree")
         nvimtree.setup({
           disable_netrw = true,
@@ -27,6 +27,10 @@ return {
           hijack_cursor = true,
           hijack_unnamed_buffer_when_opening = false,
           sync_root_with_cwd = true,
+          filters = {
+            dotfiles = false,
+            custom = {'.git', 'node_modules', '__pycache__', '.venv'}
+          },
           update_focused_file = {
             enable = true,
             update_root = false,
@@ -51,7 +55,7 @@ return {
           },
           renderer = {
             root_folder_label = false,
-            highlight_git = false,
+            highlight_git = true,
             highlight_opened_files = "none",
         
             indent_markers = {
@@ -63,7 +67,7 @@ return {
                 file = true,
                 folder = true,
                 folder_arrow = true,
-                git = false,
+                git = true,
               },
         
               glyphs = {
