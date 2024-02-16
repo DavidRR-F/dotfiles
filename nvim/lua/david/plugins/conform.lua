@@ -18,6 +18,7 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
+      go = { "goimports", "gofmt" },
       python = { "black" },
       javascript = { { "prettierd", "prettier" } },
     },
