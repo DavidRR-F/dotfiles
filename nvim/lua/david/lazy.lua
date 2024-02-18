@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
   { import = "david.plugins" },
+  { import = "david.plugins.fileconfig" },
+  { import = "david.plugins.lspconfig" },
+  { import = "david.plugins.gitconfig" },
+  { import = "david.plugins.formatconfig" }
 }
 
 require("lazy").setup(plugins, {
