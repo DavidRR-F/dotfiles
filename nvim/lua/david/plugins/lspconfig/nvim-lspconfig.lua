@@ -1,21 +1,23 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-			require("mason").setup()
-			local mason_lspconfig = require("mason-lspconfig")
-			mason_lspconfig.setup({
-				ensure_installed = { "pyright", "gopls", "tsserver", "tailwindcss" },
-				automatic_installation = true,
-			})
-			require("lspconfig").pyright.setup({
+			local lspconfig = require("lspconfig")
+			local cpm_nvim_lsp = require("cmp_nvim_lsp")
+			local keymap = vim.keymap
+			local opts = { noremap = true, silent = true }
+			local on_attach = function(client, bufnr)
+				opts.buffer = bufnr
+				-- set keybinds here
+			end
+			local capabilities = cpm_nvim_lsp.default_capabilities()
+		  capabilities.textDocument.completion.completionItem.snippetSupport = true	
+			lspconfig.pyright.setup({
+				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					python = {
@@ -30,25 +32,42 @@ return {
 				},
 				filetypes = { "python" },
 			})
-			require("lspconfig").gopls.setup({
-				capabilities = capabilities,
+			lspconfig.gopls.setup({
 				cmd = { "gopls" },
+				on_attach = on_attach,
+				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
+				root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
 				settings = {
 					gopls = {
 						completeUnimported = true,
-						analysis = {
+						analyses = {
 							unusedparams = true,
-						},
+							shadow = true,
+						 },
+						 staticcheck = true,
 					},
 				},
 			})
-			require("lspconfig").tailwindcss.setup({
+			lspconfig.tailwindcss.setup({
+				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "css", "typescript", "typescriptreact", "typescript.tsx" },
 			})
-			require("lspconfig").tsserver.setup({
+			lspconfig.emmet_ls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less" },
+			})
+			lspconfig.cssls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.html.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			lspconfig.tsserver.setup({
 				on_attach = function(client, bufnr)
 					client.resolved_capabilities.document_formatting = false
 					client.resolved_capabilities.document_range_formatting = false
