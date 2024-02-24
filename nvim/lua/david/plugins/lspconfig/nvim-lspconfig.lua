@@ -32,7 +32,17 @@ return {
 			})
 			require("lspconfig").gopls.setup({
 				capabilities = capabilities,
-				filetypes = { "go", "gomod" },
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						analysis = {
+							unusedparams = true,
+						},
+					},
+				},
 			})
 			require("lspconfig").tailwindcss.setup({
 				capabilities = capabilities,
