@@ -14,10 +14,11 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
         vim.opt.termguicolors = true
-        vim.api.nvim_exec([[
-        autocmd VimEnter * NvimTreeOpen
-        autocmd VimEnter * wincmd p
-        ]], false)
+        -- open nvim-tree on startup
+        --vim.api.nvim_exec([[
+        --autocmd VimEnter * NvimTreeOpen
+        --autocmd VimEnter * wincmd p
+        --]], false)
         vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
         vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])  
         local nvimtree = require("nvim-tree")
@@ -99,6 +100,6 @@ return {
       
           -- set keymaps
           local keymap = vim.keymap -- for conciseness
-          keymap.set('n', '<C-n>', "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+          keymap.set('n', '<C-a>', "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
         end,
 }
