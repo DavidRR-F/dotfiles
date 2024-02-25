@@ -34,6 +34,7 @@ return {
 			})
 			lspconfig.gopls.setup({
 				cmd = { "gopls" },
+        single_file_support = true,
 				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
