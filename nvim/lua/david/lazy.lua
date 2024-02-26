@@ -16,7 +16,8 @@ local plugins = {
   { import = "david.plugins.fileconfig" },
   { import = "david.plugins.lspconfig" },
   { import = "david.plugins.gitconfig" },
-  { import = "david.plugins.formatconfig" }
+  { import = "david.plugins.formatconfig" },
+  { import = "david.plugins.notebookconfig" },
 }
 
 require("lazy").setup(plugins, {

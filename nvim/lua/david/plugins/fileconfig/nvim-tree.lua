@@ -1,11 +1,3 @@
-function OpenFileInNewTab()
-  local lib = require'nvim-tree.lib'
-  local node = lib.get_node_at_cursor()
-  if node then
-      vim.cmd('tabnew ' .. node.absolute_path)
-  end
-end
-
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons", "Mofiqul/vscode.nvim" },
@@ -100,6 +92,6 @@ return {
       
           -- set keymaps
           local keymap = vim.keymap -- for conciseness
-          keymap.set('n', '<C-a>', "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+          keymap.set('n', '<C-g>', "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
         end,
 }
