@@ -8,7 +8,7 @@ return {
   },
   dependencies = {
     "echasnovski/mini.comment",
-    "hkupty/iron.nvim",
+    "benlubas/molten-nvim",
     "anuvyklack/hydra.nvim",
     "echasnovski/mini.hipatterns",
     "echasnovski/mini.ai"
@@ -22,7 +22,10 @@ return {
   end,
   config = function()
     local nn = require("notebook-navigator")
-    nn.setup({ activate_hydra_keys = "<leader>h" })
+    nn.setup({ 
+      activate_hydra_keys = "<leader>h",
+      syntax_highlight = true
+    })
 
     -- Configure mini.hipatterns for cell highlighting
     require("mini.hipatterns").setup({
