@@ -22,7 +22,7 @@ return {
           sync_root_with_cwd = true,
           filters = {
             dotfiles = false,
-            custom = {'.git', 'node_modules', '__pycache__', '.venv'}
+            custom = {'node_modules', '__pycache__', '.venv'}
           },
           update_focused_file = {
             enable = true,
