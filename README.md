@@ -10,16 +10,28 @@ This repository contains my personal dotfiles.
    git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 ```
 
-2. Symlink the configuration folders to your config directories:
+2. **Configure Dotfiles**:
 
-- Linux/macOS:
+- Linux (Ubuntu/Debian - RHEL/CentOS/Fedora):
 
 ```bash
-$ ln -s ~/.dotfiles/nvim ~/.config/nvim
+$ chmod +x ./scripts/linux-setup.sh
+$ ./scripts/linux-setup.sh
 ```
 
 - Windows (in Command Prompt as Administrator):
 
+  Install the necessary dependencies:
+    - Neovim
+    - Python
+    - Nodejs
+    - Golang
+    - Starship/OhMyPosh
+    - NerdFonts
+
+  Add symlinks to your config files or move them somewhere else:
+
 ```cmd
 mklink /D %LOCALAPPDATA%\nvim C:\Users\yourusername\.dotfiles\nvim
 ```
+
