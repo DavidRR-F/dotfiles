@@ -48,6 +48,7 @@ install_packages() {
     sudo $PACKAGEMANAGER install -y python3-pip
     sudo $PACKAGEMANAGER install -y neovim
     sudo $PACKAGEMANAGER install -y tmux
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 install_terminal_config() {
