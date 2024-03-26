@@ -20,6 +20,7 @@ local plugins = {
   { import = "david.plugins.gitconfig" },
   { import = "david.plugins.formatconfig" },
   { import = "david.plugins.notebookconfig" },
+  { import = "david.plugins.dbconfig" },
 }
 
 require("lazy").setup(plugins, {

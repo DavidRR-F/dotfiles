@@ -8,6 +8,7 @@ return {
 				"dockerfile",
 				"html",
 				"css",
+        "sql",
 				"javascript",
 				"typescript",
 				"tsx",
