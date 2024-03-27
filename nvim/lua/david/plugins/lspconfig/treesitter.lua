@@ -19,6 +19,7 @@ return {
 				"json",
 				"markdown",
 				"markdown_inline",
+        "terraform" 
 			}, -- Add the languages here
 			sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
 			highlight = {
@@ -27,6 +28,6 @@ return {
 			indent = {
 				enable = true, -- Enable Tree-sitter based indentation
 			},
-		})
+		}) 
 	end,
 }

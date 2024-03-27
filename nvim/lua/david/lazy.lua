@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
+  {"chr4/nginx.vim"},
   { import = "david.plugins" },
   { import = "david.plugins.fileconfig" },
   { import = "david.plugins.colorconfig" },
