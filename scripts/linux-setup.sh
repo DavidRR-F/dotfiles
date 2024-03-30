@@ -67,6 +67,12 @@ install_go() {
     rm go.tar.gz
 }
 
+install_wezterm() {
+    curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+    echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+    sudo apt install wezterm
+}
+
 append_to_bashrc() {
     echo "eval \"$(starship init bash)\"" >> ~/.bashrc
     echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
@@ -77,6 +83,8 @@ create_symlinks() {
     ln -s ~/.dotfiles/nvim ~/.config/nvim
     ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
     ln -s ~/.dotfiles/term-theme/starship.toml ~/.config/starship.toml
+    ln -s ~/.dotfiles/term-theme/wezterm.lua ~/.config/wezterm/wezterm.lua
+    cp ~/.dotfiles/term-theme/bgb.jpg ~/Pictures/
 }
 
 main() {
