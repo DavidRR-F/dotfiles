@@ -115,6 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="$HOME/nvim-linux64/bin:$PATH"
+export PATH="/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/.local/bin:$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 eval "$(starship init bash)"
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
