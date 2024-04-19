@@ -46,7 +46,7 @@ install_packages() {
     sudo $PACKAGEMANAGER install -y nodejs
     sudo $PACKAGEMANAGER install -y npm
     sudo $PACKAGEMANAGER install -y python3-pip
-    sudo $PACKAGEMANAGER install -y neovim
+    sudo $PACKAGEMANAGER install -y stow
     sudo $PACKAGEMANAGER install -y tmux
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
@@ -80,11 +80,7 @@ append_to_bashrc() {
 }
 
 create_symlinks() {
-    ln -s ~/.dotfiles/nvim ~/.config/nvim
-    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-    ln -s ~/.dotfiles/term-theme/starship.toml ~/.config/starship.toml
-    ln -s ~/.dotfiles/term-theme/wezterm.lua ~/.config/wezterm/wezterm.lua
-    cp ~/.dotfiles/term-theme/bgb.jpg ~/Pictures/
+    stow ~/dotfiles
 }
 
 main() {
