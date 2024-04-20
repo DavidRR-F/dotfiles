@@ -1,4 +1,5 @@
 node_modules/
+go/
 package-lock.json
 package.json
 

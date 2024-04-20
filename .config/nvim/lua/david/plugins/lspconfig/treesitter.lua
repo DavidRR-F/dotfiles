@@ -30,15 +30,22 @@ return {
 				"json",
 				"markdown",
 				"markdown_inline",
-        "terraform" 
+        "terraform",
+        "templ"
 			}, -- Add the languages here
 			sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
 			highlight = {
 				enable = true,
+        additional_vim_regex_highlighting = false,
 			},
 			indent = {
 				enable = true, -- Enable Tree-sitter based indentation
 			},
 		})
+    vim.filetype.add({
+      extension = {
+          templ = "templ",
+      },
+    })
   end,
 }
