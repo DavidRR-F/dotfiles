@@ -22,7 +22,15 @@ return {
           sync_root_with_cwd = true,
           filters = {
             dotfiles = false,
-            custom = {'node_modules', '__pycache__', '.venv'}
+            custom = {
+              'node_modules', 
+              '__pycache__', 
+              '.venv',
+              '.git'
+            },
+            exclude = {
+              '.gitignore'
+            }
           },
           update_focused_file = {
             enable = true,
@@ -89,7 +97,7 @@ return {
             },
           },
           })
-      
+          --nvimtree.add_custom_ignore("notebooks/*.py")
           -- set keymaps
           local keymap = vim.keymap -- for conciseness
           keymap.set('n', '<C-g>', "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
