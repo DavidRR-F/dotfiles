@@ -3,7 +3,7 @@
 GO_VERSION=1.22.1
 NODE_VERSION=16
 NERD_FONT_VERSION=3.2.1
-NERD_FONT=Proto
+NERD_FONT=0xProto
 
 wsl=false
 tpm_dir=~/.tmux/plugins/tpm
@@ -25,7 +25,7 @@ install_packages() {
     sudo apt install -y python3-pip
     sudo apt install -y stow
     sudo apt install -y tmux
-    if [ ! -d "$tpm_dir"] then
+    if [ ! -d "$tpm_dir"]; then
         git clone https://github.com/tmux-plugins/tpm $tpm_dir
     fi 
     if ! command_exists nvm; then
@@ -60,6 +60,7 @@ install_terminal() {
         curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
         echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
         sudo apt install wezterm -y
+        sudo apt install i3 -y
     fi
 }
 
@@ -88,13 +89,13 @@ shift $((OPTIND -1))
 # Check if running on WSL
 if [ "$wsl" = true ]; then
   echo "Running on Windows Subsystem for Linux (WSL)."
-  # Your WSL-specific actions here
 else
   echo "Not running on Windows Subsystem for Linux (WSL)."
 fi
 
 install_packages
 install_terminal $wsl
+mv ~/.bashrc ~/.bashrc.bak
 stow .
 source ~/.bashrc
 install_deps

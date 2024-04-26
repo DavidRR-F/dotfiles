@@ -1,13 +1,10 @@
 local wezterm = require 'wezterm';
 local act = wezterm.action
-wezterm.on("key-binding", function(key, mods)
-    if key == "t" and mods.control then
-        return wezterm.action{SpawnCommandInNewWindow={args={"tmux"}}}
-    end
-end)
+
 return {
   default_prog = { "bash" },
   color_scheme = 'Catppuccin Mocha',
+  font = wezterm.font("0xProtoNerdFontMono", { weight = "Regular" }),
   font_size = 14, 
   window_padding = {
     left = 5,
