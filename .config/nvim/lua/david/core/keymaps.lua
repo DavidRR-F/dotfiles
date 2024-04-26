@@ -7,6 +7,7 @@ local keymap = vim.keymap -- for conciseness
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("v", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- mouse scroll
 keymap.set("n", "<ScrollWheelUp>", "<C-Y>", { silent = true })

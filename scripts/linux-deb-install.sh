@@ -6,12 +6,13 @@ NERD_FONT_VERSION=3.2.1
 NERD_FONT=Proto
 
 wsl=false
+tpm_dir=~/.tmux/plugins/tpm
 
-command_not_exists() {
-    if ! command -v $1 &>/dev/null; then
-        return 0
+command_exists() {
+    if command -v "$1" &>/dev/null; then
+        return 1
     else
-        return 1 
+        return 0 
     fi 
 }
 
@@ -24,16 +25,16 @@ install_packages() {
     sudo apt install -y python3-pip
     sudo apt install -y stow
     sudo apt install -y tmux
-    if [ -d "$tpm_dir"] then
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    if [ ! -d "$tpm_dir"] then
+        git clone https://github.com/tmux-plugins/tpm $tpm_dir
     fi 
-    if command_not_exists "nvm"; then
+    if ! command_exists nvm; then
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
     fi
-    if command_not_exists "pyenv"; then
+    if ! command_exists pyenv; then
         curl https://pyenv.run | bash
     fi
-    if command_not_exists "go"; then
+    if ! command_exists go; then
         wget -q "https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz" -O go.tar.gz
         sudo tar -C /usr/local -xzf go.tar.gz
         rm go.tar.gz
@@ -42,10 +43,10 @@ install_packages() {
 }
 
 install_terminal() {
-    if command_not_exists "starship"; then
+    if ! command_exists starship; then
         curl -sS https://starship.rs/install.sh | sh
     fi
-    if command_not_exists "zoxide"; then
+    if ! command_not_exists zoxide; then
         curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
     fi
     if [ "$1" = false ]; then
@@ -58,7 +59,7 @@ install_terminal() {
         # Install Wezterm
         curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
         echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-        sudo apt install wezterm
+        sudo apt install wezterm -y
     fi
 }
 
@@ -67,7 +68,7 @@ install_deps() {
     go install golang.org/x/tools/gopls@latest
     go install github.com/a-h/templ/cmd/templ@latest
     nvm install v$NODE_VERSION
-    npm install neovim tailwindcss typescript-language-server pyright -g
+    npm install -g neovim tailwindcss typescript-language-server pyright
     pip3 install neovim pynvim jupyter-client jupytext cairosvg pnglatex plotly kaleido pyperclip nbformat  
 }
 

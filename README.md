@@ -12,26 +12,18 @@ This repository contains my personal dotfiles.
 
 2. **Configure Dotfiles**:
 
-- Linux (Ubuntu/Debian - RHEL/CentOS/Fedora):
+This `linux-deb-install.sh` will install all package deps, applications, and create sym links (run in dotfile root directory)
+
+- Linux (Ubuntu/Debian):
 
 ```bash
-$ chmod +x ./scripts/linux-setup.sh
-$ ./scripts/linux-setup.sh
+$ chmod +x ./scripts/linux-deb-install.sh
+$ ./scripts/linux-deb-install.sh
 ```
 
-- Windows (in Command Prompt as Administrator):
+- Windows Wsl (Ubuntu/Debain)
 
-  Install the necessary dependencies:
-    - Neovim
-    - Python
-    - Nodejs
-    - Golang
-    - Starship/OhMyPosh
-    - NerdFonts
-
-  Add symlinks to your config files or move them somewhere else:
-
-```cmd
-mklink /D %LOCALAPPDATA%\nvim C:\Users\yourusername\.dotfiles\nvim
+```bash
+$ chmod +x ./scripts/linux-deb-install.sh
+$ ./scripts/linux-deb-install.sh -w
 ```
-
