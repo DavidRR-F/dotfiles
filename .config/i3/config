@@ -185,5 +185,5 @@ bar {
         status_command i3status
 }
 
-exec_always --no-startup-id /usr/bin/feh --bg-max $HOME/.config/i3/wallpaper.jpg
+exec_always --no-startup-id /usr/bin/feh --bg-fill $HOME/.config/i3/wallpaper.jpg
 exec --no-startup-id compton

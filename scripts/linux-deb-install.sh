@@ -68,6 +68,7 @@ install_deps() {
     go install golang.org/x/tools/cmd/goimports@latest
     go install golang.org/x/tools/gopls@latest
     go install github.com/a-h/templ/cmd/templ@latest
+    go install github.com/go-delve/delve/cmd/dlv@latest
     nvm install v$NODE_VERSION
     npm install -g neovim tailwindcss typescript-language-server pyright
     pip3 install neovim pynvim jupyter-client jupytext cairosvg pnglatex plotly kaleido pyperclip nbformat  

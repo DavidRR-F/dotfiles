@@ -14,6 +14,6 @@ return {
   init = function()
     -- Your DBUI configuration
     vim.g.db_ui_use_nerd_fonts = 1
-    vim.api.nvim_set_keymap('n', '<Leader>db', ':DBUI<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<Leader>sql', ':DBUI<CR>', { noremap = true, silent = true })
   end,
 }
