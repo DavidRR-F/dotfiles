@@ -4,7 +4,12 @@ return {
     { "]h", function() require("notebook-navigator").move_cell("d") end },
     { "[h", function() require("notebook-navigator").move_cell("u") end },
     { "<leader>X", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
-    { "<leader>x", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
+    { "<leader>x", 
+      function()
+        require('notebook-navigator').run_and_move()
+        vim.cmd('normal! zz')  -- Center the screen on the cursor
+      end 
+    },
   },
   dependencies = {
     "echasnovski/mini.comment",
@@ -13,6 +18,7 @@ return {
     "echasnovski/mini.hipatterns",
     "echasnovski/mini.ai"
   },
+  ft = "ipynb",
   event = "VeryLazy",
   opts = function()
     local nn = require "notebook-navigator"

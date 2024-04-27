@@ -7,6 +7,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+    "hrsh7th/cmp-nvim-lsp-signature-help"
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -24,12 +25,13 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<C-e>"] = cmp.mapping.abort(),
-			}),
+      }),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+        { name = 'nvim_lsp_signature_help' }
 			}),
 			window = {
 				completion = cmp.config.window.bordered(),
