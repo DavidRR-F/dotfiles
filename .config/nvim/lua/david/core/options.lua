@@ -24,8 +24,3 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.fillchars = { eob = " " }
 
 opt.conceallevel = 2
-
--- folds
-opt.foldmethod = 'indent'
-opt.foldlevel = 1
-opt.foldenable = true  -- Enable folding by default
