@@ -3,8 +3,12 @@ return {
   config = function()
     require("vscode").setup({
       transparent = true,
-      disable_nvimtree_bg = true
+      disable_nvimtree_bg = true,
+      color_overrides = {
+        vscBack = 'NONE',
+        vscPopupBack = 'NONE'
+      }
     })
-    require('vscode').load()  
+    require('vscode').load()
   end
 }

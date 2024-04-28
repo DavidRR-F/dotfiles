@@ -16,10 +16,6 @@ return {
   opts = {
     workspaces = {
       {
-        name = "work",
-        path = "~/Documents/ObsidianWork",
-      },
-      {
         name = "personal",
         path = "~/Documents/Obsidian",
       },

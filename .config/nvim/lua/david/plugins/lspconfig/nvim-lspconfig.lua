@@ -91,12 +91,12 @@ return {
 			lspconfig.tailwindcss.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				filetypes = { "css", "typescript", "typescriptreact", "typescript.tsx" },
+				filetypes = { "css", "typescript", "typescriptreact", "typescript.tsx", "templ" },
 			})
 			lspconfig.emmet_ls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less" },
+				filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less", "templ" },
 			})
 			lspconfig.cssls.setup({
 				on_attach = on_attach,
