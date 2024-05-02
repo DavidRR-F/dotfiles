@@ -115,8 +115,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="/opt/mssql-tools/bin:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="/opt/mssql-tools/bin:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"

@@ -15,31 +15,37 @@ return {
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, opts)
 			end
 			local capabilities = cmp_nvim_lsp.default_capabilities()
-		  capabilities.textDocument.completion.completionItem.snippetSupport = true	
+		  capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local function get_python_path(workspace)
-        -- Default to a .venv in the workspace directory if it exists, otherwise the system Python
-        local venv_path = workspace .. "/.venv/bin/python"
-        return vim.fn.filereadable(venv_path) == 1 and venv_path or "python"
+      function get_venv()
+          require('venv-selector').retrieve_from_cache()
+          local venv_path = require('venv-selector').get_active_venv()
+          if venv_path then
+              return venv_path .. "/bin/python"
+          else 
+              return vim.fn.expand('$HOME/.pyenv/versions/neovim3/bin/python')
+          end
       end
 
-			lspconfig.pyright.setup({
-				on_attach = on_attach,
+			lspconfig.pyright.setup({				
+        on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
 					python = {
 						analysis = {
 							typeCheckingMode = "off",
+              useLibraryCodeForTypes = true,
 							diagnosticSeverityOverrides = {
 								reportGeneralTypeIssues = "none", -- Ignore general type issues
 								reportOptionalMemberAccess = "none", -- Ignore optional member access issues
 							},
+              python_path = get_venv()
 						},
-            pythonPath = get_python_path(vim.fn.getcwd()),
 					},
 				},
         filetypes = { "python" },
 			})
+
 			lspconfig.gopls.setup({
 				cmd = { "gopls" },
         single_file_support = true,

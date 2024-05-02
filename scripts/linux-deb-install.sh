@@ -25,6 +25,8 @@ install_packages() {
     sudo apt install -y python3-pip
     sudo apt install -y stow
     sudo apt install -y tmux
+    sudo apt install -y fd-find 
+    sudo apt install -y jq
     if [ ! -d "$tpm_dir"]; then
         git clone https://github.com/tmux-plugins/tpm $tpm_dir
     fi 

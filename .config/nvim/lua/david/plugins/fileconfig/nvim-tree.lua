@@ -6,11 +6,6 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
         vim.opt.termguicolors = true
-        -- open nvim-tree on startup
-        --vim.api.nvim_exec([[
-        --autocmd VimEnter * NvimTreeOpen
-        --autocmd VimEnter * wincmd p
-        --]], false)
         vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
         vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])  
         local nvimtree = require("nvim-tree")
@@ -29,8 +24,8 @@ return {
               '.git'
             },
             exclude = {
-              '.gitignore'
-            }
+              '.gitignore',
+            },
           },
           update_focused_file = {
             enable = true,
