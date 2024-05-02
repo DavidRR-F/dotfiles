@@ -1,32 +1,3 @@
-local function set_python_path(path)
-  local clients = vim.lsp.get_active_clients {
-    bufnr = vim.api.nvim_get_current_buf(),
-    name = 'pyright',
-  }
-  for _, client in ipairs(clients) do
-    if client.settings then
-      client.settings.python = vim.tbl_deep_extend('force', client.settings.python, { pythonPath = path })
-    else
-      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, { python = { pythonPath = path } })
-    end
-    client.notify('workspace/didChangeConfiguration', { settings = nil })
-  end
-end
-
--- Auto-command to set Python path from .venv on buffer enter
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*.py",
-  callback = function()
-    local venv_path = vim.fn.getcwd() .. '/.venv/bin/python'
-    if vim.fn.filereadable(venv_path) == 1 then
-      set_python_path(venv_path)
-    else
-      print("Python interpreter not found in .venv")
-    end
-  end
-})
-
-
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -42,10 +13,16 @@ return {
 			local on_attach = function(client, bufnr)
 				opts.buffer = bufnr
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.hover, opts)
-        --vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 			end
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 		  capabilities.textDocument.completion.completionItem.snippetSupport = true	
+
+      local function get_python_path(workspace)
+        -- Default to a .venv in the workspace directory if it exists, otherwise the system Python
+        local venv_path = workspace .. "/.venv/bin/python"
+        return vim.fn.filereadable(venv_path) == 1 and venv_path or "python"
+      end
+
 			lspconfig.pyright.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
@@ -58,17 +35,10 @@ return {
 								reportOptionalMemberAccess = "none", -- Ignore optional member access issues
 							},
 						},
+            pythonPath = get_python_path(vim.fn.getcwd()),
 					},
 				},
-        commands = {
-          PyrightSetPythonPath = {
-            set_python_path,
-            description = 'Reconfigure pyright with the provided python path',
-            nargs = 1,
-            complete = 'file',
-          },
-        },
-				filetypes = { "python" },
+        filetypes = { "python" },
 			})
 			lspconfig.gopls.setup({
 				cmd = { "gopls" },

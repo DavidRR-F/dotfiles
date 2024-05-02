@@ -26,6 +26,72 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
+       views = {
+        cmdline_popup = {
+          position = {
+            row = 5,
+            col = "50%",
+          },
+          size = {
+            width = 60,
+            height = "auto",
+          },
+        },
+        popupmenu = {
+          relative = "editor",
+          position = {
+            row = 8,
+            col = "50%",
+          },
+          size = {
+            width = 60,
+            height = 10,
+          },
+          border = {
+            style = "rounded",
+            padding = { 0, 1 },
+          },
+          win_options = {
+            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+          },
+        },
+      },
+      commands = {
+        history = {
+          view = "split",  -- or any other preferred view that is not 'notify'
+          opts = { enter = false, format = "details" },
+        },
+        -- You can adjust other commands similarly
+      },
+      notify = {
+        enabled = true,
+        view = "notify",  -- Ensure that notifications are routed through Noice
+      },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "utils.lua",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "written",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "notify",
+            kind = "warn",
+          },
+          opts = { skip = true },
+        },
+      },
       cmdline = {
         enabled = true,
         view = "cmdline_popup", 
