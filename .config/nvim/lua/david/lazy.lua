@@ -13,16 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
   {"chr4/nginx.vim"},
-  { import = "david.plugins.fileconfig" },
-  { import = "david.plugins.colorconfig" },
-  { import = "david.plugins.colorconfig.csstools" },
-  { import = "david.plugins.lspconfig" },
-  { import = "david.plugins.debugconfig" },
-  { import = "david.plugins.hubconfig" },
-  { import = "david.plugins.formatconfig" },
-  { import = "david.plugins.notebookconfig" },
-  { import = "david.plugins.dbconfig" },
-  { import = "david.plugins.markdownconfig" }, 
+  { import = "david.plugins.code" },
+  { import = "david.plugins.code.lsp" },
+  { import = "david.plugins.color" },
+  { import = "david.plugins.gui" },
+  { import = "david.plugins.markdown" },
+  { import = "david.plugins.python" },
 }
 
 require("lazy").setup(plugins, {

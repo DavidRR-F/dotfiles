@@ -1,6 +1,6 @@
 -- set leader key to space
 vim.g.mapleader = " "
-
+vim.g.python3_host_prog = vim.fn.expand('$HOME/.pyenv/versions/neovim3/bin/python')
 vim.o.clipboard = "unnamedplus"
 
 local keymap = vim.keymap -- for conciseness

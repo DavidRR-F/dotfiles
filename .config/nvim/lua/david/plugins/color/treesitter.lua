@@ -1,14 +1,3 @@
-local colors = {
-        h1 = "#ff0000",
-        h2 = "#00ff00",
-        h3 = "#0000ff",
-        h4 = "#ffff00",
-        h5 = "#ff00ff",
-        h6 = "#00ffff",
-        -- Add more colors for other header levels as needed
-    }
-
-
 return {
 	"nvim-treesitter/nvim-treesitter",
 	run = ":TSUpdate",

@@ -4,7 +4,7 @@ return {
   cmd = "VenvSelect",
   opts = {
     default_venv = ".venv",
-    auto_refresh = false,
+    auto_refresh = true,
     dap_enabled = true,
   },
   keys = { 

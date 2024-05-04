@@ -8,6 +8,8 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+      -- keybindings
 			local keymap = vim.keymap
 			local opts = { noremap = true, silent = true }
 			local on_attach = function(client, bufnr)
@@ -17,63 +19,29 @@ return {
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 		  capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      function get_venv()
-          require('venv-selector').retrieve_from_cache()
-          local venv_path = require('venv-selector').get_active_venv()
-          if venv_path then
-              return venv_path .. "/bin/python"
-          else 
-              return vim.fn.expand('$HOME/.pyenv/versions/neovim3/bin/python')
-          end
-      end
+      -- python
+      local python = require("david.plugins.code.lang.python")
+			lspconfig.pyright.setup(python.lsp(on_attach, capabilities))
+      
+      -- go 
+      local go = require("david.plugins.code.lang.go")
+			lspconfig.gopls.setup(go.lsp(on_attach, capabilities, lspconfig.util.root_pattern("go.work", "go.mod", ".git")))
 
-			lspconfig.pyright.setup({				
-        on_attach = on_attach,
-				capabilities = capabilities,
-				settings = {
-					python = {
-						analysis = {
-							typeCheckingMode = "off",
-              useLibraryCodeForTypes = true,
-							diagnosticSeverityOverrides = {
-								reportGeneralTypeIssues = "none", -- Ignore general type issues
-								reportOptionalMemberAccess = "none", -- Ignore optional member access issues
-							},
-              python_path = get_venv()
-						},
-					},
-				},
-        filetypes = { "python" },
-			})
-
-			lspconfig.gopls.setup({
-				cmd = { "gopls" },
-        single_file_support = true,
-				on_attach = on_attach,
-				capabilities = capabilities,
-				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
-				settings = {
-					gopls = {
-						completeUnimported = true,
-						analyses = {
-							unusedparams = true,
-							shadow = true,
-						 },
-						 staticcheck = true,
-					},
-				},
-			})
+      -- tailwind
 			lspconfig.tailwindcss.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "css", "typescript", "typescriptreact", "typescript.tsx", "templ" },
 			})
+
+      -- emmet
 			lspconfig.emmet_ls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
 				filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less", "templ" },
 			})
+
+      -- css
 			lspconfig.cssls.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
@@ -82,6 +50,8 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
+
+      -- typescript 
 			lspconfig.tsserver.setup({
 				on_attach = function(client, bufnr)
 					client.resolved_capabilities.document_formatting = false
