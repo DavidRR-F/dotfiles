@@ -14,6 +14,8 @@ return {
   dependencies = {
     "echasnovski/mini.comment",
     "benlubas/molten-nvim",
+    --"akinsho/toggleterm.nvim",
+    --"hkupty/iron.nvim",
     "anuvyklack/hydra.nvim",
     "echasnovski/mini.hipatterns",
     "echasnovski/mini.ai"

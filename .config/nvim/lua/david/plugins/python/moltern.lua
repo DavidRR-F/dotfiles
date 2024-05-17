@@ -7,7 +7,7 @@ return {
         init = function()
             -- these are examples, not defaults. Please see the readme
             vim.g.molten_image_provider = "wezterm.nvim"
-            vim.g.molten_output_win_max_height = 20
+            vim.g.molten_output_win_max_height = 80
         end,
         config = function()
             vim.api.nvim_set_hl(0, "MoltenOutputBorder", { fg = '#ff0000', bg = '#000000' })
