@@ -2,7 +2,7 @@ local wezterm = require 'wezterm';
 local act = wezterm.action
 
 return {
-  default_prog = { "bash" },
+  default_prog = { "zsh" },
   color_scheme = 'Catppuccin Mocha',
   font = wezterm.font("0xProtoNerdFontMono", { weight = "Regular" }),
   font_size = 14, 
