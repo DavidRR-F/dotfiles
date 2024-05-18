@@ -22,3 +22,9 @@ vim.api.nvim_set_keymap('n', '<Leader>ww', ':resize +5<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<Leader>ws', ':resize -5<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>wa', ':vertical resize +5<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>wd', ':vertical resize -5<CR>', { noremap = true, silent = true })
+
+-- move cursor in insert mode
+keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
+keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
+keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down" })
+keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up" })

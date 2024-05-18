@@ -20,7 +20,8 @@ return {
 				"markdown",
 				"markdown_inline",
         "terraform",
-        "templ"
+        "templ",
+        "hcl"
 			}, -- Add the languages here
 			sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
 			highlight = {
