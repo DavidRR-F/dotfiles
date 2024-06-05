@@ -1,11 +1,7 @@
 # ZSH plugin manager
-ZINIT_HOME="${XDG_DATAHOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-if [[ ! -d $ZINIT_HOME ]]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # ZSH plugins
@@ -46,9 +42,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
+alias gam="$HOME/bin/gam/gam"
+alias jenkins-cli="$HOME/.jenkins-cli.sh"
 
-
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
+export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
+export POETRY_PLUGIN_DOTENV_IGNORE=0
 export PATH="/opt/mssql-tools/bin:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"

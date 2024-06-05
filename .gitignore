@@ -2,7 +2,7 @@ node_modules/
 go/
 package-lock.json
 package.json
-
+NuGet/
 # Compiled Lua sources
 luac.out
 
