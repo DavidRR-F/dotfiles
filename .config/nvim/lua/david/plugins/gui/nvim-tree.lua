@@ -25,6 +25,7 @@ return {
             },
             exclude = {
               '.gitignore',
+              '.github',
             },
           },
           update_focused_file = {

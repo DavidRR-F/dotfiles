@@ -11,12 +11,12 @@ return {
                     package_pending = "➜",
                     package_uninstalled = "✗",
                 }
-            }
+            },
         })
         require("mason-lspconfig").setup({
             ensure_installed = { 
-                "pyright", 
-                "gopls", 
+                "pyright",
+                "gopls",
                 "tsserver", 
                 "tailwindcss",
                 "emmet_ls",

@@ -41,6 +41,11 @@ install_packages() {
         sudo tar -C /usr/local -xzf go.tar.gz
         rm go.tar.gz
     fi
+    if ! command_exists dotnet; then
+        wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh 
+        chmod +x ./dotnet-install.sh 
+        ./dotnet-install.sh --version latest
+    fi
 
 }
 
@@ -74,6 +79,7 @@ install_deps() {
     nvm install v$NODE_VERSION
     npm install -g neovim tailwindcss typescript-language-server pyright
     pip3 install neovim pynvim jupyter-client jupytext cairosvg pnglatex plotly kaleido pyperclip nbformat  
+    dotnet tool install --global csharp-ls
 }
 
 while getopts ":w" opt; do

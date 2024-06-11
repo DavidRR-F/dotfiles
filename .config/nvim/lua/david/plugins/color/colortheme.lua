@@ -6,7 +6,8 @@ return {
       disable_nvimtree_bg = true,
       color_overrides = {
         vscBack = 'NONE',
-        vscPopupBack = 'NONE'
+        vscPopupBack = 'NONE',
+        vscFoldBackground = 'NONE',
       }
     })
     require('vscode').load()

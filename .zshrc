@@ -49,7 +49,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
 export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
 export POETRY_PLUGIN_DOTENV_IGNORE=0
-export PATH="/opt/mssql-tools/bin:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH="/opt/mssql-tools/bin::$DOTNET_ROOT:$DOTNET_ROOT/tools:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
