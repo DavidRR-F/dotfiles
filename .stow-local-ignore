@@ -2,3 +2,7 @@
 README.md 
 .git 
 scripts/
+package.json
+package-lock.json
+NuGet
+go

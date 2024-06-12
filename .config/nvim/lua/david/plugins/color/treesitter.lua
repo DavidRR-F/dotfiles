@@ -5,6 +5,9 @@ return {
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"python",
+        "go",
+        "c",
+        "cpp",
 				"dockerfile",
 				"html",
 				"css",
@@ -14,13 +17,13 @@ return {
 				"tsx",
 				"bash",
 				"regex",
-				"go",
-				"lua",
+        "lua",
 				"json",
+        "xml",
+        "yaml",
 				"markdown",
 				"markdown_inline",
         "terraform",
-        "templ",
         "hcl"
 			}, -- Add the languages here
 			sync_install = false, -- Install languages synchronously (only applied to `ensure_installed`)
@@ -32,11 +35,6 @@ return {
 				enable = true, -- Enable Tree-sitter based indentation
 			},
 		})
-    vim.filetype.add({
-      extension = {
-          templ = "templ",
-      },
-    })
     vim.cmd [[
             au BufRead,BufNewFile Jenkinsfile set filetype=groovy
         ]]

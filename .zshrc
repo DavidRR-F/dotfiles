@@ -38,12 +38,16 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' 
 
+if [ -f ~/.env ]; then
+  source ~/.env
+fi
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias gam="$HOME/bin/gam/gam"
-alias jenkins-cli="$HOME/.jenkins-cli.sh"
+alias jenkins-cli="java -jar ~/.jenkins-cli.jar -s $JENKINS_URL -auth $JENKINS_USER_ID:$JENKINS_API_TOKEN "$@""
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"

@@ -17,6 +17,7 @@ return {
             ensure_installed = { 
                 "pyright",
                 "gopls",
+                "clangd",
                 "tsserver", 
                 "tailwindcss",
                 "emmet_ls",
