@@ -26,6 +26,8 @@ return {
             exclude = {
               '.gitignore',
               '.github',
+              'fugitive.lua',
+              'git',
             },
           },
           update_focused_file = {

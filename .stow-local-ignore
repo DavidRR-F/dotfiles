@@ -2,6 +2,7 @@
 README.md 
 .git 
 scripts/
+windows/
 package.json
 package-lock.json
 NuGet

@@ -1,4 +1,15 @@
-return {
+local harpoon = {
+  'ThePrimeagen/harpoon',
+  config = function()
+    require("harpoon").setup()
+    vim.keymap.set("n", "<C-a>", require("harpoon.ui").toggle_quick_menu)
+    vim.keymap.set("n", "<Tab>", function() require("harpoon.ui").nav_next() end)
+    vim.keymap.set("n", "<S-Tab>", function() require("harpoon.ui").nav_prev() end)
+    vim.keymap.set("n", "<Leader>a", function() require("harpoon.mark").add_file() end)
+  end
+}
+
+local bufferline = {
   'akinsho/bufferline.nvim', 
   version = "*", 
   dependencies = {'nvim-tree/nvim-web-devicons', "Mofiqul/vscode.nvim"},
@@ -62,8 +73,11 @@ return {
     },
     } 
     local opts = { noremap = true, silent = true }
-    vim.api.nvim_set_keymap('n', '<Leader>t', ':bdelete! %d<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<Leader>w', ':execute "silent bufdo if bufexists(".bufnr("").") | if buflisted(bufnr("")) && bufwinnr(bufnr("")) == -1 | bdelete | endif | endif"<CR>', opts)
+    vim.api.nvim_set_keymap('n', '<Leader>t', ':lua require("bufferline").buf_delete(%d)<CR>', opts)
     vim.api.nvim_set_keymap('n', '<TAB>', ':BufferLineCycleNext<CR>', opts)
     vim.api.nvim_set_keymap('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', opts)
   end
 }
+
+return harpoon

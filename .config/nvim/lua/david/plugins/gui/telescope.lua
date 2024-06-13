@@ -1,10 +1,17 @@
 return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.5',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  dependencies = { 
+    'nvim-lua/plenary.nvim',
+    "radyz/telescope-gitsigns",
+    "ThePrimeagen/git-worktree.nvim",
+  },
   keys = {
     { "<C-s>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    {"<C-x>", "<cmd>Telescope buffers<cr>", desc = "Find Text" } 
+    {"<C-e>", "<cmd>Telescope git_status<cr>", desc = "Find Changes" },
+    {"<C-x>", "<cmd>Telescope git_sign<cr>", desc = "Find File Changes" },
+    {"<C-w>", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
+
   },
   config = function()
     require('telescope').setup({
@@ -34,6 +41,8 @@ return {
       }
     })
 
+    require('telescope').load_extension('git_signs')
+    require('telescope').load_extension('git_worktree')
   end,
 }
 

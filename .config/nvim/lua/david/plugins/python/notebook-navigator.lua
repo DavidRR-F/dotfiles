@@ -1,9 +1,18 @@
 return {
   "GCBallesteros/NotebookNavigator.nvim",
   keys = {
-    { "]h", function() require("notebook-navigator").move_cell("d") end },
-    { "[h", function() require("notebook-navigator").move_cell("u") end },
-    { "<leader>X", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
+    { "<leader>k", 
+      function() 
+        require("notebook-navigator").move_cell("u")
+        vim.cmd('normal! zz')
+      end 
+    },
+    { "<leader>j", 
+      function() 
+        require("notebook-navigator").move_cell("d")
+        vim.cmd('normal! zz')
+      end 
+    },
     { "<leader>x", 
       function()
         require('notebook-navigator').run_and_move()
@@ -31,7 +40,6 @@ return {
   config = function()
     local nn = require("notebook-navigator")
     nn.setup({ 
-      activate_hydra_keys = "<leader>h",
       syntax_highlight = true
     })
 
