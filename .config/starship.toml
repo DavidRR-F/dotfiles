@@ -45,6 +45,8 @@ Windows = "󰍲"
 Ubuntu = "󰕈"
 Macos = "󰀵"
 Linux = "󰌽"
+Arch = "󰣇"
+Artix = "󰣇"
 
 [username]
 show_always = true

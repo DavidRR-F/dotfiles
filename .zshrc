@@ -42,6 +42,8 @@ if [ -f ~/.env ]; then
   source ~/.env
 fi
 
+source "$HOME/.rye/env"
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
@@ -75,5 +77,6 @@ if command -v tmux >/dev/null 2>&1; then
     fi
 fi
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
