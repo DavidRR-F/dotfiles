@@ -1,7 +1,5 @@
 configuration{
     modi: "run,window,combi";
-    font: "0xProtoNerdFontMono";
-    icon-theme: "0xProtoNerdFontMono";
     show-icons: true;
     terminal: "org.wezfurlong.wezterm";
     drun-display-format: "{icon} {name}";

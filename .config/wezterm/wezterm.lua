@@ -5,7 +5,7 @@ return {
   default_prog = { "zsh" },
   color_scheme = 'Catppuccin Mocha',
   font = wezterm.font("0xProtoNerdFontMono", { weight = "Regular" }),
-  font_size = 14, 
+  font_size = 16, 
   window_padding = {
     left = 5,
     right = 5,

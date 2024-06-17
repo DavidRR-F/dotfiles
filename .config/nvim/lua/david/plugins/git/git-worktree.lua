@@ -4,7 +4,10 @@ return {
         local worktree = require("git-worktree")
         local function handle_worktree_change(op, metadata)
             if op == worktree.Operations.Switch then
-                vim.g.last_worktree_path = metadata.path
+                local venv = vim.fn.findfile('pyproject.toml', vim.fn.getcwd() .. ';')
+                if venv ~= '' then
+                  require('venv-selector').retrieve_from_cache()
+                end
                 print("Switched from " .. metadata.prev_path .. " to " .. metadata.path)
             end
         end

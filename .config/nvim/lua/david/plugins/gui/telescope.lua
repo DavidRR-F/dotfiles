@@ -7,6 +7,7 @@ return {
     "ThePrimeagen/git-worktree.nvim",
   },
   keys = {
+    { "<C-z>", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<C-s>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
     {"<C-e>", "<cmd>Telescope git_status<cr>", desc = "Find Changes" },
     {"<C-x>", "<cmd>Telescope git_sign<cr>", desc = "Find File Changes" },
