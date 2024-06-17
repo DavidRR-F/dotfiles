@@ -86,6 +86,14 @@ return {
         },
         {
           filter = {
+            event = "msg_show",
+            kind = "error",
+            find = "LspProgress",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
             event = "notify",
             kind = "warn",
           },
