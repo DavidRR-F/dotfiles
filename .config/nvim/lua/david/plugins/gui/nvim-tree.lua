@@ -1,6 +1,6 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons", "Mofiqul/vscode.nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     -- optionally enable 24-bit colour
     config = function()
         vim.g.loaded_netrw = 1
