@@ -11,7 +11,7 @@ local function configure_obsidian_vaults()
         local name, type = uv.fs_scandir_next(dirs)
         if not name then break end
         local full_path = main_obsidian_directory .. '/' .. name
-        if type == 'directory' and uv.fs_stat(dir .. '/.obsidian') then
+        if type == 'directory' and uv.fs_stat(full_path .. '/.obsidian') then
             table.insert(vaults, {name = name, path = full_path})
         end
     end
