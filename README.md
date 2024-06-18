@@ -7,23 +7,14 @@ This repository contains my personal dotfiles.
 1. **Clone the Repository**:
 
 ```bash
-   git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 ```
 
-2. **Configure Dotfiles**:
+2. **Stow Repository**:
 
-This `linux-deb-install.sh` will install all package deps, applications, and create sym links (run in dotfile root directory)
-
-- Linux (Ubuntu/Debian):
-
-```bash
-$ chmod +x ./scripts/linux-deb-install.sh
-$ ./scripts/linux-deb-install.sh
+```bash 
+$ cd ~/.dotfiles
+$ stow .
 ```
 
-- Windows Wsl (Ubuntu/Debain)
-
-```bash
-$ chmod +x ./scripts/linux-deb-install.sh
-$ ./scripts/linux-deb-install.sh -w
 ```
