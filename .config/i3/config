@@ -13,13 +13,18 @@ set $mod Mod1
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/polyfix.sh
-exec_always --no-startup-id /usr/bin/feh --bg-fill $HOME/.config/i3/wallpaper.jpg
+exec_always --no-startup-id /usr/bin/feh --bg-fill $HOME/.config/i3/wallpapers/clearnight.jpg
 exec --no-startup-id compton
 
 # Rofi binds 
 
 bindsym $mod+space exec --no-startup-id rofi -show window
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# Scrot Binds (screenshot)
+
+bindsym Print exec scrot ~/Pictures/screenshot_%Y-%m-%d-%H%M%S.png
+bindsym Shift+Print exec scrot -s ~/Pictures/screenshot_%Y-%m-%d-%H%M%S.png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

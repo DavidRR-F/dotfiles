@@ -23,6 +23,7 @@ return {
                 "emmet_ls",
                 "cssls",
                 "html",
+                "lua_ls",
             },
             automatic_installation = true,
         })
