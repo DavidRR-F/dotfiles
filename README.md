@@ -16,5 +16,3 @@ $ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ stow .
 ```
-
-```
