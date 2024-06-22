@@ -8,13 +8,14 @@ return {
     "DeleteBook",
     "CreateKernel",
     "DeleteKernel",
-    "ShowKernels",
+    "KernelMenu",
   },
   opts = {
     notebook_dir = "./notebooks",
     kernel_dir = "default",
+    ignore_package_manager = false,
   },
   keys = {
-    { "<leader>km", "<cmd>:ShowKernels<cr>", desc = "Show Kernels" },
+    { "<leader>km", "<cmd>:KernelMenu<cr>", desc = "Show Kernels" },
   },
 }
