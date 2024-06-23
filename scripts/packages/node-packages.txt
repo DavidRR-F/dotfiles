@@ -1,0 +1,5 @@
+neovim
+tailwindcss
+typescript-language-server
+pyright
+live-server
