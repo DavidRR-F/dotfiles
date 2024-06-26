@@ -7,8 +7,8 @@ return {
     auto_refresh = true,
     dap_enabled = true,
   },
-  keys = { 
-    { "<leader>vs", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" },
+  keys = {
+    { "<leader>vs", "<cmd>:VenvSelect<cr>",      desc = "Select VirtualEnv" },
     { '<leader>vc', '<cmd>VenvSelectCached<cr>', desc = "Select Cached VirtualEnv" },
   },
 }

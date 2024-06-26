@@ -1,7 +1,7 @@
-local M = {} 
+local M = {}
 
 
-function M.lsp(on_attach, capabilities, root)
+function M.lsp(on_attach, capabilities)
   return {
     cmd = { "clangd" },
     single_file_support = true,

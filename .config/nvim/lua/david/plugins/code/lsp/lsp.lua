@@ -45,6 +45,39 @@ return {
         },
       })
 
+      -- yaml
+      lspconfig.yamlls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          yaml = {
+            schemas = {
+              ["http://json.schemastore.org/github-workflow"] = "/.github/workflows/*",
+              ["http://json.schemastore.org/github-action"] = "/.github/action/*",
+              ["http://json.schemastore.org/ansible-stable-2.9"] = "/roles/*",
+            },
+            schemas = {
+              ["https://json.schemastore.org/github-workflow-2.1.0.json"] = "/.github/workflows/*",
+              ["https://kubernetesjsonschema.dev/v3.0.0"] = "/kubernetes/*",
+              ["https://raw.githubusercontent.com/docker/compose/master/compose.schema.json"] = "/docker-compose/*",
+              ["http://json.schemastore.org/ansible-stable-2.9"] = "/roles/*",
+            },
+          },
+        },
+      })
+
+      -- json
+      lspconfig.jsonls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      -- docker
+      lspconfig.dockerls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
       -- tailwind
       lspconfig.tailwindcss.setup({
         on_attach = on_attach,

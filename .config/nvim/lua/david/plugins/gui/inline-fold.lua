@@ -4,9 +4,9 @@ return {
     defaultPlaceholder = "…",
     queries = {
       html = {
-        { pattern = 'class="([^"]*)"', placeholder = "@" }, -- classes in html
-        { pattern = 'href="(.-)"' }, -- hrefs in html
-        { pattern = 'src="(.-)"' }, -- HTML img src attribute
+        { pattern = 'class="([^"]*)"', placeholder = "@" },
+        { pattern = 'href="(.-)"' },
+        { pattern = 'src="(.-)"' },
       }
     },
   },

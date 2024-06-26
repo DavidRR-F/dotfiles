@@ -1,30 +1,28 @@
 return {
   "GCBallesteros/NotebookNavigator.nvim",
   keys = {
-    { "<leader>k", 
-      function() 
+    { "<leader>k",
+      function()
         require("notebook-navigator").move_cell("u")
         vim.cmd('normal! zz')
-      end 
+      end
     },
-    { "<leader>j", 
-      function() 
+    { "<leader>j",
+      function()
         require("notebook-navigator").move_cell("d")
         vim.cmd('normal! zz')
-      end 
+      end
     },
-    { "<leader>x", 
+    { "<leader>x",
       function()
         require('notebook-navigator').run_and_move()
-        vim.cmd('normal! zz')  -- Center the screen on the cursor
-      end 
+        vim.cmd('normal! zz')
+      end
     },
   },
   dependencies = {
     "echasnovski/mini.comment",
     "benlubas/molten-nvim",
-    --"akinsho/toggleterm.nvim",
-    --"hkupty/iron.nvim",
     "anuvyklack/hydra.nvim",
     "echasnovski/mini.hipatterns",
     "echasnovski/mini.ai"
@@ -39,11 +37,10 @@ return {
   end,
   config = function()
     local nn = require("notebook-navigator")
-    nn.setup({ 
+    nn.setup({
       syntax_highlight = true
     })
 
-    -- Configure mini.hipatterns for cell highlighting
     require("mini.hipatterns").setup({
       highlighters = { cells = nn.minihipatterns_spec }
     })

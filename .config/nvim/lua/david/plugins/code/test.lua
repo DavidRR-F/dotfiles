@@ -4,7 +4,7 @@ return {
     "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
-    "nvim-treesitter/nvim-treesitter",    
+    "nvim-treesitter/nvim-treesitter",
     "nvim-neotest/neotest-python",
     "nvim-neotest/neotest-go",
   },
@@ -22,6 +22,6 @@ return {
     -- keymaps
     vim.keymap.set('n', '<leader>nt', function()
       neotest.run.run()
-    end, {desc = "Run nearest test"})
+    end, { desc = "Run nearest test" })
   end
 }
