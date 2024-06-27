@@ -8,6 +8,8 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "hrsh7th/cmp-nvim-lsp-signature-help",
+    "luckasRanarison/tailwind-tools.nvim",
+    "onsails/lspkind-nvim",
   },
   config = function()
     local cmp = require("cmp")
@@ -39,6 +41,11 @@ return {
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+      },
+      formatting = {
+        format = require("lspkind").cmp_format({
+          before = require("tailwind-tools.cmp").lspkind_format
+        })
       }
     })
   end,

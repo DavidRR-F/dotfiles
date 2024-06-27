@@ -117,6 +117,12 @@ return {
         cmd = { "typescript-language-server", "--stdio" },
         capabilities = capabilities,
       })
+
+      lspconfig.tailwindcss.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "css", "typescriptreact", "javascriptreact", "typescript.tsx", "templ" },
+      })
     end,
   },
 }

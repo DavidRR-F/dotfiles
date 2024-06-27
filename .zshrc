@@ -42,8 +42,6 @@ if [ -f ~/.env ]; then
   source ~/.env
 fi
 
-source "$HOME/.rye/env"
-
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
