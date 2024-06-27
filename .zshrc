@@ -42,12 +42,14 @@ if [ -f ~/.env ]; then
   source ~/.env
 fi
 
+if [ -f ~/.aliases.sh ]; then
+  source ~/.aliases.sh
+fi
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
-alias gam="$HOME/bin/gam/gam"
-alias jenkins-cli="java -jar ~/.jenkins-cli.jar -s $JENKINS_URL -auth $JENKINS_USER_ID:$JENKINS_API_TOKEN "$@""
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"

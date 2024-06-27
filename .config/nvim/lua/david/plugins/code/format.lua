@@ -16,13 +16,20 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       go = { "goimports", "gofmt" },
-      python = { "black" },
+      python = { "black", "ruff" },
+      yaml = { "yamlfix" },
       javascript = { { "prettierd", "prettier" } },
     },
     format_on_save = { timeout_ms = 500, lsp_fallback = true },
     formatters = {
       shfmt = {
         prepend_args = { "-i", "2" },
+      },
+      yamlfix = {
+        command = "yamlfix",
+        env = {
+          YAMLFIX_SEQUENCE_STYLE = "block_style",
+        },
       },
     },
   },

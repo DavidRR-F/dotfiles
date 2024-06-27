@@ -1,5 +1,6 @@
 neovim
 pynvim
+ipykernel
 jupyter-client
 jupytext
 cairosvg
@@ -7,4 +8,5 @@ pnglatex
 plotly
 kaleido
 pyperclip
-nbformat
+yamlfix
+ruff
