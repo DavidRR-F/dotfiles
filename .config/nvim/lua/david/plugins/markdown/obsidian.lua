@@ -62,6 +62,20 @@ return {
           print("Changed directory to " .. new_dir)
         end
       end
+    },
+    picker = {
+      name = "telescope.nvim",
+      mappings = {
+        new = "<C-x>",
+        insert_link = "<C-l>",
+      },
+    },
+    attachments = {
+      img_folder = "images",
+      img_text_func = function(client, path)
+        path = client:vault_relative_path(path) or path
+        return string.format("![%s](%s)", path.name, path)
+      end,
     }
   },
 }

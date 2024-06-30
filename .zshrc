@@ -46,6 +46,8 @@ if [ -f ~/.aliases.sh ]; then
   source ~/.aliases.sh
 fi
 
+source $HOME/.cargo/env
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
@@ -56,7 +58,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
 export POETRY_PLUGIN_DOTENV_IGNORE=0
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH="/opt/mssql-tools/bin::$DOTNET_ROOT:$DOTNET_ROOT/tools:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
+export PATH="/opt/mssql-tools/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -80,3 +82,4 @@ fi
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias wezterm='flatpak run org.wezfurlong.wezterm'
