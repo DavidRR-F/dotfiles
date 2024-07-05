@@ -19,7 +19,6 @@ local plugins = {
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
   { import = "david.plugins.markdown" },
-  { import = "david.plugins.python" },
 }
 
 require("lazy").setup(plugins, {
