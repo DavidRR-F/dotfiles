@@ -1,4 +1,5 @@
 $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+$ENV:XDG_CONFIG_HOME="$HOME\.config"
 $DotFilesPath = "$HOME\.dotfiles"
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })

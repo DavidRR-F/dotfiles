@@ -5,16 +5,12 @@ return {
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "python",
-        "go",
-        "c",
-        "cpp",
         "dockerfile",
         "html",
+        "c_sharp",
         "css",
         "sql",
         "javascript",
-        "typescript",
-        "tsx",
         "bash",
         "regex",
         "lua",
@@ -23,8 +19,6 @@ return {
         "yaml",
         "markdown",
         "markdown_inline",
-        "terraform",
-        "hcl"
       },
       sync_install = false,
       highlight = {
@@ -35,8 +29,5 @@ return {
         enable = true,
       },
     })
-    vim.cmd [[
-            au BufRead,BufNewFile Jenkinsfile set filetype=groovy
-        ]]
-  end,
+  end
 }

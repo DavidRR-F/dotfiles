@@ -19,18 +19,17 @@ return {
       local capabilities = cmp_nvim_lsp.default_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+      -- powershell 
+      local pwsh = require("david.plugins.code.lang.pwsh")
+      lspconfig.powershell_es.setup(pwsh.lsp(on_attach, capabilities))
+
       -- python
       local python = require("david.plugins.code.lang.python")
       lspconfig.pyright.setup(python.lsp(on_attach, capabilities))
 
-      -- go
-      local go = require("david.plugins.code.lang.go")
-      lspconfig.gopls.setup(go.lsp(on_attach, capabilities, lspconfig.util.root_pattern("go.work", "go.mod", ".git")))
-
-      -- c and cpp
-      local c = require("david.plugins.code.lang.c")
-      lspconfig.clangd.setup(c.lsp(on_attach, capabilities))
-
+      -- csharp
+      local csharp = require("david.plugins.code.lang.csharp")
+      lspconfig.csharp_ls.setup(csharp.lsp(on_attach, capabilities))
 
       -- lua
       lspconfig.lua_ls.setup({

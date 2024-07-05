@@ -1,6 +1,5 @@
 -- set leader key to space
 vim.g.mapleader = " "
-vim.g.python3_host_prog = vim.fn.expand('$HOME/.pyenv/versions/neovim3/bin/python')
 vim.o.clipboard = "unnamedplus"
 
 local keymap = vim.keymap -- for conciseness
@@ -41,6 +40,11 @@ keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left" })
 keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right" })
 keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down" })
 keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up" })
+
+keymap.set("n", "<C-h>", '<C-w>h', { desc = "Move cursor left" })
+keymap.set("n", "<C-l>", '<C-w>l', { desc = "Move cursor right" })
+keymap.set("n", "<C-j>", '<C-w>j', { desc = "Move cursor down" })
+keymap.set("n", "<C-k>", '<C-w>k', { desc = "Move cursor up" })
 
 -- poetry commands
 vim.api.nvim_set_keymap('n', '<Leader>pi', ':!poetry install<CR>', { noremap = true, silent = true })

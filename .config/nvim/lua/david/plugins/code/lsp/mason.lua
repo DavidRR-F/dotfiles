@@ -16,13 +16,11 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "pyright",
-        "gopls",
-        "clangd",
+        "powershell_es",
+        "csharp_ls",
         "jsonls",
         "dockerls",
         "yamlls",
-        "tsserver",
-        "tailwindcss",
         "emmet_ls",
         "cssls",
         "html",
