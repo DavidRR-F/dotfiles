@@ -1,0 +1,10 @@
+[
+    {
+        "basePath": "$HOME\\.dotfiles\\profile\\keys.ahk",
+        "linkPath": "$HOME\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\keys.ahk"
+    },
+    {
+        "basePath": "$HOME\\.dotfiles\\profile\\Microsoft.Powershell_profile.ps1",
+        "linkPath": "$PROFILE"
+    }
+]

@@ -1,18 +1,15 @@
 # Dotfiles Repository
 
-This repository contains my personal dotfiles.
-
 ### Installation
 
 1. **Clone the Repository**:
 
 ```bash
-$ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/DavidRR-F/dotfiles.git $HOME/.dotfiles
 ```
 
-2. **Stow Repository**:
+3. **Symlink Repository**:
 
 ```bash 
-$ cd ~/.dotfiles
-$ stow .
+$ ./scripts/sym.ps1
 ```
