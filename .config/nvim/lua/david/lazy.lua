@@ -13,6 +13,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
   { "chr4/nginx.vim" },
+  {
+    'stevearc/dressing.nvim',
+    config = function()
+      require('dressing').setup({
+        select = {
+          backend = { 'telescope', 'builtin' },
+        },
+      })
+    end
+  },
   { import = "david.plugins.code" },
   { import = "david.plugins.code.lsp" },
   { import = "david.plugins.color" },

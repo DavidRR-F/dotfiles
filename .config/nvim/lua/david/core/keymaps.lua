@@ -45,3 +45,12 @@ keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up" })
 -- poetry commands
 vim.api.nvim_set_keymap('n', '<Leader>pi', ':!poetry install<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>pe', ':!poetry env info<CR>', { noremap = true, silent = true })
+
+-- messages
+vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
+
+-- custom commands
+local spell_checker = require("david.custom.spell_checker")
+
+vim.api.nvim_set_keymap('n', 'z=', ':lua require("david.custom.spell_checker").spell_suggest_popup()<CR>',
+  { noremap = true, silent = true })
