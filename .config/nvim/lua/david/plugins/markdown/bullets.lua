@@ -3,6 +3,8 @@ return {
   ft = { "markdown" },
   init = function()
     vim.g.bullets_enabled_file_types = { "markdown" }
+    vim.g.bullets_line_spacing = 2
+
     _G.tab_or_demote = function()
       local line = vim.api.nvim_get_current_line()
       local col = vim.fn.col('.') - 1
