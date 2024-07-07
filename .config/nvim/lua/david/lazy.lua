@@ -18,8 +18,10 @@ local plugins = {
   { import = "david.plugins.color" },
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
+  { import = "david.plugins.gui.nav" },
   { import = "david.plugins.markdown" },
   { import = "david.plugins.python" },
+  { import = "david.plugins.typescript" },
 }
 
 require("lazy").setup(plugins, {

@@ -29,3 +29,8 @@ opt.conceallevel = 2
 opt.foldlevel = 5
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- spelling
+
+opt.spell = true
+opt.spelllang = "en_us"

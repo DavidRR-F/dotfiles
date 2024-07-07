@@ -46,7 +46,6 @@ install_packages() {
 
 flatpak_install() {
   sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  sudo flatpak install -y org.wezfurlong.wezterm
   sudo flatpak install -y org.mozilla.firefox
   sudo flatpak install -y com.discordapp.Discord
 }

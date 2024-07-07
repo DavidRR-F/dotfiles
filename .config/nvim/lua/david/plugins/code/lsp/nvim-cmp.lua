@@ -36,7 +36,8 @@ return {
         { name = "buffer" },
         { name = "path" },
         { name = 'nvim_lsp_signature_help' },
-        { name = "codeium" }
+        { name = "codeium" },
+
       }),
       window = {
         completion = cmp.config.window.bordered(),
