@@ -10,7 +10,7 @@ opt.spelllang = "en_us"
 
 opt.breakindent = true
 opt.breakindentopt = "shift:2,sbr"
-opt.showbreak = "⮑ "
+opt.showbreak = "-> "
 
 opt.comments = "fb:-,fb:*,fb:+,fb:1.,fb:a.,fb:A."
 opt.formatoptions = "cqj"

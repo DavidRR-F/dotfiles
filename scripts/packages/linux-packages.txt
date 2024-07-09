@@ -19,3 +19,5 @@ python3-venv
 luarocks
 lua5.4
 liblua5.4-dev
+libglfw3-dev
+libegl1-mesa-dev

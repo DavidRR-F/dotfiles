@@ -4,6 +4,7 @@ package-lock.json
 package.json
 NuGet/
 packer/
+metplotlib/
 # Compiled Lua sources
 luac.out
 

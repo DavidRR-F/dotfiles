@@ -15,6 +15,7 @@ local plugins = {
   { "chr4/nginx.vim" },
   { import = "david.plugins.code" },
   { import = "david.plugins.code.lsp" },
+  { import = "david.plugins.code.ai" },
   { import = "david.plugins.color" },
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
