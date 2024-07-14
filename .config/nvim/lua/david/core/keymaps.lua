@@ -18,12 +18,16 @@ keymap.set("v", "<Tab>", ">gv", { silent = true })
 keymap.set("v", "<S-Tab>", "<gv", { silent = true })
 
 -- windows
-vim.api.nvim_set_keymap('n', '<Leader>ww', ':resize +5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>ws', ':resize -5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>wa', ':vertical resize +5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>wd', ':vertical resize -5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>wv', ':vsplit<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>wh', ':split<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>k', ':resize +5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>j', ':resize -5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>h', ':vertical resize +5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>l', ':vertical resize -5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>sv', ':vsplit<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>sh', ':split<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wk', '<C-w>K', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wj', '<C-w>J', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wh', '<C-w>H', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>wl', '<C-w>L', { noremap = true, silent = true })
 
 -- tabs
 vim.api.nvim_set_keymap('n', '<Leader>to', ':tabnew<CR>', { noremap = true, silent = true })
@@ -48,6 +52,15 @@ vim.api.nvim_set_keymap('n', '<Leader>pe', ':!poetry env info<CR>', { noremap = 
 
 -- messages
 vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
+
+-- terminals
+vim.api.nvim_set_keymap('n', '<Leader>t', ':botright term<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-d>', '<C-\\><C-n>:bdelete!<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', 'jk', '<C-\\><C-n>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 
 -- custom commands
 local spell_checker = require("david.custom.spell_checker")
