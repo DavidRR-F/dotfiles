@@ -6,5 +6,9 @@
     {
         "basePath": "$HOME\\.dotfiles\\profile\\Microsoft.Powershell_profile.ps1",
         "linkPath": "$PROFILE"
+    },
+    {
+        "basePath": "$HOME\\.dotfiles\\.vimrc",
+        "linkPath": "$HOME\\_vimrc"
     }
 ]
