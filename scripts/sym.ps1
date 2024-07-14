@@ -1,5 +1,5 @@
 $dotPath = $HOME/.dotfiles
-
+ 
 if (-Not (Test-Path -Path $basePath)) {
     Write-Error "The target path '$basePath' does not exist."
     exit
