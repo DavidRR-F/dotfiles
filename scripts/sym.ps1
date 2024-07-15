@@ -1,4 +1,4 @@
-$dotPath = $HOME/.dotfiles
+$dotPath = "$HOME/.dotfiles"
  
 if (-Not (Test-Path -Path $basePath)) {
     Write-Error "The target path '$basePath' does not exist."
@@ -21,7 +21,7 @@ foreach ($dir in $directories) {
 
 # other 
 # Read and convert JSON file to PowerShell object
-$jsonPath = $dotPath/path.json
+$jsonPath = "$dotPath/path.json"
 $configArray = Get-Content -Path $jsonPath | ConvertFrom-Json
 
 foreach ($config in $configArray) {
