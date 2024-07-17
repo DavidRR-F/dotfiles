@@ -25,8 +25,12 @@ local plugins = {
   { import = "david.plugins.typescript" },
 }
 
-if vim.env.TERM == "xterm-kitty" then
-  table.insert(plugins, 1, { import = "david.plugins.gui.kitty" })
+local terminal = require("david.custom.terminal")
+
+if terminal.is_kitty_terminal() then
+  table.insert(plugins, 1, { import = "david.plugins.gui.term.kitty" })
+elseif terminal.is_wezterm_terminal() then
+  table.insert(plugins, 1, { import = "david.plugins.gui.term.wezterm" })
 end
 
 require("lazy").setup(plugins, {
