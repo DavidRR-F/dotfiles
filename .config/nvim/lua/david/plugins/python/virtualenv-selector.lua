@@ -6,6 +6,7 @@ return {
     default_venv = ".venv",
     auto_refresh = true,
     dap_enabled = true,
+    stay_on_this_version = true,
   },
   keys = {
     { "<leader>vs", "<cmd>:VenvSelect<cr>",      desc = "Select VirtualEnv" },

@@ -4,7 +4,6 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'cartpuccin',
         component_separators = '|',
         section_separators = { left = '', right = '' },
       },
@@ -30,22 +29,6 @@ return {
           { 'location', separator = { right = '' }, left_padding = 2 },
         },
       },
-      winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
-      inactive_winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
       tabline = {
         lualine_a = {},
         lualine_b = {},
@@ -54,7 +37,6 @@ return {
         lualine_y = {},
         lualine_z = { 'tabs' },
       },
-      extensions = {},
     }
   end
 }

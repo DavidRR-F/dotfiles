@@ -31,6 +31,17 @@ return {
       local c = require("david.plugins.code.lang.c")
       lspconfig.clangd.setup(c.lsp(on_attach, capabilities))
 
+      -- bash
+      lspconfig.bashls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      -- powershell
+      lspconfig.powershell_es.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
 
       -- lua
       lspconfig.lua_ls.setup({
@@ -112,12 +123,6 @@ return {
         filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
         cmd = { "typescript-language-server", "--stdio" },
         capabilities = capabilities,
-      })
-
-      lspconfig.tailwindcss.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        filetypes = { "css", "typescriptreact", "javascriptreact", "typescript.tsx", "templ" },
       })
     end,
   },

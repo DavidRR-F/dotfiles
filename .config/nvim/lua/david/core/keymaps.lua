@@ -54,13 +54,9 @@ vim.api.nvim_set_keymap('n', '<Leader>pe', ':!poetry env info<CR>', { noremap = 
 vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
 
 -- terminals
-vim.api.nvim_set_keymap('n', '<Leader>t', ':botright term<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>t', ':spilt | te<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-d>', '<C-\\><C-n>:bdelete!<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', 'jk', '<C-\\><C-n>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-l>', '<C-w>l', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 
 -- custom commands
 local spell_checker = require("david.custom.spell_checker")

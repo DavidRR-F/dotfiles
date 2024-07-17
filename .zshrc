@@ -46,8 +46,6 @@ if [ -f ~/.aliases.sh ]; then
   source ~/.aliases.sh
 fi
 
-source $HOME/.cargo/env
-
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
@@ -81,5 +79,4 @@ fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias wezterm='flatpak run org.wezfurlong.wezterm'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

@@ -21,7 +21,7 @@ return {
         bottom_search = true,
         command_palette = true,
         long_message_to_split = true,
-        inc_rename = false,
+        inc_rename = true,
         lsp_doc_border = true,
       },
       views = {
@@ -84,8 +84,16 @@ return {
         {
           filter = {
             event = "msg_show",
-            kind = "error",
-            find = "LspProgress",
+            kind = "",
+            find = "created",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "removed",
           },
           opts = { skip = true },
         },

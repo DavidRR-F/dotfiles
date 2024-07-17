@@ -1,7 +1,5 @@
 return {
-  dir = "/home/davidrrf/Dev/notebook-manager/kernel-menu",
-  name = "notebook-manager",
-  --"DavidRR-F/notebook-manager.nvim",
+  "DavidRR-F/notebook-manager.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

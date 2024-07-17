@@ -3,16 +3,16 @@ return {
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    "radyz/telescope-gitsigns",
-    "ThePrimeagen/git-worktree.nvim",
+    'Myzel394/jsonfly.nvim',
+    'ThePrimeagen/git-worktree.nvim',
   },
   keys = {
-    { "<C-z>", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
-    { "<C-s>", "<cmd>Telescope find_files<cr>",                                              desc = "Find Files" },
-    { "<C-e>", "<cmd>Telescope git_status<cr>",                                              desc = "Find Changes" },
-    { "<C-x>", "<cmd>Telescope git_sign<cr>",                                                desc = "Find File Changes" },
-    { "<C-w>", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
-
+    { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",                                              desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>",                                               desc = "Live Grep" },
+    { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
+    { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
+    { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" }
   },
   config = function()
     require('telescope').setup({
@@ -34,10 +34,21 @@ return {
             return { '--no-ignore' }
           end
         }
+      },
+      extensions = {
+        jsonfly = {
+          mirror = true,
+          layout_strategy = "vertical",
+          layout_config = {
+            mirror = true,
+            preview_height = 0.65,
+            prompt_position = "top",
+          },
+          key_exact_length = true
+        }
       }
     })
-
-    require('telescope').load_extension('git_signs')
+    require('telescope').load_extension('jsonfly')
     require('telescope').load_extension('git_worktree')
   end,
 }

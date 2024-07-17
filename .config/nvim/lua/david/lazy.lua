@@ -19,11 +19,15 @@ local plugins = {
   { import = "david.plugins.color" },
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
+  { import = "david.plugins.gui.edit" },
   { import = "david.plugins.gui.nav" },
-  { import = "david.plugins.markdown" },
   { import = "david.plugins.python" },
   { import = "david.plugins.typescript" },
 }
+
+if vim.env.TERM == "xterm-kitty" then
+  table.insert(plugins, 1, { import = "david.plugins.gui.kitty" })
+end
 
 require("lazy").setup(plugins, {
   checker = {

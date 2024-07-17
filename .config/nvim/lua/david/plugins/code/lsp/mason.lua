@@ -18,6 +18,8 @@ return {
         "pyright",
         "gopls",
         "clangd",
+        "bashls",
+        "powershell_es",
         "jsonls",
         "dockerls",
         "yamlls",
