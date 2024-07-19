@@ -2,8 +2,8 @@ local wezterm = require('wezterm')
 local utils = require('utils')
 local nf = wezterm.nerdfonts
 
-local GLYPH_SEMI_CIRCLE_LEFT = ''
-local GLYPH_SEMI_CIRCLE_RIGHT = ''
+local GLYPH_SEMI_CIRCLE_LEFT = nf.pl_right_hard_divider --''
+local GLYPH_SEMI_CIRCLE_RIGHT = nf.pl_left_hard_divider --''
 local GLYPH_CIRCLE = nf.fa_circle --[[ '' ]]
 local GLYPH_ADMIN = nf.md_shield_half_full --[[ '󰞀' ]]
 
@@ -11,9 +11,9 @@ local M = {}
 
 local __cells__ = {}
 local colors = {
-  default   = { bg = '#b4befe', fg = '#1c1b19' },
-  is_active = { bg = '#a6e3a1', fg = '#11111b' },
-  hover     = { bg = '#94e2d5', fg = '#1c1b19' },
+  default   = { bg = '#b4befe', fg = 'rgba(30 30 50 0.8)' },
+  is_active = { bg = '#a6e3a1', fg = 'rgba(30 30 50 0.8)' },
+  hover     = { bg = '#94e2d5', fg = 'rgba(30 30 50 0.8)' },
 }
 
 local _set_process_name = function(s)
@@ -61,7 +61,7 @@ M.setup = function()
     local fg
     local process_name = _set_process_name(tab.active_pane.foreground_process_name)
     local is_admin = _check_if_admin(tab.active_pane.title)
-    local title = utils.get_shell_type(tab.active_pane)
+    local title = _set_title(process_name, tab.tab_index + 1, max_width, 6)
 
     if tab.is_active then
       bg = colors.is_active.bg
@@ -83,7 +83,7 @@ M.setup = function()
     end
 
     -- Left semi-circle
-    _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_LEFT)
+    _push('rgba(30 30 50 0.8)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_LEFT)
 
     -- Admin Icon
     if is_admin then
@@ -102,7 +102,7 @@ M.setup = function()
     _push(bg, fg, { Intensity = 'Bold' }, ' ')
 
     -- Right semi-circle
-    _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_RIGHT)
+    _push('rgba(30 30 50 0.8)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_RIGHT)
 
     return __cells__
   end)

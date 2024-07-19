@@ -38,6 +38,27 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' 
 
+# wezterm
+__wezterm_set_user_var() {
+  if hash base64 2>/dev/null ; then
+    if [[ -z "${TMUX}" ]] ; then
+      printf "\033]1337;SetUserVar=%s=%s\007" "$1" `echo -n "$2" | base64`
+    else
+      printf "\033Ptmux;\033\033]1337;SetUserVar=%s=%s\007\033\\" "$1" `echo -n "$2" | base64`
+    fi
+  fi
+}
+
+# Set the current shell as a user var
+__wezterm_set_user_var "WEZTERM_SHELL" "$SHELL"
+
+# Set whether tmux is active as a user var
+if [[ -z "${TMUX}" ]]; then
+  __wezterm_set_user_var "WEZTERM_IN_TMUX" "0"
+else
+  __wezterm_set_user_var "WEZTERM_IN_TMUX" "1"
+fi
+
 if [ -f ~/.env ]; then
   source ~/.env
 fi

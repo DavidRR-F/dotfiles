@@ -7,6 +7,7 @@ require 'tabs'.setup()
 local config = {
   default_prog = { "powershell" },
   color_scheme = 'Catppuccin Mocha',
+  colors = { tab_bar = { background = 'rgba(30 30 50 0.8)' } },
   font = wezterm.font("0xProto Nerd Font Mono", { weight = "Regular" }),
   font_size = 14,
   window_padding = {

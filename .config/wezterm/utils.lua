@@ -43,8 +43,8 @@ M.get_shell_type = function(pane)
   return "Unknown"
 end
 
-M.is_tmux = function (pane)
-  return pane:get_user_vars().TMUX ~= nil
+M.is_tmux = function(pane)
+  return pane:get_user_vars().WEZTERM_IN_TMUX == "1"
 end
 
 M.split_nav = function(resize_or_move, key)
