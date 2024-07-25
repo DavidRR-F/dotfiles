@@ -20,6 +20,8 @@ return {
         "clangd",
         "bashls",
         "powershell_es",
+        "terraformls",
+        "dockerls",
         "jsonls",
         "dockerls",
         "yamlls",

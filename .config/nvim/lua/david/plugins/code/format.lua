@@ -17,6 +17,8 @@ return {
       lua = { "stylua" },
       go = { "goimports", "gofmt" },
       python = { "black", "ruff" },
+      hcl = { "packer_fmt" },
+      terraform = { "terraform_fmt" },
       yaml = { "yamlfix" },
       javascript = { { "prettierd", "prettier" } },
     },
