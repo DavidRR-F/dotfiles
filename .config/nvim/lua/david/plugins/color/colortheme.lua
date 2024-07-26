@@ -1,5 +1,6 @@
 return {
   "catppuccin/nvim",
+  as = "catppuccin",
   name = "catppuccin",
   priority = 1000,
   config = function()
@@ -44,6 +45,7 @@ return {
         treesitter = true,
         harpoon = true,
         noice = true,
+        telescope = true,
         mini = {
           enabled = true,
           indentscope_color = "",

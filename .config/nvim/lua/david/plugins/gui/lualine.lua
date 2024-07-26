@@ -1,8 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = { 'nvim-tree/nvim-web-devicons', { 'catppuccin/nvim', as = 'catppuccin' } },
   config = function()
     require('lualine').setup {
+      theme = 'catppuccin',
       options = {
         component_separators = '|',
         section_separators = { left = '', right = '' },
@@ -35,7 +36,7 @@ return {
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { 'tabs' },
+        lualine_z = {},
       },
     }
   end

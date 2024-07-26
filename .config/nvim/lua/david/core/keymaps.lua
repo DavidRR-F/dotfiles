@@ -53,6 +53,9 @@ vim.api.nvim_set_keymap('n', '<Leader>pe', ':!poetry env info<CR>', { noremap = 
 -- messages
 vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
 
+-- tree
+vim.api.nvim_set_keymap('n', '<Leader>T', ':!tree ./', { noremap = true, silent = true })
+
 -- terminals
 vim.api.nvim_set_keymap('n', '<Leader>t', ':split | te<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-d>', '<C-\\><C-n>:bdelete!<CR>', { noremap = true, silent = true })
