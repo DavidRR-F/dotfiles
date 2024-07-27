@@ -8,14 +8,14 @@ return {
     "nvim-telescope/telescope-file-browser.nvim"
   },
   keys = {
-    { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                                             desc = "Buffers" },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>",                                                                          desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>",                                                                           desc = "Live Grep" },
-    { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                                                  desc = "Builtin Commands List" },
-    { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",                             desc = "Switch Branch" },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>",                                              desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>",                                               desc = "Live Grep" },
+    { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
+    { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
     { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" },
-    { "<leader>ft", "<cmd>:lua require('telescope').extensions.file_browser.file_browser({ respect_gitignore = false })<cr>", desc = "File Browser" },
-    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                                                desc = "Git Status" },
+    { "<leader>ft", "<cmd>:lua require('telescope').extensions.file_browser.file_browser()<cr>",  desc = "File Browser" },
+    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                    desc = "Git Status" },
   },
   config = function()
     require('telescope').setup({
@@ -44,14 +44,14 @@ return {
           hijack_netrw = true,
           mappings = {
             ["i"] = {
-              ["<C-n>"] = require('telescope').extensions.file_browser.actions.create,
+              ["<C-a>"] = require('telescope').extensions.file_browser.actions.create,
               ["<C-c>"] = require('telescope').extensions.file_browser.actions.copy,
               ["<C-m>"] = require('telescope').extensions.file_browser.actions.move,
               ["<C-d>"] = require('telescope').extensions.file_browser.actions.remove,
               ["<C-r>"] = require('telescope').extensions.file_browser.actions.rename,
             },
             ["n"] = {
-              ["n"] = require('telescope').extensions.file_browser.actions.create,
+              ["a"] = require('telescope').extensions.file_browser.actions.create,
               ["c"] = require('telescope').extensions.file_browser.actions.copy,
               ["m"] = require('telescope').extensions.file_browser.actions.move,
               ["d"] = require('telescope').extensions.file_browser.actions.remove,

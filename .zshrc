@@ -73,6 +73,29 @@ alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias box='VBoxManage'
 
+# Posting TUI Config
+
+export POSTING_THEME_DIRECTORY="$HOME/.config/posting/themes"
+export POSTINGDIR="$HOME/post"
+
+unalias post 2>/dev/null
+
+post() {
+    local collection="$POSTINGDIR/$1"
+    local env="$POSTINGDIR/$1/shared.env"
+    local collection_dir="$POSTINGDIR/$1"
+    
+    if [ ! -d "$collection_dir" ]; then
+        mkdir -p "$collection_dir"
+    fi 
+
+    if [ ! -f "$env" ]; then
+        touch "$env"
+    fi
+
+    command posting --collection "$collection" --env "$env"
+}
+
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
 export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
