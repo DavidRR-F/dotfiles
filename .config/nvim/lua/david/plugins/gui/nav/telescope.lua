@@ -3,9 +3,10 @@ return {
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'kyazdani42/nvim-web-devicons',
     'Myzel394/jsonfly.nvim',
     'ThePrimeagen/git-worktree.nvim',
-    "nvim-telescope/telescope-file-browser.nvim"
+    'nvim-telescope/telescope-file-browser.nvim'
   },
   keys = {
     { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
@@ -14,8 +15,8 @@ return {
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
     { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" },
-    { "<leader>ft", "<cmd>:lua require('telescope').extensions.file_browser.file_browser()<cr>",  desc = "File Browser" },
-    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                    desc = "Git Status" },
+    { "<leader>fe", "<cmd>:lua require('telescope').extensions.file_browser.file_browser()<cr>",  desc = "File Browser" },
+    { "<leader>fs", "<cmd>lua require('telescope.builtin').git_status()<CR>",                     desc = "Git Status" },
   },
   config = function()
     require('telescope').setup({
@@ -41,7 +42,10 @@ return {
       extensions = {
         file_browser = {
           theme = "ivy",
-          hijack_netrw = true,
+          hidden = { file_browser = true, folder_browser = true },
+          respect_gitignore = false,
+          no_ignore = false,
+          hijack_netrw = false,
           mappings = {
             ["i"] = {
               ["<C-a>"] = require('telescope').extensions.file_browser.actions.create,
@@ -68,8 +72,8 @@ return {
             prompt_position = "top",
           },
           key_exact_length = true
-        }
-      }
+        },
+      },
     })
     require('telescope').load_extension('jsonfly')
     require('telescope').load_extension('git_worktree')
