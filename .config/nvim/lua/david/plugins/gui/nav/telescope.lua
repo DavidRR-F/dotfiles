@@ -45,7 +45,7 @@ return {
           hidden = { file_browser = true, folder_browser = true },
           respect_gitignore = false,
           no_ignore = false,
-          hijack_netrw = false,
+          hijack_netrw = true,
           mappings = {
             ["i"] = {
               ["<C-a>"] = require('telescope').extensions.file_browser.actions.create,

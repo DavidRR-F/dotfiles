@@ -5,6 +5,7 @@ package.json
 NuGet/
 packer/
 metplotlib/
+gh/
 # Compiled Lua sources
 luac.out
 

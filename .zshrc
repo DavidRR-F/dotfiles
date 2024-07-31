@@ -96,7 +96,8 @@ post() {
     command posting --collection "$collection" --env "$env"
 }
 
-export JUPYTER_CONFIG_DIR=$HOME/.local/share/jupyter
+export JUPYTER_DATA_DIR=$HOME/.local/share/jupyter
+export JUPYTER_PATH=$HOME/.local/share/jupyter
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYENV_ROOT="$HOME/.pyenv"
 export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
