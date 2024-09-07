@@ -10,7 +10,7 @@ exec --no-startup-id compton
 
 bindsym $mod+space exec --no-startup-id rofi -show window
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui 
 
 exec --no-startup-id dex --autostart --environment i3
