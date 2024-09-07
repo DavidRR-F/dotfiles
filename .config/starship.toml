@@ -1,24 +1,18 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](thm_gray)\
-$os\
-$username\
-[](fg:thm_gray bg:thm_black4)\
 $directory\
-[](fg:thm_black4 bg:thm_green)\
 $git_branch\
 $git_status\
-[](fg:thm_green bg:thm_blue)\
 $golang\
 $nodejs\
 $java\
 $python\
-[](fg:thm_blue bg:thm_gray)\
 $docker_context\
-$conda\
-[](fg:thm_gray)\
-$line_break$character"""
+$aws\
+$azure\
+$line_break$character\
+"""
 
 palette = 'catpuccin_mocha'
 
@@ -36,6 +30,7 @@ thm_yellow="#f9e2af"
 thm_blue="#89b4fa"
 thm_orange="#fab387"
 thm_black4="#4e5166"
+
 [os]
 disabled = false
 style = "bg:thm_gray fg:thm_green"
@@ -55,7 +50,7 @@ style_root = "bg:thm_gray fg:thm_green"
 format = '[ $user ]($style)'
 
 [directory]
-style = "bg:thm_black4 fg:thm_blue"
+style = "fg:thm_blue"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -69,50 +64,63 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:thm_green fg:thm_gray"
-format = '[[ $symbol $branch ](fg:thm_black4 bg:thm_green)]($style)'
+style = "fg:thm_magenta"
+format = '[[$symbol $branch ](fg:thm_magenta)]($style)'
 
 [git_status]
-style = "bg:thm_green fg:thm_gray"
-format = '[[($all_status$ahead_behind )](fg:thm_black4 bg:thm_green)]($style)'
+style = "fg:thm_magenta"
+format = '[[($all_status$ahead_behind )](fg:thm_magenta)]($style)'
 
 [nodejs]
 symbol = ""
 style = "bg:thm_blue"
-format = '[[ $symbol( $version) ](fg:thm_black4 bg:thm_blue)]($style)'
+format = '[[ $symbol( $version) ](fg:thm_green)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:thm_blue"
-format = '[[ $symbol( $version) ](fg:thm_black4 bg:thm_blue)]($style)'
+format = '[[ $symbol( $version) ](fg:thm_cyan)]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "bg:thm_blue"
-format = '[[ $symbol( $version) ](fg:thm_black4 bg:thm_blue)]($style)'
+format = '[[ $symbol( $version) ](fg:thm_red)]($style)'
 
 [python]
 symbol = ""
 style = "bg:thm_blue"
-format = '[[ $symbol( $version) ](fg:thm_black4 bg:thm_blue)]($style)'
+format = '[[ $symbol( $version) ](fg:thm_yellow)]($style)'
 
 [docker_context]
 symbol = ""
 style = "bg:thm_gray"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:thm_gray)]($style)'
+format = '[[ $symbol( $context) ](fg:thm_blue)]($style)'
 
 [conda]
 style = "bg:thm_gray"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:thm_gray)]($style)'
+format = '[[ $symbol( $environment) ](fg:thm_pink)]($style)'
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:thm_green)'
-error_symbol = '[](bold fg:thm_red)'
-vimcmd_symbol = '[](bold fg:thm_green)'
-vimcmd_replace_one_symbol = '[](bold fg:thm_magenta)'
-vimcmd_replace_symbol = '[](bold fg:thm_magenta)'
-vimcmd_visual_symbol = '[](bold fg:thm_yellow)'
+success_symbol = ' [󱞩](bold fg:thm_green)'
+error_symbol = ' [󱞩](bold fg:thm_red)'
+vimcmd_symbol = ' [](bold fg:thm_green)'
+vimcmd_replace_one_symbol = ' [](bold fg:thm_magenta)'
+vimcmd_replace_symbol = ' [](bold fg:thm_magenta)'
+vimcmd_visual_symbol = ' [](bold fg:thm_yellow)'
+
+[aws]
+symbol = " "
+format = '[$symbol$region]($style) '
+style = 'bold thm_orange'
+
+[azure]
+disabled = false
+format = '[$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'bold thm_cyan'
+subscription_aliases = { "Microsoft Azure Enterprise" = "mc" }
+
