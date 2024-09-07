@@ -59,42 +59,11 @@ else
   __wezterm_set_user_var "WEZTERM_IN_TMUX" "1"
 fi
 
-if [ -f ~/.env ]; then
-  source ~/.env
-fi
-
-if [ -f ~/.aliases.sh ]; then
-  source ~/.aliases.sh
-fi
-
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias box='VBoxManage'
-
-# Posting TUI Config
-
-export POSTING_THEME_DIRECTORY="$HOME/.config/posting/themes"
-export POSTINGDIR="$HOME/post"
-
-unalias post 2>/dev/null
-
-post() {
-    local collection="$POSTINGDIR/$1"
-    local env="$POSTINGDIR/$1/shared.env"
-    local collection_dir="$POSTINGDIR/$1"
-    
-    if [ ! -d "$collection_dir" ]; then
-        mkdir -p "$collection_dir"
-    fi 
-
-    if [ ! -f "$env" ]; then
-        touch "$env"
-    fi
-
-    command posting --collection "$collection" --env "$env"
-}
 
 export JUPYTER_DATA_DIR=$HOME/.local/share/jupyter
 export JUPYTER_PATH=$HOME/.local/share/jupyter
@@ -109,20 +78,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-#eval "$(fzf --zsh)"
-
-# tmux session
-if command -v tmux >/dev/null 2>&1; then
-    if [ -z "$TMUX" ]; then
-        # If there are existing tmux sessions, attach to the last one
-        if tmux ls &>/dev/null; then
-            tmux attach-session -t $(tmux ls | tail -n 1 | cut -d: -f1)
-        else
-            # Otherwise, start a new session
-            tmux new-session -s primary
-        fi
-    fi
-fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

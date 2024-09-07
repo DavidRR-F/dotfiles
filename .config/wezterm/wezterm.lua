@@ -12,7 +12,7 @@ if wezterm.config_builder then
   c = wezterm.config_builder()
 end
 
-c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or "zsh"
+c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "zsh" }
 c.default_workspace = "main"
 c.keys = keys.tmux_session_inactive
 c.key_tables = { tmux = keys.tmux }
