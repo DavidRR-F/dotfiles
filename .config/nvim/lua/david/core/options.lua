@@ -15,6 +15,11 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
+-- no windows/tabs
+opt.showtabline = 0
+opt.winbar = nil
+opt.laststatus = 2
+
 opt.backspace = "indent,eol,start"
 
 opt.splitright = true

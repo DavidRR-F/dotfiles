@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
-local utils = require 'utils'
+local utils = require 'lua.utils'
 
 local M = {}
 
@@ -55,7 +55,7 @@ M.tmux = {
   { key = "w",     action = act.CloseCurrentTab { confirm = true } },
   { key = "Space", action = act.RotatePanes "Clockwise" },
   { key = "0",     action = act.PaneSelect { mode = "SwapWithActive" } },
-  { key = "[", action = act.ActivateCopyMode },
+  { key = "[",     action = act.ActivateCopyMode },
   --{ key = "s",     action = act.ShowLauncherArgs { flags = "WORKSPACES" } },
   { key = "s",     action = workspace_switcher.switch_workspace() },
 }

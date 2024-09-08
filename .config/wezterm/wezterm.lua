@@ -1,8 +1,9 @@
 local wezterm = require 'wezterm'
-local utils = require 'utils'
-local appearance = require 'appearance'
-local font = require 'font'
-local keys = require 'keys'
+local utils = require 'lua.utils'
+local appearance = require 'lua.appearance'
+local domains = require 'lua.domains'
+local font = require 'lua.font'
+local keys = require 'lua.keys'
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
@@ -18,6 +19,7 @@ c.keys = keys.tmux_session_inactive
 c.key_tables = { tmux = keys.tmux }
 
 appearance.apply_to_config(c)
+domains.apply_to_config(c)
 font.apply_to_config(c)
 
 workspace_switcher.apply_to_config(c)

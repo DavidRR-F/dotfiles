@@ -27,9 +27,7 @@ local plugins = {
 
 local terminal = require("david.custom.terminal")
 
-if terminal.is_kitty_terminal() then
-  table.insert(plugins, 1, { import = "david.plugins.gui.term.kitty" })
-elseif terminal.is_wezterm_terminal() then
+if terminal.is_wezterm_terminal() then
   table.insert(plugins, 1, { import = "david.plugins.gui.term.wezterm" })
 end
 
