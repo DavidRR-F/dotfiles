@@ -11,6 +11,7 @@ $python\
 $docker_context\
 $aws\
 $azure\
+$direnv\
 $line_break$character\
 """
 
@@ -111,6 +112,13 @@ vimcmd_symbol = ' [](bold fg:thm_green)'
 vimcmd_replace_one_symbol = ' [](bold fg:thm_magenta)'
 vimcmd_replace_symbol = ' [](bold fg:thm_magenta)'
 vimcmd_visual_symbol = ' [](bold fg:thm_yellow)'
+
+[direnv]
+disabled = false
+format = '[$loaded]($style) '
+style = 'fg:thm_yellow'
+loaded_msg = "󱎚"
+unloaded_msg = "󱚳"
 
 [aws]
 symbol = " "
