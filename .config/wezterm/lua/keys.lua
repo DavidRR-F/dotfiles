@@ -2,7 +2,39 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 local utils = require 'lua.utils'
+local function switch_domains()
+  return wezterm.action_callback(function(window, pane)
+    local sessions = {}
 
+    for host, config in pairs(wezterm.enumerate_ssh_hosts()) do
+      table.insert(sessions, {
+        label = '󰣀 ' .. host,
+        id = host,
+      })
+    end
+
+    -- Create an input selector for choosing the SSH domain
+    window:perform_action(
+      act.InputSelector({
+        action = wezterm.action_callback(function(window, pane, id, label)
+          if id then
+            -- Spawn a new tab and connect to the selected SSH host
+            window:perform_action(
+              act.AttachDomain(id),
+              pane
+            )
+          end
+        end),
+        title = "Choose SSH Host",
+        description = "Select a host and press Enter = accept, Esc = cancel, / = filter",
+        fuzzy_description = " " .. "Hosts: ",
+        choices = sessions,
+        fuzzy = true,
+      }),
+      pane
+    )
+  end)
+end
 local M = {}
 
 M.tmux_session_inactive = {
@@ -12,7 +44,10 @@ M.tmux_session_inactive = {
     mods = "NONE",
     action = act.ToggleFullScreen,
   },
-  { key = "p", mods = "CTRL|SHIFT", action = act.SpawnCommandInNewTab { args = { "wsl" }, },
+  {
+    key = "s",
+    mods = "CTRL",
+    action = switch_domains(),
   },
   { key = "Space", mods = "CTRL", action = act.ActivateKeyTable { name = "tmux", one_shot = true }, },
   utils.split_nav("move", "h"),
@@ -26,14 +61,8 @@ M.tmux_session_inactive = {
 }
 
 M.tmux_session_active = {
-  { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
-  {
-    key = "F11",
-    mods = "NONE",
-    action = act.ToggleFullScreen,
-  },
-  { key = "l", mods = "CTRL|SHIFT", action = act.SpawnCommandInNewTab { args = { "wsl" }, },
-  }
+  { key = 'v',   mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+  { key = "F11", mods = "NONE", action = act.ToggleFullScreen },
 }
 
 -- key tables
@@ -56,8 +85,19 @@ M.tmux = {
   { key = "Space", action = act.RotatePanes "Clockwise" },
   { key = "0",     action = act.PaneSelect { mode = "SwapWithActive" } },
   { key = "[",     action = act.ActivateCopyMode },
-  --{ key = "s",     action = act.ShowLauncherArgs { flags = "WORKSPACES" } },
+  { key = "d",     action = switch_domains() },
   { key = "s",     action = workspace_switcher.switch_workspace() },
+  {
+    key = 'w',
+    action = wezterm.action.PromptInputLine {
+      description = 'Enter workspace name',
+      action = wezterm.action_callback(function(window, pane, workspace)
+        if workspace and #workspace > 0 then
+          window:perform_action(wezterm.action.SwitchToWorkspace { name = workspace }, pane)
+        end
+      end),
+    },
+  },
 }
 
 return M

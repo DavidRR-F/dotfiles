@@ -5,7 +5,7 @@ local domains = require 'lua.domains'
 local font = require 'lua.font'
 local keys = require 'lua.keys'
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
-local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+local workspace = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
 
 local c = {}
@@ -15,14 +15,15 @@ end
 
 c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "zsh" }
 c.default_workspace = "main"
+c.ssh_domains = domains.ssh_domains
 c.keys = keys.tmux_session_inactive
 c.key_tables = { tmux = keys.tmux }
 
 appearance.apply_to_config(c)
-domains.apply_to_config(c)
 font.apply_to_config(c)
 
-workspace_switcher.apply_to_config(c)
+workspace.apply_to_config(c)
+
 bar.apply_to_config(
   c,
   {

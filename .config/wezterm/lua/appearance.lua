@@ -1,5 +1,5 @@
 local wez = require "wezterm"
-
+local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 local bg = "rgba(30, 30, 46, 0.9)"
 
 local M = {}
@@ -38,6 +38,9 @@ M.apply_to_config = function(c)
   c.tab_bar_at_bottom = false
   c.tab_max_width = 50
   c.use_fancy_tab_bar = false
+  workspace.get_choices = function(opts)
+    return workspace.choices.get_workspace_elements({})
+  end
 end
 
 return M
