@@ -24,7 +24,7 @@ return {
     vim.keymap.set('n', '<leader>ms', ':MoltenShowOutput<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>mh', ':MoltenHideOutput<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>me', ':MoltenEnterOutput<CR>', { noremap = true, silent = true })
-    vim.keymap.set('n', '<leader>me', ':MoltenDeinit<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>mf', ':MoltenDeinit<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>mi', ':MoltenInit<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>mr', ':MoltenRestart<CR>', { noremap = true, silent = true })
   end,

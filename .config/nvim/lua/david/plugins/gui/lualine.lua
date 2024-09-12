@@ -98,18 +98,18 @@ return {
           {
             'branch',
             icon = '󰊢',
-            color = { bg = 'none', fg = colors.blue },
+            color = mode_color,
             padding = { left = 0, right = 1 },
           }
         },
       },
       inactive_sections = {
-        lualine_a = {},
+        lualine_a = { 'filename' },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {},
+        lualine_z = { 'branch' },
       },
       tabline = {
         lualine_a = {},

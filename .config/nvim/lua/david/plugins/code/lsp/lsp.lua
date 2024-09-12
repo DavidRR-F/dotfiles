@@ -41,6 +41,7 @@ return {
       lspconfig.powershell_es.setup({
         on_attach = on_attach,
         capabilities = capabilities,
+        bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/"
       })
 
       -- lua
@@ -104,6 +105,8 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
+
+      -- html
       lspconfig.html.setup({
         on_attach = on_attach,
         capabilities = capabilities,

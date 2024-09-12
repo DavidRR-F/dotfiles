@@ -31,8 +31,8 @@ M.tmux_session_active = {
 -- key tables
 
 M.tmux = {
-  { key = "-",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "=",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "h",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  { key = "v",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
   { key = "k",     action = act.AdjustPaneSize { "Up", 10 } },
   { key = "j",     action = act.AdjustPaneSize { "Down", 10 } },
   { key = "h",     action = act.AdjustPaneSize { "Left", 10 } },
@@ -49,6 +49,13 @@ M.tmux = {
   { key = "0",     action = act.PaneSelect { mode = "SwapWithActive" } },
   { key = "[",     action = act.ActivateCopyMode },
   { key = "s",     action = workspace_switcher.switch_workspace() },
+  {
+    key = 'i',
+    mods = 'SHIFT',
+    action = wezterm.action_callback(function()
+      wezterm.plugin.update_all()
+    end),
+  },
   {
     key = 'w',
     action = wezterm.action.PromptInputLine {
