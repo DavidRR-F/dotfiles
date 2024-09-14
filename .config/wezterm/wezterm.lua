@@ -1,7 +1,6 @@
 local wezterm = require 'wezterm'
 local utils = require 'lua.utils'
 local appearance = require 'lua.appearance'
-local domains = require 'lua.domains'
 local font = require 'lua.font'
 local keys = require 'lua.keys'
 
@@ -12,10 +11,8 @@ local c = {}
 if wezterm.config_builder then
   c = wezterm.config_builder()
 end
-
 c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "zsh" }
 c.default_workspace = "main"
-c.ssh_domains = domains.ssh_domains
 c.keys = keys.tmux_session_inactive
 c.key_tables = { tmux = keys.tmux }
 
@@ -28,14 +25,22 @@ quick_domains.apply_to_config(c,
         tbl = 'tmux',
       },
       vsplit = {
-        key = 'v',
-        mods = 'SHIFT',
+        key = '-',
+        mods = 'CTRL',
         tbl = 'tmux',
       },
       hsplit = {
-        key = 'h',
-        mods = 'SHIFT',
+        key = '=',
+        mods = 'CTRL',
         tbl = 'tmux',
+      },
+    },
+    auto = {
+      ssh_ignore = false,
+      exec_ignore = {
+        ssh = false,
+        docker = false,
+        kubernetes = false,
       },
     }
   }
@@ -47,12 +52,10 @@ smart_workspace.apply_to_config(c)
 
 wezterm.on("update-right-status", function(window, pane)
   if utils.is_tmux(pane) then
-    wezterm.log_info("Tmux pane detected, disabling WezTerm keys")
     window:set_config_overrides({
       keys = keys.tmux_session_active,
     })
   else
-    wezterm.log_info("Non-tmux pane, enabling WezTerm keys")
     window:set_config_overrides({
       keys = c.keys,
     })

@@ -31,8 +31,8 @@ M.tmux_session_active = {
 -- key tables
 
 M.tmux = {
-  { key = "h",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "v",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "-",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  { key = "=",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
   { key = "k",     action = act.AdjustPaneSize { "Up", 10 } },
   { key = "j",     action = act.AdjustPaneSize { "Down", 10 } },
   { key = "h",     action = act.AdjustPaneSize { "Left", 10 } },
