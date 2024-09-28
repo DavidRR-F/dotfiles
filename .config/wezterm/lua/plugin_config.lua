@@ -3,8 +3,9 @@ local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 local M = {}
 
-local tab_background = 'rgb(24, 24, 37)'
-local catpuccin_purple = '#cba6f7'
+M.tab_background = '#24273a'
+M.tab_background_alt = 'rgb(24, 24, 37)'
+M.catpuccin_purple = '#cba6f7'
 
 local mode_icons = {
   NO = '', -- Normal Mode
@@ -21,21 +22,21 @@ M.tabline = {
     theme = 'Catppuccin Mocha',
     color_overrides = {
       normal_mode = {
-        a = { fg = scheme.ansi[5], bg = tab_background },
-        b = { fg = scheme.ansi[5], bg = tab_background },
+        a = { fg = scheme.ansi[5], bg = M.tab_background },
+        b = { fg = scheme.ansi[5], bg = M.tab_background },
       },
       copy_mode = {
-        a = { fg = scheme.ansi[4], bg = tab_background },
-        b = { fg = scheme.ansi[4], bg = tab_background },
+        a = { fg = scheme.ansi[4], bg = M.tab_background },
+        b = { fg = scheme.ansi[4], bg = M.tab_background },
       },
       search_mode = {
-        a = { fg = scheme.ansi[3], bg = tab_background },
-        b = { fg = scheme.ansi[3], bg = tab_background },
+        a = { fg = scheme.ansi[3], bg = M.tab_background },
+        b = { fg = scheme.ansi[3], bg = M.tab_background },
       },
       -- Defining colors for a new key table
       window_mode = {
-        a = { fg = catpuccin_purple, bg = tab_background },
-        b = { fg = catpuccin_purple, bg = tab_background },
+        a = { fg = M.catpuccin_purple, bg = M.tab_background },
+        b = { fg = M.catpuccin_purple, bg = M.tab_background },
       },
       tab = {
         active = {
@@ -43,12 +44,12 @@ M.tabline = {
           fg = scheme.ansi[3],
         },
         inactive = {
-          bg = tab_background,
-          fg = scheme.ansi[1],
+          bg = M.tab_background,
+          fg = M.catpuccin_purple,
         },
         inactive_hover = {
-          bg = tab_background,
-          fg = catpuccin_purple,
+          bg = M.tab_background,
+          fg = M.catpuccin_purple,
         }
       }
     },
@@ -147,12 +148,12 @@ M.tabline = {
         },
       },
       colors = {
-        a = { fg = scheme.ansi[6], bg = tab_background },
-        b = { fg = scheme.ansi[6], bg = tab_background },
+        a = { fg = scheme.ansi[6], bg = M.tab_background },
+        b = { fg = scheme.ansi[6], bg = M.tab_background },
       },
     },
     {
-    'smart_workspace_switcher',
+      'smart_workspace_switcher',
       events = {
         show = 'smart_workspace_switcher.workspace_switcher.start',
         hide = {
@@ -162,7 +163,7 @@ M.tabline = {
           'resurrect.fuzzy_load.start',
           'quick_domain.fuzzy_selector.opened',
         },
-      },      
+      },
       sections = {
         tabline_a = {
           {
@@ -180,8 +181,8 @@ M.tabline = {
         },
       },
       colors = {
-        a = { fg = scheme.ansi[2], bg = tab_background },
-        b = { fg = scheme.ansi[2], bg = tab_background },
+        a = { fg = scheme.ansi[2], bg = M.tab_background },
+        b = { fg = scheme.ansi[2], bg = M.tab_background },
       },
     },
   },

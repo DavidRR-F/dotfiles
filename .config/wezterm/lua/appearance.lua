@@ -2,7 +2,6 @@ local wez = require "wezterm"
 local plugin_config = require "lua.plugin_config"
 local tabline = wez.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
-local bg = "rgba(30, 30, 46, 0.9)"
 
 local M = {}
 
@@ -38,7 +37,6 @@ local M = {}
 -- selection_fg = '#cdd6f4'
 -- split = '#6c7086'
 -- visual_bell = '#313244'
-local tab_background = 'rgb(24, 24, 37)'
 
 M.apply_to_config = function(c)
   -- base config
@@ -48,17 +46,17 @@ M.apply_to_config = function(c)
     background = scheme.background,
     cursor_border = scheme.ansi[2],
     tab_bar = {
-      background = tab_background,
+      background = plugin_config.tab_background,
       active_tab = {
         bg_color = scheme.background,
         fg_color = scheme.ansi[3],
       },
       inactive_tab = {
-        bg_color = tab_background,
+        bg_color = plugin_config.tab_background,
         fg_color = scheme.ansi[1],
       },
       inactive_tab_hover = {
-        bg_color = tab_background,
+        bg_color = plugin_config.tab_background,
         fg_color = scheme.ansi[1],
       }
     }
