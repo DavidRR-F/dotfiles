@@ -6,14 +6,7 @@ return {
     'kyazdani42/nvim-web-devicons',
     'Myzel394/jsonfly.nvim',
     'ThePrimeagen/git-worktree.nvim',
-    'nvim-telescope/telescope-file-browser.nvim',
-    -- {
-    --   name = 'kernel_manager',
-    --   dir = '~/Dev/kernel-manager',
-    --   config = function()
-    --     require('telescope').load_extension('kernel_manager')
-    --   end
-    -- }
+    'nvim-telescope/telescope-file-browser.nvim'
   },
   keys = {
     { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
@@ -24,7 +17,6 @@ return {
     { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" },
     { "<leader>fe", "<cmd>:lua require('telescope').extensions.file_browser.file_browser()<cr>",  desc = "File Browser" },
     { "<leader>fs", "<cmd>lua require('telescope.builtin').git_status()<CR>",                     desc = "Git Status" },
-    { "<leader>fk", "<cmd>lua require('telescope').extensions.kernel_manager.show_kernels()<cr>", desc = "Jupyter Kernels" },
   },
   config = function()
     require('telescope').setup({
@@ -80,12 +72,11 @@ return {
             prompt_position = "top",
           },
           key_exact_length = true
-        },
+        }, 
       },
     })
     require('telescope').load_extension('jsonfly')
     require('telescope').load_extension('git_worktree')
     require("telescope").load_extension("file_browser")
-    --require('telescope').load_extension('kernel_manager')
   end,
 }

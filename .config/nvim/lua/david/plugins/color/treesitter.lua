@@ -6,8 +6,8 @@ return {
       ensure_installed = {
         "python",
         "go",
-        "c",
-        "cpp",
+        "java",
+        "groovy",
         "dockerfile",
         "html",
         "css",
@@ -21,6 +21,7 @@ return {
         "json",
         "xml",
         "yaml",
+        "nginx",
         "markdown",
         "markdown_inline",
         "terraform",
@@ -35,8 +36,5 @@ return {
         enable = true,
       },
     })
-    vim.cmd [[
-            au BufRead,BufNewFile Jenkinsfile set filetype=groovy
-        ]]
   end,
 }

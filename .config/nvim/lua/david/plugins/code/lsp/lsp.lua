@@ -27,10 +27,6 @@ return {
       local go = require("david.plugins.code.lang.go")
       lspconfig.gopls.setup(go.lsp(on_attach, capabilities, lspconfig.util.root_pattern("go.work", "go.mod", ".git")))
 
-      -- c and cpp
-      local c = require("david.plugins.code.lang.c")
-      lspconfig.clangd.setup(c.lsp(on_attach, capabilities))
-
       -- bash
       lspconfig.bashls.setup({
         on_attach = on_attach,

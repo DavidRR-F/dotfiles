@@ -1,7 +1,6 @@
 return {
   "DavidRR-F/notebook-manager.nvim",
   dependencies = {
-    "vim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
   },
   cmd = {
