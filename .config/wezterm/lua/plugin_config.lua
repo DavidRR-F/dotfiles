@@ -1,8 +1,10 @@
 local wez = require "wezterm"
 local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
-local bg = "rgba(30, 30, 46, 0.9)"
 
 local M = {}
+
+local tab_background = 'rgb(24, 24, 37)'
+local catpuccin_purple = '#cba6f7'
 
 local mode_icons = {
   NO = '', -- Normal Mode
@@ -10,6 +12,7 @@ local mode_icons = {
   SE = '', -- Search Mode
   WI = '󱀦', -- Window Mode
   SW = '', -- Switch Mode
+  DM = '', -- Domain Mode
 }
 
 M.tabline = {
@@ -18,21 +21,21 @@ M.tabline = {
     theme = 'Catppuccin Mocha',
     color_overrides = {
       normal_mode = {
-        a = { fg = scheme.ansi[5], bg = scheme.cursor_fg },
-        b = { fg = scheme.ansi[5], bg = scheme.cursor_fg },
+        a = { fg = scheme.ansi[5], bg = tab_background },
+        b = { fg = scheme.ansi[5], bg = tab_background },
       },
       copy_mode = {
-        a = { fg = scheme.ansi[4], bg = scheme.cursor_fg },
-        b = { fg = scheme.ansi[4], bg = scheme.cursor_fg },
+        a = { fg = scheme.ansi[4], bg = tab_background },
+        b = { fg = scheme.ansi[4], bg = tab_background },
       },
       search_mode = {
-        a = { fg = scheme.ansi[3], bg = scheme.cursor_fg },
-        b = { fg = scheme.ansi[3], bg = scheme.cursor_fg },
+        a = { fg = scheme.ansi[3], bg = tab_background },
+        b = { fg = scheme.ansi[3], bg = tab_background },
       },
       -- Defining colors for a new key table
       window_mode = {
-        a = { fg = '#cba6f7', bg = scheme.cursor_fg },
-        b = { fg = '#cba6f7', bg = scheme.cursor_fg },
+        a = { fg = catpuccin_purple, bg = tab_background },
+        b = { fg = catpuccin_purple, bg = tab_background },
       },
       tab = {
         active = {
@@ -40,12 +43,12 @@ M.tabline = {
           fg = scheme.ansi[3],
         },
         inactive = {
-          bg = scheme.cursor_fg,
+          bg = tab_background,
           fg = scheme.ansi[1],
         },
         inactive_hover = {
-          bg = scheme.cursor_fg,
-          fg = scheme.ansi[2],
+          bg = tab_background,
+          fg = catpuccin_purple,
         }
       }
     },
@@ -73,11 +76,11 @@ M.tabline = {
     },
     tabline_c = {},
     tab_active = {
-      'tab_index',
+      'index',
       { 'cwd',    padding = { left = 0, right = 1 } },
       { 'zoomed', padding = 0 },
     },
-    tab_inactive = { 'tab_index', { 'process', padding = { left = 0, right = 1 } } },
+    tab_inactive = { 'index', { 'cwd', padding = { left = 0, right = 1 } } },
     tabline_x = {},
     tabline_y = {
       'battery',
@@ -115,7 +118,73 @@ M.tabline = {
     },
     tabline_z = {},
   },
-  extensions = {},
+  extensions = {
+    {
+      'quick_domains',
+      events = {
+        show = 'quick_domain.fuzzy_selector.opened',
+        hide = {
+          'quick_domain.fuzzy_selector.canceled',
+          'quick_domain.fuzzy_selector.selected',
+          'resurrect.fuzzy_load.start',
+          'smart_workspace_switcher.workspace_switcher.start',
+        },
+      },
+      sections = {
+        tabline_a = {
+          {
+            'mode',
+            padding = { left = 1, right = 0 },
+            fmt = function(str) return mode_icons['DM'] end
+          },
+        },
+        tabline_b = {
+          {
+            'workspace',
+            icon = '',
+            padding = { left = 0, right = 1 },
+          }
+        },
+      },
+      colors = {
+        a = { fg = scheme.ansi[6], bg = tab_background },
+        b = { fg = scheme.ansi[6], bg = tab_background },
+      },
+    },
+    {
+    'smart_workspace_switcher',
+      events = {
+        show = 'smart_workspace_switcher.workspace_switcher.start',
+        hide = {
+          'smart_workspace_switcher.workspace_switcher.canceled',
+          'smart_workspace_switcher.workspace_switcher.chosen',
+          'smart_workspace_switcher.workspace_switcher.created',
+          'resurrect.fuzzy_load.start',
+          'quick_domain.fuzzy_selector.opened',
+        },
+      },      
+      sections = {
+        tabline_a = {
+          {
+            'mode',
+            padding = { left = 1, right = 0 },
+            fmt = function(str) return mode_icons['SW'] end
+          },
+        },
+        tabline_b = {
+          {
+            'workspace',
+            icon = '',
+            padding = { left = 0, right = 1 },
+          }
+        },
+      },
+      colors = {
+        a = { fg = scheme.ansi[2], bg = tab_background },
+        b = { fg = scheme.ansi[2], bg = tab_background },
+      },
+    },
+  },
 }
 
 M.quick_domains = {

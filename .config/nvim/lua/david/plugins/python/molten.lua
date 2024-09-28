@@ -12,7 +12,7 @@ return {
     vim.g.molten_output_show_more = true
     vim.g.molten_output_win_max_height = 80
     vim.g.molten_split_direction = "right"
-    vim.g.molten_split_size = 40
+    vim.g.molten_split_size = 30
     vim.g.molten_virt_text_output = true
     vim.g.molten_virt_text_max_lines = 1
     vim.g.molten_use_border_highlights = true

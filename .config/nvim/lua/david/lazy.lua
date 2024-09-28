@@ -20,7 +20,6 @@ local plugins = {
   { import = "david.plugins.gui" },
   { import = "david.plugins.gui.edit" },
   { import = "david.plugins.gui.nav" },
-  { import = "david.plugins.java" },
   { import = "david.plugins.python" },
   { import = "david.plugins.typescript" },
 }

@@ -4,7 +4,6 @@ local appearance = require 'lua.appearance'
 local font = require 'lua.font'
 local keys = require 'lua.keys'
 local plugin_config = require 'lua.plugin_config'
-
 local smart_workspace = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 local quick_domains = wezterm.plugin.require("https://github.com/DavidRR-F/quick_domains.wezterm")
 

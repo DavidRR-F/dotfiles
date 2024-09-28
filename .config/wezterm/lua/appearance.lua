@@ -38,6 +38,7 @@ local M = {}
 -- selection_fg = '#cdd6f4'
 -- split = '#6c7086'
 -- visual_bell = '#313244'
+local tab_background = 'rgb(24, 24, 37)'
 
 M.apply_to_config = function(c)
   -- base config
@@ -45,14 +46,19 @@ M.apply_to_config = function(c)
   local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
   c.colors = {
     background = scheme.background,
+    cursor_border = scheme.ansi[2],
     tab_bar = {
-      background = scheme.cursor_fg,
+      background = tab_background,
       active_tab = {
         bg_color = scheme.background,
         fg_color = scheme.ansi[3],
       },
       inactive_tab = {
-        bg_color = scheme.cursor_fg,
+        bg_color = tab_background,
+        fg_color = scheme.ansi[1],
+      },
+      inactive_tab_hover = {
+        bg_color = tab_background,
         fg_color = scheme.ansi[1],
       }
     }
