@@ -15,7 +15,7 @@ return {
     local go = require("david.plugins.code.lang.go")
     neotest.setup({
       adapters = {
-        require("neotest-python")(python.test(venv.get_active_path())),
+        require("neotest-python")(python.test(venv.venv())),
         require("neotest-go")(go.test)
       },
     })
