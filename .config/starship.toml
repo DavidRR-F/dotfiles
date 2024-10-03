@@ -70,7 +70,7 @@ format = '[[$symbol $branch ](fg:thm_magenta)]($style)'
 
 [git_status]
 style = "fg:thm_magenta"
-format = '[[($all_status$ahead_behind )](fg:thm_magenta)]($style)'
+format = '[[($all_status$ahead_behind)](fg:thm_magenta)]($style)'
 
 [nodejs]
 symbol = ""
@@ -115,19 +115,19 @@ vimcmd_visual_symbol = ' [](bold fg:thm_yellow)'
 
 [direnv]
 disabled = false
-format = '[$loaded]($style) '
+format = '[ $loaded]($style) '
 style = 'fg:thm_yellow'
 loaded_msg = "󱎚"
 unloaded_msg = "󱚳"
 
 [aws]
 symbol = " "
-format = '[$symbol$region]($style) '
+format = '[ $symbol$region]($style) '
 style = 'bold thm_orange'
 
 [azure]
 disabled = false
-format = '[$symbol($subscription)]($style) '
+format = '[ $symbol($subscription)]($style) '
 symbol = '󰠅 '
 style = 'bold thm_cyan'
 subscription_aliases = { "Microsoft Azure Enterprise" = "mc" }

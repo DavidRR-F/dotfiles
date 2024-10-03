@@ -11,18 +11,15 @@ return {
     require("venv-selector").setup({
       settings = {
         options = {
-          debug = true
+          debug = true,
+          show_telescope_search_type = false
         },
-        -- search = {
-        --   cwd = {
-        --     command = "fd python.exe --hidden $CWD --color never"
-        --   }
-        -- }
       }
     })
   end,
   keys = {
     { "<leader>vs", "<cmd>VenvSelect<cr>" },
+    { "<leader>vl", "<cmd>VenvSelectLog<cr>" },
   },
 }
 

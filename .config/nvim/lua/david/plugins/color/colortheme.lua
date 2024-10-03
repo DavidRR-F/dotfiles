@@ -23,7 +23,7 @@ return {
       no_underline = false,
       styles = {
         comments = { "italic" },
-        conditionals = { "italic" },
+        conditionals = {},
         loops = {},
         functions = {},
         keywords = {},
@@ -31,7 +31,7 @@ return {
         variables = {},
         numbers = {},
         booleans = {},
-        properties = {},
+        properties = { "italic" },
         types = {},
         operators = {},
       },
