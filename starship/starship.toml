@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$shell\
 $directory\
 $git_branch\
 $git_status\
@@ -32,17 +33,16 @@ thm_blue="#89b4fa"
 thm_orange="#fab387"
 thm_black4="#4e5166"
 
-[os]
+[shell]
+bash_indicator = ''
+zsh_indicator = ''
+pwsh_indicator = '󰨊'
+powershell_indicator = '󰨊'
+cmd_indicator = ''
+unknown_indicator = ''
+style = 'thm_blue'
 disabled = false
-style = "bg:thm_gray fg:thm_green"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-Macos = "󰀵"
-Linux = "󰌽"
-Arch = "󰣇"
-Artix = "󰣇"
+format = '[ $indicator]($style)'
 
 [username]
 show_always = true

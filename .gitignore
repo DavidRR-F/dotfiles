@@ -2,6 +2,11 @@ node_modules/
 package-lock.json
 package.json
 
+# Dotter Files
+.dotter/local.toml
+.dotter/cache.toml
+.dotter/cache
+
 # Compiled Lua sources
 luac.out
 

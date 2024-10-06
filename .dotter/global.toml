@@ -1,0 +1,11 @@
+[settings]
+default_target_type = "symbolic"
+
+[nvim.files]
+nvim = "~/.config/nvim"
+
+[wezterm.files]
+wezterm = "~/.config/wezterm"
+
+[starship.files]
+"starship/starship.toml" = "~/.config/starship.toml"

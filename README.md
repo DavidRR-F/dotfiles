@@ -1,20 +1,49 @@
-# Dotfiles Repository
-
-This repository contains my personal dotfiles.
+# Minimal Cross-Platform Dotfiles
 
 ### Installation
 
-1. **Clone the Repository**:
+#### **Clone the Repository**:
 
 ```bash
 $ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 ```
 
-2. **Stow Repository**:
+#### **Install Tools Scripts**:
 
-```bash 
-$ cd ~/.dotfiles
-$ stow .
+##### If Linux
+
+```bash
+./scripts/linux/install.sh -d fedora
+```
+
+##### If Windows
+
+```pwsh
+./scripts/windows/install.ps1
+```
+
+#### **SymLink Configuration**:
+
+Create `.dotter/local.toml`
+
+##### If Linux
+
+```toml
+includes = [".dotter/include/linux.toml"]
+packages = ["zsh", "pwsh", "wezterm", "nvim", "starship"]
+```
+
+##### If Windows
+
+```toml
+includes = [".dotter/include/windows.toml"]
+packages = ["pwsh", "wezterm", "nvim", "starship"]
+```
+
+##### Run dotter
+
+```bash
+dotter -g $HOME/.dofiles/.dotter/global.toml -l $HOME/.dotfiles/.dotter/local.toml
 ```
 
 #### Vim Stuff I always forget
