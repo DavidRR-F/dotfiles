@@ -31,7 +31,7 @@ return {
         variables = {},
         numbers = {},
         booleans = {},
-        properties = { "italic" },
+        properties = {},
         types = {},
         operators = {},
       },

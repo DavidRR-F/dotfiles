@@ -23,7 +23,8 @@ return {
         "markdown",
         "markdown_inline",
         "terraform",
-        "hcl"
+        "hcl",
+        "vimdoc"
       },
       sync_install = false,
       highlight = {

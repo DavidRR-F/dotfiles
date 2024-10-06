@@ -44,9 +44,17 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       formatting = {
-        format = require("lspkind").cmp_format({
-          before = require("tailwind-tools.cmp").lspkind_format
-        })
+        format = function(entry, item)
+          local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
+          item = require("lspkind").cmp_format({
+            before = require("tailwind-tools.cmp").lspkind_format
+          })(entry, item)
+          if color_item.abbr_hl_group then
+            item.kind_hl_group = color_item.abbr_hl_group
+            item.kind = color_item.abbr
+          end
+          return item
+        end
       }
     })
   end,

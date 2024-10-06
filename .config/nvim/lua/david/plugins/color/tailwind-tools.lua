@@ -3,9 +3,9 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   opts = {
     document_color = {
-      enabled = false,
+      enabled = true,
       kind = "inline",
-      inline_symbol = "󰝤 ",
+      inline_symbol = "󱓻 ",
       debounce = 200,
     },
     conceal = {

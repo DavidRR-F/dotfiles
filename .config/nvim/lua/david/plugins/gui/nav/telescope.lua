@@ -8,9 +8,10 @@ return {
     'ThePrimeagen/git-worktree.nvim',
   },
   keys = {
-    { "<leader>fb", "<cmd>Telescope buffers<cr>",                                                 desc = "Buffers" },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>",                                              desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>",                                               desc = "Live Grep" },
+    { "<leader>fb", "<cmd>:Telescope buffers<cr>",                                                 desc = "Buffers" },
+    { "<leader>fr", "<cmd>:Telescope registers<cr>",                                               desc = "Registers" },
+    { "<leader>ff", "<cmd>:Telescope find_files<cr>",                                              desc = "Find Files" },
+    { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
     { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" },
@@ -47,7 +48,7 @@ return {
             prompt_position = "top",
           },
           key_exact_length = true
-        }, 
+        },
       },
     })
     require('telescope').load_extension('jsonfly')

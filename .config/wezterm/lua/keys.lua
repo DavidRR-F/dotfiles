@@ -6,7 +6,6 @@ local utils = require 'lua.utils'
 local M = {}
 
 M.tmux_session_inactive = {
-  { key = 'v',     mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
   {
     key = "F11",
     mods = "NONE",
@@ -24,7 +23,6 @@ M.tmux_session_inactive = {
 }
 
 M.tmux_session_active = {
-  { key = 'v',   mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
   { key = "F11", mods = "NONE", action = act.ToggleFullScreen },
 }
 
