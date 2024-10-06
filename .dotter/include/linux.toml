@@ -1,5 +1,7 @@
-[pwsh.files]
+[shell.files]
 "shell/pwsh.ps1" = "~/powershell/Microsoft.PowerShell_profile.ps1"
+"shell/.zshrc" = "~/.zshrc"
+"shell/starship.toml" = "~/.config/starship.toml"
 
-[zsh.files]
-"shell/.zshrc" = ".zshrc"
+[window-manager.files]
+"window-manager/hyprland/hyprland.conf" = "~/.config/hyprland/hyprland.conf"

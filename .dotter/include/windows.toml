@@ -1,2 +1,6 @@
-[pwsh.files]
+[shell.files]
 "shell/pwsh.ps1" = "~/OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"shell/starship.toml" = "~/.config/starship.toml"
+
+[window-manager.files]
+"window-manager/glaze-wm/config.yaml" = "~/.glzr/glazewm/config.yaml"

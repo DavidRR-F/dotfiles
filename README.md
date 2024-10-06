@@ -8,20 +8,6 @@
 $ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 ```
 
-#### **Install Tools Scripts**:
-
-##### If Linux
-
-```bash
-./scripts/linux/install.sh -d fedora
-```
-
-##### If Windows
-
-```pwsh
-./scripts/windows/install.ps1
-```
-
 #### **SymLink Configuration**:
 
 Create `.dotter/local.toml`
@@ -30,23 +16,23 @@ Create `.dotter/local.toml`
 
 ```toml
 includes = [".dotter/include/linux.toml"]
-packages = ["zsh", "pwsh", "wezterm", "nvim", "starship"]
+packages = ["shell", "terminal", "editor", "window-manager"]
 ```
 
 ##### If Windows
 
 ```toml
 includes = [".dotter/include/windows.toml"]
-packages = ["pwsh", "wezterm", "nvim", "starship"]
+packages = ["shell", "terminal", "editor", "window-manager"]
 ```
 
 ##### Run dotter
 
 ```bash
-dotter -g $HOME/.dofiles/.dotter/global.toml -l $HOME/.dotfiles/.dotter/local.toml
+dotter -g $HOME/.dofiles/.dotter/global.toml -l $HOME/.dotfiles/.dotter/local.toml --force
 ```
 
-#### Vim Stuff I always forget
+### Vim Stuff I always forget
 
 ##### Insert Mode 
 
