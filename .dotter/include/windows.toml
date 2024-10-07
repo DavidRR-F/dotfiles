@@ -3,4 +3,6 @@
 "shell/starship.toml" = "~/.config/starship.toml"
 
 [window-manager.files]
-"window-manager/glaze-wm/config.yaml" = "~/.glzr/glazewm/config.yaml"
+"window-manager/glazewm/config.yaml" = "~/.glzr/glazewm/config.yaml"
+"window-manager/glazewm/zebar.css" = "~/.glzr/zebar/starter/styles.css"
+"window-manager/glazewm/zebar.json" = "~/.glzr/zebar/starter/with-glazewm.zebar.json"
