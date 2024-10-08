@@ -1,0 +1,47 @@
+    {
+      "color_scheme": "default",
+      "syntax_theme": "native",
+      "edit_mode": "vi",
+      "show_scoll_bar": false,
+      "always_show_tab_bar": false,
+      "show_top_bar": false,
+      "save": true,
+      "enable_language_servers": true,
+      "language_servers": {
+        "pyright": {
+          "command": [
+            "pyright"
+          ],
+          "languages": [
+            "python"
+          ]
+        }
+      },
+      "autocomplete": true,
+      "autosuggest": true,
+      "autoinspect": false,
+      "formatters": [
+        {
+          "command": [
+            "ruff",
+            "format",
+            "-"
+          ],
+          "languages": [
+            "python"
+          ]
+        }
+      ],
+      "key_bindings": {
+        "euporie.core.app.BaseApp": {
+          "quit": "c-c",
+          "next-tab": "c-tab",
+          "previous-tab": "c-s-tab"
+        }
+      },
+      "notebook": {
+        "expand": false,
+        "always_show_tab_bar": true,
+        "show_cell_borders": false
+      }
+    }

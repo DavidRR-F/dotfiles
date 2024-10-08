@@ -5,13 +5,17 @@ local utils = require 'lua.utils'
 
 local M = {}
 
-M.tmux_session_inactive = {
+M.general = {
   {
     key = "F11",
     mods = "NONE",
     action = act.ToggleFullScreen,
   },
-  { key = "Space", mods = "CTRL", action = act.ActivateKeyTable { name = "tmux", one_shot = true }, },
+  { key = "Space", mods = "CTRL",       action = act.ActivateKeyTable { name = "tmux", one_shot = true }, },
+  { key = "Enter", mods = "CTRL",       action = wezterm.action { SendString = "\x1b[13;5u" } },
+  { key = "Enter", mods = "SHIFT",      action = wezterm.action { SendString = "\x1b[13;2u" } },
+  { key = "v",     mods = "CTRL|SHIFT", action = act.PasteFrom 'Clipboard' },
+  { key = "c",     mods = "CTRL|SHIFT", action = act.CopyTo 'Clipboard' },
   utils.split_nav("move", "h"),
   utils.split_nav("resize", "h"),
   utils.split_nav("move", "j"),
@@ -21,12 +25,6 @@ M.tmux_session_inactive = {
   utils.split_nav("move", "l"),
   utils.split_nav("resize", "l"),
 }
-
-M.tmux_session_active = {
-  { key = "F11", mods = "NONE", action = act.ToggleFullScreen },
-}
-
--- key tables
 
 M.tmux = {
   { key = "-",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },

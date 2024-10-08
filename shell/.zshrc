@@ -38,44 +38,15 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' 
 
-# wezterm
-__wezterm_set_user_var() {
-  if hash base64 2>/dev/null ; then
-    if [[ -z "${TMUX}" ]] ; then
-      printf "\033]1337;SetUserVar=%s=%s\007" "$1" `echo -n "$2" | base64`
-    else
-      printf "\033Ptmux;\033\033]1337;SetUserVar=%s=%s\007\033\\" "$1" `echo -n "$2" | base64`
-    fi
-  fi
-}
-
-# Set the current shell as a user var
-__wezterm_set_user_var "WEZTERM_SHELL" "$SHELL"
-
-# Set whether tmux is active as a user var
-if [[ -z "${TMUX}" ]]; then
-  __wezterm_set_user_var "WEZTERM_IN_TMUX" "0"
-else
-  __wezterm_set_user_var "WEZTERM_IN_TMUX" "1"
-fi
-
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias box='VBoxManage'
 
-export JUPYTER_DATA_DIR=$HOME/.local/share/jupyter
-export JUPYTER_PATH=$HOME/.local/share/jupyter
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PYENV_ROOT="$HOME/.pyenv"
-export POETRY_PLUGIN_DOTENV_LOCATION="$HOME/.env"
-export POETRY_PLUGIN_DOTENV_IGNORE=0
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH="/opt/mssql-tools/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:/usr/local/nvim-linux64/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/.local/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
+
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(direnv hook zsh)"

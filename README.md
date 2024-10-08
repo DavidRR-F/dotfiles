@@ -10,26 +10,33 @@ $ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 
 #### **SymLink Configuration**:
 
+##### Download Dotter Binaries
+
+```bash 
+curl -L -o ~/.dotfiles/dotter https://github.com/SuperCuber/dotter/releases/download/<version>/<platform>
+```
+
 Create `.dotter/local.toml`
 
 ##### If Linux
 
 ```toml
 includes = [".dotter/include/linux.toml"]
-packages = ["shell", "terminal", "editor", "window-manager"]
+packages = ["shell", "terminal", "editor", "twm", "tui"]
 ```
 
 ##### If Windows
 
 ```toml
 includes = [".dotter/include/windows.toml"]
-packages = ["shell", "terminal", "editor", "window-manager"]
+packages = ["shell", "terminal", "editor", "twm", "tui"]
 ```
 
 ##### Run dotter
 
 ```bash
-dotter -g $HOME/.dofiles/.dotter/global.toml -l $HOME/.dotfiles/.dotter/local.toml --force
+cd ~/.dotfiles
+./dotter --force
 ```
 
 ### Vim Stuff I always forget
@@ -49,7 +56,7 @@ dotter -g $HOME/.dofiles/.dotter/global.toml -l $HOME/.dotfiles/.dotter/local.to
 - vi<character> (inside)
 - va<character> (around)
 - viw (word)
-- * (highlighed to search)
+- * or # (highlighed to search)
 
 ###### You don't need multiple cursors
 

@@ -3,5 +3,9 @@
 "shell/.zshrc" = "~/.zshrc"
 "shell/starship.toml" = "~/.config/starship.toml"
 
-[window-manager.files]
-"window-manager/hyprland/hyprland.conf" = "~/.config/hyprland/hyprland.conf"
+[twm.files]
+"twm/hyprland/hyprland.conf" = "~/.config/hyprland/hyprland.conf"
+
+[tui.files]
+"tui/euporie" = "~/.config/euporie"
+

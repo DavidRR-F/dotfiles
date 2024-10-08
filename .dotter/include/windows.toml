@@ -2,7 +2,9 @@
 "shell/pwsh.ps1" = "~/OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 "shell/starship.toml" = "~/.config/starship.toml"
 
-[window-manager.files]
-"window-manager/glazewm/config.yaml" = "~/.glzr/glazewm/config.yaml"
-"window-manager/glazewm/zebar.css" = "~/.glzr/zebar/starter/styles.css"
-"window-manager/glazewm/zebar.json" = "~/.glzr/zebar/starter/with-glazewm.zebar.json"
+[twm.files]
+"twm/glazewm/config.yaml" = "~/.glzr/glazewm/config.yaml"
+
+[tui.files]
+"tui/euporie" = "~/AppData/Local/euporie"
+

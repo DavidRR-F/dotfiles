@@ -15,8 +15,15 @@ if wezterm.config_builder then
 end
 c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "zsh" }
 c.default_workspace = "main"
-c.keys = keys.tmux_session_inactive
+c.disable_default_key_bindings = true
+c.keys = keys.general
 c.key_tables = { tmux = keys.tmux }
+c.launch_menu = {
+  { label = "󰊢 GitHub Dashboard", args = { "gh", "dash" } },
+  { label = " Lazy Docker", args = { "lazydocker" } },
+  { label = "󱃾 K9S", args = { "k9s" } },
+  { label = "󰻫 Ranger", args = { "ranger" } },
+}
 
 appearance.apply_to_config(c)
 font.apply_to_config(c)
@@ -25,19 +32,5 @@ font.apply_to_config(c)
 
 quick_domains.apply_to_config(c, plugin_config.quick_domains)
 smart_workspace.apply_to_config(c)
-
--- event hooks
-
-wezterm.on("update-right-status", function(window, pane)
-  if utils.is_tmux(pane) then
-    window:set_config_overrides({
-      keys = keys.tmux_session_active,
-    })
-  else
-    window:set_config_overrides({
-      keys = c.keys,
-    })
-  end
-end)
 
 return c
