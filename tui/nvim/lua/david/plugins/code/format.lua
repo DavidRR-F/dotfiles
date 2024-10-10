@@ -16,7 +16,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       go = { "goimports", "gofmt" },
-      python = { "black", "ruff" },
+      python = { "ruff" },
       hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
       yaml = { "yamlfix" },

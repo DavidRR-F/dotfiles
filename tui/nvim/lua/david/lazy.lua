@@ -18,8 +18,7 @@ local plugins = {
   { import = "david.plugins.color" },
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
-  { import = "david.plugins.gui.nav" },
-  { import = "david.plugins.notebooks" },
+  { import = "david.plugins.gui.nav" }
 }
 
 local terminal = require("david.custom.terminal")

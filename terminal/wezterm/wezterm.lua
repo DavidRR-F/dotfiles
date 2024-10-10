@@ -13,7 +13,7 @@ local c = {}
 if wezterm.config_builder then
   c = wezterm.config_builder()
 end
-c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "zsh" }
+c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "bash" }
 c.default_workspace = "main"
 c.disable_default_key_bindings = true
 c.keys = keys.general

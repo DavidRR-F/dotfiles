@@ -4,10 +4,6 @@ Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
 Invoke-Expression "$(direnv hook pwsh)"
 
-Set-PsFzfOption -TabExpansion
-Set-PsReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
-Set-PsFzfOption -PsReadlineChordProvider 'Ctrl+t' -PsReadlineChordReverseHistory 'Ctrl+r'
-
 Set-PSReadlineKeyHandler -Chord Ctrl+a -Function BeginningOfLine
 Set-PSReadlineKeyHandler -Chord Ctrl+e -Function EndOfLine
 Set-PSReadlineKeyHandler -Chord Ctrl+b -Function BackwardChar
@@ -19,3 +15,22 @@ Set-PSReadlineKeyHandler -Chord Ctrl+w -Function BackwardKillWord
 Set-PSReadlineKeyHandler -Chord Alt+d -Function KillWord
 Set-PSReadlineKeyHandler -Chord Ctrl+n -Function NextHistory
 Set-PSReadlineKeyHandler -Chord Ctrl+p -Function PreviousHistory
+
+function Get-Help {
+  [CmdletBinding()]
+  param (
+      [Parameter(Mandatory=$true)]
+      [string]
+      $Command
+  )
+  $helpText = Get-Help $Command
+  $helpText | ForEach-Object {
+    if ($_ -match "^SYNOPSIS") {
+      Write-Host $_ -ForegroundColor Green
+    } elseif ($_ -match "^SYNTAX") {
+      Write-Host $_ -ForegroundColor Yellow
+    } else {
+      Write-Host $_
+    }
+  }
+}

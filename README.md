@@ -1,5 +1,12 @@
 # Minimal Cross-Platform Dotfiles
 
+| Tool | Windows | Linux | 
+|:-----|:--------|:------|
+| terminal | wezterm | wezterm |
+| shell | powershell | bash |
+| editor | neovim | neovim | 
+| window manager | glazewm | hyperland |
+
 ### Installation
 
 #### **Clone the Repository**:

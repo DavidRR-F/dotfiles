@@ -5,11 +5,7 @@ vim.g.python3_host_prog = vim.fn.expand(custom.get_os_settings().python_host)
 
 vim.o.clipboard = "unnamedplus"
 
-local keymap = vim.keymap -- for conciseness
-
--- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-keymap.set("v", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+local keymap = vim.keymap
 
 -- mouse scroll
 keymap.set("n", "<ScrollWheelUp>", "<C-Y>", { silent = true })

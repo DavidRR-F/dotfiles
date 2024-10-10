@@ -1,47 +1,64 @@
-    {
-      "color_scheme": "default",
-      "syntax_theme": "native",
-      "edit_mode": "vi",
-      "show_scoll_bar": false,
-      "always_show_tab_bar": false,
-      "show_top_bar": false,
-      "save": true,
-      "enable_language_servers": true,
-      "language_servers": {
-        "pyright": {
-          "command": [
-            "pyright"
-          ],
-          "languages": [
-            "python"
-          ]
-        }
-      },
-      "autocomplete": true,
-      "autosuggest": true,
-      "autoinspect": false,
-      "formatters": [
-        {
-          "command": [
-            "ruff",
-            "format",
-            "-"
-          ],
-          "languages": [
-            "python"
-          ]
-        }
+{
+  "color_scheme": "default",
+  "syntax_theme": "native",
+  "edit_mode": "vi",
+  "show_scoll_bar": false,
+  "always_show_tab_bar": false,
+  "show_top_bar": false,
+  "save": true,
+  "enable_language_servers": true,
+  "language_servers": {
+    "pyright": {
+      "command": [
+        "pyright"
       ],
-      "key_bindings": {
-        "euporie.core.app.BaseApp": {
-          "quit": "c-c",
-          "next-tab": "c-tab",
-          "previous-tab": "c-s-tab"
-        }
-      },
-      "notebook": {
-        "expand": false,
-        "always_show_tab_bar": true,
-        "show_cell_borders": false
-      }
+      "languages": [
+        "python"
+      ]
     }
+  },
+  "autocomplete": true,
+  "autosuggest": true,
+  "autoinspect": false,
+  "formatters": [
+    {
+      "command": [
+        "ruff",
+        "format",
+        "-"
+      ],
+      "languages": [
+        "python"
+      ]
+    }
+  ],
+  "key_bindings": {
+    "euporie.core.app.BaseApp": {
+      "quit": "c-c",
+      "next-tab": "c-tab",
+      "previous-tab": "c-s-tab",
+      "find": "/"
+    },
+    "euporie.notebook.app.NotebookApp": {
+      "toggle-side-bar-pane": "c-t",
+      "new-notebook": "c-n"
+    },
+    "euporie.notebook.tabs.notebook.Notebook": {
+      "run-selected-cells": "c-enter",
+      "run-and-select-next": "s-enter",
+      "scroll-up": "c-y",
+      "scroll-down": "c-e",
+      "scroll-down-5-lines": "c-d",
+      "scroll-up-5-lines": "c-u"
+    },
+    "euporie.core.key_binding.bindings.micro.EditMode": {
+      "accept-suggestion": "c-f",
+      "fill-suggestion": "A-f" 
+    }
+  },
+  "notebook": {
+    "expand": false,
+    "always_show_tab_bar": true,
+    "show_cell_borders": false
+  }
+}
