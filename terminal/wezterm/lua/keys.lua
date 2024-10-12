@@ -16,6 +16,11 @@ M.general = {
   { key = "Enter", mods = "SHIFT",      action = wezterm.action { SendString = "\x1b[13;2u" } },
   { key = "v",     mods = "CTRL|SHIFT", action = act.PasteFrom 'Clipboard' },
   { key = "c",     mods = "CTRL|SHIFT", action = act.CopyTo 'Clipboard' },
+  { key = "p",     mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
+  { key = "d",     mods = "CTRL|SHIFT", action = act.ShowDebugOverlay },
+  { key = "q",     mods = "CTRL|SHIFT", action = act.QuitApplication },
+  { key = "-",     mods = "CTRL",       action = act.DecreaseFontSize },
+  { key = "+",     mods = "CTRL",       action = act.IncreaseFontSize },
   utils.split_nav("move", "h"),
   utils.split_nav("resize", "h"),
   utils.split_nav("move", "j"),
@@ -27,24 +32,31 @@ M.general = {
 }
 
 M.tmux = {
-  { key = "-",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "=",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-  { key = "k",     action = act.AdjustPaneSize { "Up", 10 } },
-  { key = "j",     action = act.AdjustPaneSize { "Down", 10 } },
-  { key = "h",     action = act.AdjustPaneSize { "Left", 10 } },
-  { key = "l",     action = act.AdjustPaneSize { "Right", 10 } },
+  -- tmux defaults
+  { key = "%", mods = "SHIFT", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  { key = '"', mods = "SHIFT", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = "(", mods = "SHIFT", action = act.SwitchWorkspaceRelative(-1) },
+  { key = ")", mods = "SHIFT", action = act.SwitchWorkspaceRelative(1) },
+  { key = "&", mods = "SHIFT", action = act.CloseCurrentTab { confirm = true } },
+  {
+    key = "!",
+    mods = "SHIFT",
+    action = wezterm.action_callback(function(win, pane)
+      local tab, window = pane:move_to_new_tab()
+    end)
+  },
   { key = "c",     action = act.SpawnTab("CurrentPaneDomain") },
   { key = "n",     action = act.ActivateTabRelative(1) },
   { key = "p",     action = act.ActivateTabRelative(-1) },
   { key = "x",     action = act.CloseCurrentPane { confirm = true } },
-  { key = "m",     action = act.TogglePaneZoomState },
-  { key = "q",     action = act.QuitApplication },
-  { key = "r",     action = act.ReloadConfiguration },
-  { key = "w",     action = act.CloseCurrentTab { confirm = true } },
+  { key = "z",     action = act.TogglePaneZoomState },
   { key = "Space", action = act.RotatePanes "Clockwise" },
-  { key = "0",     action = act.PaneSelect { mode = "SwapWithActive" } },
   { key = "[",     action = act.ActivateCopyMode },
   { key = "s",     action = workspace_switcher.switch_workspace() },
+  { key = "r",     action = act.ReloadConfiguration },
+  -- wezterm extras
+  { key = "/",     action = act.Search "CurrentSelectionOrEmptyString" },
+  { key = "q",     action = act.QuickSelect },
   {
     key = 'i',
     mods = 'SHIFT',
@@ -62,6 +74,10 @@ M.tmux = {
         end
       end),
     },
+  },
+  {
+    key = 'l',
+    action = act.ShowLauncherArgs { flags = 'FUZZY|LAUNCH_MENU_ITEMS' },
   },
 }
 
