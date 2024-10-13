@@ -9,9 +9,10 @@
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
-         "format": " {icon} ",
+         "format": " {id} {icon} ",
          "format-icons": {
-             "default": "",
+             "default": "",
+             "active": "",
          },
      },
     "tray": {
@@ -28,10 +29,10 @@
         "max-length": 50
     },
     "clock": {
-        "timezone": "Asia/Dubai",
+        "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+        "format": " {:%I:%M}"
     },
     "backlight": {
         "device": "intel_backlight",
@@ -66,6 +67,6 @@
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
-        "format": "襤"
+        "format": ""
     }
 }

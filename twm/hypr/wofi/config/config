@@ -1,9 +1,9 @@
 show=drun
-width=750
-height=400
+width=600
+height=200
 always_parse_args=true
 show_all=false
-term=kitty
+term=wezterm
 hide_scroll=true
 print_command=true
 insensitive=true

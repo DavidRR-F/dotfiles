@@ -52,16 +52,16 @@
 @define-color	crust-rgb  rgb(17, 17, 27);
 
 * {
-  font-family: 'Inconsolata Nerd Font', monospace;
+  font-family: '0xProto Nerd Font Mono', monospace;
   font-size: 14px;
 }
 
 /* Window */
 window {
   margin: 0px;
-  padding: 10px;
+  padding: 5px;
   border: 0.16em solid @lavender;
-  border-radius: 0.1em;
+  border-radius: 10px;
   background-color: @base;
   animation: slideIn 0.5s ease-in-out both;
 }
@@ -80,7 +80,7 @@ window {
 /* Inner Box */
 #inner-box {
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border: none;
   background-color: @base;
   animation: fadeIn 0.5s ease-in-out both;
@@ -100,7 +100,7 @@ window {
 /* Outer Box */
 #outer-box {
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
   border: none;
   background-color: @base;
 }
@@ -118,7 +118,7 @@ window {
   margin: 5px 20px;
   padding: 10px;
   border: none;
-  border-radius: 0.1em;
+  border-radius: 10px;
   color: @text;
   background-color: @base;
   animation: fadeIn 0.5s ease-in-out both;
@@ -153,10 +153,11 @@ window {
 /* Selected Entry */
 #entry:selected {
   border: 0.11em solid @lavender;
+  border-radius: 10px;
 }
 
 #entry:selected #text {
-  color: @mauve;
+  color: @maroon;
 }
 
 #entry:drop(active) {

@@ -13,8 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 local plugins = {
   { import = "david.plugins.code" },
-  { import = "david.plugins.code.lsp" },
-  { import = "david.plugins.code.ai" },
+  --  { import = "david.plugins.code.lsp" },
+  --  { import = "david.plugins.code.ai" },
   { import = "david.plugins.color" },
   { import = "david.plugins.git" },
   { import = "david.plugins.gui" },
