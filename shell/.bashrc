@@ -90,7 +90,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -106,9 +106,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -127,7 +127,9 @@ eval "$(zoxide init --cmd cd bash)"
 eval "$(direnv hook bash)"
 
 export PATH="$PATH:/bin/bash:$HOME/.local/bin:/usr/local/go/bin"
+export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:$XDG_DATA_DIRS
 
+. "$HOME/.cargo/env"
 export XDG_CONFIG_HOME="$HOME/.config"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

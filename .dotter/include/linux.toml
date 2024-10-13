@@ -1,10 +1,11 @@
 [shell.files]
-"shell/pwsh.ps1" = "~/powershell/Microsoft.PowerShell_profile.ps1"
-"shell/.zshrc" = "~/.zshrc"
+"shell/pwsh.ps1" = "~/.config/powershell/Microsoft.PowerShell_profile.ps1"
+"shell/.bashrc" = "~/.bashrc"
 "shell/starship.toml" = "~/.config/starship.toml"
 
 [twm.files]
-"twm/hyprland/hyprland.conf" = "~/.config/hyprland/hyprland.conf"
+"twm/hypr" = "~/.config/hypr"
+"twm/hypr/waybar" = "~/.config/waybar"
 
 [tui.files]
 "tui/euporie" = "~/.config/euporie"

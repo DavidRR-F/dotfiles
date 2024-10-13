@@ -20,7 +20,7 @@ M.general = {
   { key = "d",     mods = "CTRL|SHIFT", action = act.ShowDebugOverlay },
   { key = "q",     mods = "CTRL|SHIFT", action = act.QuitApplication },
   { key = "-",     mods = "CTRL",       action = act.DecreaseFontSize },
-  { key = "+",     mods = "CTRL",       action = act.IncreaseFontSize },
+  { key = "=",     mods = "CTRL",       action = act.IncreaseFontSize },
   utils.split_nav("move", "h"),
   utils.split_nav("resize", "h"),
   utils.split_nav("move", "j"),
@@ -33,8 +33,8 @@ M.general = {
 
 M.tmux = {
   -- tmux defaults
-  { key = "%", mods = "SHIFT", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = '"', mods = "SHIFT", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+  { key = '"', mods = "SHIFT", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  { key = '%', mods = "SHIFT", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
   { key = "(", mods = "SHIFT", action = act.SwitchWorkspaceRelative(-1) },
   { key = ")", mods = "SHIFT", action = act.SwitchWorkspaceRelative(1) },
   { key = "&", mods = "SHIFT", action = act.CloseCurrentTab { confirm = true } },
