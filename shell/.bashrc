@@ -128,6 +128,7 @@ eval "$(direnv hook bash)"
 
 export PATH="$PATH:/bin/bash:$HOME/.local/bin:/usr/local/go/bin"
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:$XDG_DATA_DIRS
+export EDITOR="nvim"
 
 . "$HOME/.cargo/env"
 export XDG_CONFIG_HOME="$HOME/.config"

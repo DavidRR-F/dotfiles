@@ -6,7 +6,7 @@
   "always_show_tab_bar": false,
   "show_top_bar": false,
   "save": true,
-  "enable_language_servers": true,
+  "enable_language_servers": false,
   "language_servers": {
     "pyright": {
       "command": [
@@ -17,8 +17,8 @@
       ]
     }
   },
-  "autocomplete": true,
-  "autosuggest": true,
+  "autocomplete": false,
+  "autosuggest": false,
   "autoinspect": false,
   "formatters": [
     {

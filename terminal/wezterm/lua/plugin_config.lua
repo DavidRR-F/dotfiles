@@ -14,6 +14,7 @@ local mode_icons = {
   WI = '󱀦', -- Window Mode
   SW = '', -- Switch Mode
   DM = '', -- Domain Mode
+  RE = '', -- Resurrect
 }
 
 M.tabline = {
@@ -185,6 +186,38 @@ M.tabline = {
         b = { fg = scheme.ansi[2], bg = M.tab_background },
       },
     },
+    {
+      'resurrect',
+      events = {
+        show = 'resurrect.fuzzy_load.start',
+        hide = {
+          'resurrect.fuzzy_load.finished',
+          'quick_domain.fuzzy_selector.opened',
+          'smart_workspace_switcher.workspace_switcher.start',
+        },
+      },
+      sections = {
+        tabline_a = {
+          {
+            'mode',
+            padding = { left = 1, right = 0 },
+            fmt = function(str) return mode_icons['RE'] end
+          },
+        },
+        tabline_b = {
+          {
+            'workspace',
+            icon = '',
+            padding = { left = 0, right = 1 },
+          }
+        },
+      },
+      colors = {
+        a = { fg = scheme.ansi[2], bg = M.tab_background },
+        b = { fg = scheme.ansi[2], bg = M.tab_background },
+      },
+    },
+
   },
 }
 

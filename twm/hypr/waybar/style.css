@@ -88,6 +88,7 @@
 
 #custom-music {
   color: @mauve;
+  border: 1px solid @surface1;
   border-radius: 1rem;
 }
 

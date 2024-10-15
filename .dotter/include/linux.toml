@@ -9,5 +9,4 @@
 
 [tui.files]
 "tui/euporie" = "~/.config/euporie"
-"tui/ranger" = "~/.config/ranger"
-
+"tui/yazi" = "~/.config/yazi"
