@@ -11,12 +11,20 @@ return {
   config = function()
     local neotest = require("neotest")
     local venv = require("venv-selector")
-    local python = require("david.plugins.code.lang.python")
-    local go = require("david.plugins.code.lang.go")
     neotest.setup({
       adapters = {
-        require("neotest-python")(python.test(venv.venv())),
-        require("neotest-go")(go.test)
+        require("neotest-python")({
+          command = "pytest",
+          args = { "--log-level", "DEBUG" },
+          runner = "pytest",
+          python = venv.venv()
+        }),
+        require("neotest-go")({
+          experimental = {
+            test_table = true,
+          },
+          args = { "-count=1", "-timeout=60s" }
+        })
       },
     })
     -- keymaps

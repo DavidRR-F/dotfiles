@@ -4,7 +4,7 @@ local plugins = {
     config = function(_, opts)
       opts = {
         n = {
-          ["<leader>db"] = { require("dap").toggle_breakpoint, "Toggle breakpoint" },
+          ["<leader>tb"] = { require("dap").toggle_breakpoint, "Toggle breakpoint" },
           ["<leader>dc"] = { require("dap").continue, "Continue" },
           ["<leader>dl"] = { require("dap").run_last, "Run last" },
         }

@@ -30,9 +30,3 @@ vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent =
 
 -- messages
 vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
-
--- custom commands
-local spell_checker = require("david.custom.spell_checker")
-
-vim.api.nvim_set_keymap('n', 'z=', ':lua require("david.custom.spell_checker").spell_suggest_popup()<CR>',
-  { noremap = true, silent = true })

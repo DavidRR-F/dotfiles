@@ -1,10 +1,19 @@
+local custom_git_icons = {
+  ['??'] = '',   -- Untracked
+  ['A']  = '',   -- Added
+  ['M']  = '',   -- Modified
+  ['D']  = '',   -- Deleted
+  ['R']  = '󰑙',   -- Renamed
+  ['C']  = '',   -- Copied
+  ['!']  = '',   -- Ignored
+}
+
 return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'kyazdani42/nvim-web-devicons',
-    'Myzel394/jsonfly.nvim',
     'ThePrimeagen/git-worktree.nvim',
   },
   keys = {
@@ -14,22 +23,25 @@ return {
     { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
-    { "<leader>fj", "<cmd>:Telescope jsonfly<cr>" },
     { "<leader>fs", "<cmd>lua require('telescope.builtin').git_status()<CR>",                     desc = "Git Status" },
   },
   config = function()
     require('telescope').setup({
       defaults = {
-        file_ignore_patterns = { '.pytest_cache', '__pycache__', 'node_modules', '.venv' },
+        file_ignore_patterns = { '.pytest_cache', '__pycache__', 'node_modules', '.venv', '.ruff_cache' },
         vimgrep_arguments = {
           'rg', '--color=never', '--no-heading',
           '--with-filename', '--line-number', '--column', '--smart-case', '--no-ignore'
         },
+        path_display = function(opts, path)
+          local tail = require("telescope.utils").path_tail(path)
+          return string.format("%s (%s)", tail, path)
+        end
       },
       pickers = {
         find_files = {
           find_command = {
-            'rg', '--files', '--hidden', '--no-ignore', '--glob', '!**/.git/*', '--glob', '!**/notebooks/*.py'
+            'rg', '--files', '--hidden', '--no-ignore', '--sort=path', '--glob', '!**/.git/*'
           }
         },
         live_grep = {
@@ -37,21 +49,8 @@ return {
             return { '--no-ignore' }
           end
         }
-      },
-      extensions = {
-        jsonfly = {
-          mirror = true,
-          layout_strategy = "vertical",
-          layout_config = {
-            mirror = true,
-            preview_height = 0.65,
-            prompt_position = "top",
-          },
-          key_exact_length = true
-        },
-      },
+      }
     })
-    require('telescope').load_extension('jsonfly')
     require('telescope').load_extension('git_worktree')
   end,
 }

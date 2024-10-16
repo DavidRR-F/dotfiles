@@ -11,8 +11,9 @@ return {
     require("venv-selector").setup({
       settings = {
         options = {
-          debug = true,
-          show_telescope_search_type = false
+          notify_user_on_venv_activation = true,
+          require_lsp_activation = false,
+          show_telescope_search_type = true
         },
       }
     })
