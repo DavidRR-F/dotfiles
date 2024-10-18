@@ -6,7 +6,6 @@ return {
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
   },
   config = function()
     require("noice").setup({
@@ -16,26 +15,6 @@ return {
         long_message_to_split = false,
         inc_rename = true,
         lsp_doc_border = false,
-      },
-      views = {
-        popupmenu = {
-          relative = "editor",
-          position = {
-            row = 8,
-            col = "50%",
-          },
-          size = {
-            width = 60,
-            height = 10,
-          },
-          border = {
-            style = "rounded",
-            padding = { 0, 1 },
-          },
-          win_options = {
-            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-          },
-        },
       },
       commands = {
         history = {
