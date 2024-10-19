@@ -9,6 +9,7 @@ return {
       python = { "ruff_format" },
       hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
+      json = { "jq" },
       yaml = { "yamlfix" },
       javascript = { { "prettierd", "prettier" } },
     },

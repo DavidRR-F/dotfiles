@@ -35,6 +35,16 @@ return {
             action = function() require('telescope.builtin').find_files() end
           },
           {
+            icon = '󰛢 ',
+            icon_hl = 'Title',
+            desc = 'Find Hooks',
+            desc_hl = 'String',
+            key = 'w',
+            keymap = 'leader fh',
+            key_format = ' %s', 
+            action = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
+          },
+          {
             icon = ' ',
             icon_hl = 'Title',
             desc = 'Find Worktree',
