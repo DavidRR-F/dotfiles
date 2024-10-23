@@ -28,5 +28,8 @@ vim.api.nvim_set_keymap('n', '<Leader>bn', ':bnext<CR>', { noremap = true, silen
 vim.api.nvim_set_keymap('n', '<Leader>bp', ':bprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent = true })
 
+-- Netrw
+vim.api.nvim_set_keymap('n', '<Leader>fe', ':Ex<CR>', { noremap = true, silent = true })
+
 -- messages
 vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })

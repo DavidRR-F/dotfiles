@@ -4,6 +4,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   config = function()
+    local colors = require("catppuccin.palettes.mocha")
     require("catppuccin").setup({
       flavour = "frappe",
       background = {
@@ -36,7 +37,10 @@ return {
         operators = {},
       },
       color_overrides = {},
-      custom_highlights = {},
+      custom_highlights = { 
+        CursorLineNr = { fg = colors.yellow },
+        CursorLine = { bg = "NONE" }
+      },
       default_integrations = true,
       integrations = {
         cmp = true,

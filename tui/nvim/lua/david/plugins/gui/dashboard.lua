@@ -62,7 +62,7 @@ return {
             key = 'e',
             keymap = 'leader fe',
             key_format = ' %s', 
-            action = function() vim.cmd('Yazi cwd') end
+            action = function() vim.cmd('Ex') end
           },
           {
             icon = '󰈆 ',

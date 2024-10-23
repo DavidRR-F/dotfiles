@@ -85,19 +85,7 @@ return {
             }
           }
         },
-        lualine_b = {
-          {
-            'diagnostic',
-            color = { bg = 'none', fg = colors.red },
-            sources = { 'nvim_diagnostic' },
-            symbols = { error = ' ', warn = ' ', info = ' ' },
-            diagnostics_color = {
-              error = { fg = colors.red },
-              warn = { fg = colors.yellow },
-              info = { fg = colors.cyan },
-            },
-          }
-        },
+        lualine_b = {},
         lualine_c = { 
             { 
               'harpoon2',
