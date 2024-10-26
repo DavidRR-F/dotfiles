@@ -5,6 +5,8 @@ return {
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "python",
+        "java",
+        "c",
         "go",
         "dockerfile",
         "html",

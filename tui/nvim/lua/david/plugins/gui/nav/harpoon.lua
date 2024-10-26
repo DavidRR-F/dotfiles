@@ -14,6 +14,7 @@ return {
     })
 
     keymap.set("n", "<leader>h", function() harpoon:list():add() end)
+    keymap.set("n", "<leader>hd", function() harpoon:list():remove() end)
     keymap.set("n", "<S-Tab>", function() harpoon:list():prev() end)
     keymap.set("n", "<Tab>", function() harpoon:list():next() end)
     vim.keymap.set("n", "<leader>fh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)

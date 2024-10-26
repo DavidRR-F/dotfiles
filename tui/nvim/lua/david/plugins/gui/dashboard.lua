@@ -75,7 +75,7 @@ return {
             action = function() vim.cmd('qa') end
           },
         },
-        footer = {},
+        footer = {"Do Math"},
       }
     }
   end,
