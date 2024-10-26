@@ -6,7 +6,6 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
     "nvim-neotest/neotest-python",
-    "nvim-neotest/neotest-go",
   },
   config = function()
     local neotest = require("neotest")
@@ -19,12 +18,6 @@ return {
           runner = "pytest",
           python = venv.venv()
         }),
-        require("neotest-go")({
-          experimental = {
-            test_table = true,
-          },
-          args = { "-count=1", "-timeout=60s" }
-        })
       },
     })
     -- keymaps

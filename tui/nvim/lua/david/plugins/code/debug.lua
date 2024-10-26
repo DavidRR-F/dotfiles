@@ -1,36 +1,36 @@
-local plugins = {
-  {
-    "mfussenegger/nvim-dap",
-    config = function(_, opts)
-      opts = {
-        n = {
-          ["<leader>tb"] = { require("dap").toggle_breakpoint, "Toggle breakpoint" },
-          ["<leader>dc"] = { require("dap").continue, "Continue" },
-          ["<leader>dl"] = { require("dap").run_last, "Run last" },
-        }
-      }
-    end,
-  },
-  {
+return {
+  "mfussenegger/nvim-dap",
+  dependencies = {
+    "stevearc/dressing.nvim",
     "rcarriga/nvim-dap-ui",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-    },
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end,
+    "mfussenegger/nvim-dap-python"
   },
-}
+  config = function()
+    -- Keys
 
-return plugins
+    vim.api.nvim_set_keymap('n', '<leader>bb', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', '<leader>bc', '<cmd>DapContinue<CR>', { noremap = true, silent = true })
+
+    -- Language Adapters
+
+    local os = require('david.custom.os').get_os_settings()
+    require('dap-python').setup(os.python_host)
+
+    -- UI Setup
+    vim.fn.sign_define('DapBreakpoint', {text='', texthl='DiagnosticSignError', linehl='', numhl=''})
+    local dap, dapui = require("dap"), require("dapui")
+    dapui.setup()
+    dap.listeners.before.attach.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+      dapui.close()
+    end
+  end
+}

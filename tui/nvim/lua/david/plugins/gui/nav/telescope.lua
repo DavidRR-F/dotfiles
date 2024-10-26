@@ -1,13 +1,3 @@
-local custom_git_icons = {
-  ['??'] = '',   -- Untracked
-  ['A']  = '',   -- Added
-  ['M']  = '',   -- Modified
-  ['D']  = '',   -- Deleted
-  ['R']  = '󰑙',   -- Renamed
-  ['C']  = '',   -- Copied
-  ['!']  = '',   -- Ignored
-}
-
 return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.5',
@@ -23,7 +13,7 @@ return {
     { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
-    { "<leader>fs", "<cmd>lua require('telescope.builtin').git_status()<CR>",                     desc = "Git Status" },
+    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                      desc = "Git Status List" },
   },
   config = function()
     require('telescope').setup({
@@ -36,7 +26,17 @@ return {
         path_display = function(opts, path)
           local tail = require("telescope.utils").path_tail(path)
           return string.format("%s (%s)", tail, path)
-        end
+        end,
+        mappings = {
+          i = { -- Insert mode mappings
+            ["<C-d>"] = require('telescope.actions').preview_scrolling_down,
+            ["<C-u>"] = require('telescope.actions').preview_scrolling_up,
+          },
+          n = { -- Normal mode mappings
+            ["<C-d>"] = require('telescope.actions').preview_scrolling_down,
+            ["<C-u>"] = require('telescope.actions').preview_scrolling_up,
+          },
+        },
       },
       pickers = {
         find_files = {
@@ -48,9 +48,29 @@ return {
           additional_args = function(opts)
             return { '--no-ignore' }
           end
+        },
+        git_status = {
+          layout_strategy = "vertical",
+          layout_config = {
+            vertical = {
+              height = 0.9,
+              preview_cutoff = 20,
+              prompt_position = "bottom",
+              width = 0.8
+            }
+          },
+          git_icons = {
+            added  = '',
+            changed  = '',
+            deleted  = '',
+            renamed  = '󰑙',
+            copied  = '',
+            untracked  = '',
+            unmerged = ''
+          },
         }
       }
     })
     require('telescope').load_extension('git_worktree')
-  end,
+  end
 }
