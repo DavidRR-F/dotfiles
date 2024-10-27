@@ -3,8 +3,7 @@ return {
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'kyazdani42/nvim-web-devicons',
-    'ThePrimeagen/git-worktree.nvim',
+    'kyazdani42/nvim-web-devicons'
   },
   keys = {
     { "<leader>fb", "<cmd>:Telescope buffers<cr>",                                                 desc = "Buffers" },
@@ -12,8 +11,10 @@ return {
     { "<leader>ff", "<cmd>:Telescope find_files<cr>",                                              desc = "Find Files" },
     { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
-    { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch Branch" },
     { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                      desc = "Git Status List" },
+    { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                      desc = "Telescope Ctags" },
+    { "<leader>fm", "<cmd>:lua require('telescope.builtin').man_pages()<cr>",                      desc = "Telescope Man Pages" },
+    { "<leader>fh", "<cmd>:lua require('telescope.builtin').help_tags()<cr>",                      desc = "Telescope Help Tags" },
   },
   config = function()
     require('telescope').setup({
@@ -71,6 +72,5 @@ return {
         }
       }
     })
-    require('telescope').load_extension('git_worktree')
   end
 }

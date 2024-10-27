@@ -67,3 +67,11 @@ cd ~/.dotfiles
 - //.*: This pattern matches // followed by any characters until the end of the line.
 - ::g: This replaces the matched pattern with nothing (i.e., removes it) and g applies it globally in each line.
 
+3. CTag Regex
+
+- :tag main jumps directly to the tag “main”
+- :tag /^get jumps to the tag that starts with “get”
+- :tag /Final$ jumps to the tag that ends with “Final”
+- :tag /norm lists all the tags that contain “norm”, including “id_norm”
+- :tag /Final$\C lists all the tags that end with “Final” (Doesn’t match “Cipher_final” or “SHA_FINAL”)
+

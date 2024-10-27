@@ -6,7 +6,3 @@
 [twm.files]
 "twm/hypr" = "~/.config/hypr"
 "twm/hypr/waybar" = "~/.config/waybar"
-
-[tui.files]
-"tui/euporie" = "~/.config/euporie"
-"tui/yazi" = "~/.config/yazi"

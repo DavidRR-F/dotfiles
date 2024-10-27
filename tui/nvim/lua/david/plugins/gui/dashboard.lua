@@ -24,7 +24,7 @@ return {
         },
         center = {
           {
-            icon = ' ',
+            icon = '󰱼 ',
             icon_hl = 'Title',
             desc = 'Find File',
             desc_hl = 'String',
@@ -35,24 +35,14 @@ return {
             action = function() require('telescope.builtin').find_files() end
           },
           {
-            icon = '󰛢 ',
+            icon = '󱤇 ',
             icon_hl = 'Title',
-            desc = 'Find Hooks',
+            desc = 'Find Tags',
             desc_hl = 'String',
-            key = 'w',
-            keymap = 'leader fh',
+            key = 't',
+            keymap = 'leader ft',
             key_format = ' %s', 
-            action = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
-          },
-          {
-            icon = ' ',
-            icon_hl = 'Title',
-            desc = 'Find Worktree',
-            desc_hl = 'String',
-            key = 'w',
-            keymap = 'leader fw',
-            key_format = ' %s', 
-            action = function() require('telescope').extensions.git_worktree.git_worktrees() end
+            action = function() require('telescope.builtin').tags() end
           },
           {
             icon = '󰷊 ',
@@ -75,7 +65,7 @@ return {
             action = function() vim.cmd('qa') end
           },
         },
-        footer = {"Do Math"},
+        footer = {"", "", "Do Math"},
       }
     }
   end,

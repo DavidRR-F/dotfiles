@@ -15,9 +15,7 @@ local plugins = {
   { import = "david.plugins.code" },
   { import = "david.plugins.code.python" },
   { import = "david.plugins.color" },
-  { import = "david.plugins.git" },
-  { import = "david.plugins.gui" },
-  { import = "david.plugins.gui.nav" }
+  { import = "david.plugins.gui" }
 }
 
 require("lazy").setup(plugins, {

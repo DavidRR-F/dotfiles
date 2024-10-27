@@ -20,15 +20,6 @@ return {
   dependencies = { 
     'nvim-tree/nvim-web-devicons', 
     { 'catppuccin/nvim', as = 'catppuccin' },
-    {
-      "letieu/harpoon-lualine",
-      dependencies = {
-        {
-          "ThePrimeagen/harpoon",
-          branch = "harpoon2",
-        }
-      },
-    }
   },
   config = function()
     local colors = require('catppuccin.palettes').get_palette 'mocha'
@@ -86,17 +77,7 @@ return {
           }
         },
         lualine_b = {},
-        lualine_c = { 
-            { 
-              'harpoon2',
-              icon = '',
-              color = { bg = 'none', fg = colors.blue },
-              padding = { left = 0, right = 0 },
-              color_active = { fg = colors.mauve },
-              separator = { left = '%=', right = '%=' },
-              no_harpoon = ""
-            }
-          },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {

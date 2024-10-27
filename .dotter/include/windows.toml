@@ -4,7 +4,3 @@
 
 [twm.files]
 "twm/glazewm/config.yaml" = "~/.glzr/glazewm/config.yaml"
-
-[tui.files]
-"tui/euporie" = "~/AppData/Local/euporie/euporie"
-"tui/yazi" = "~/AppData/Roaming/yazi/config"
