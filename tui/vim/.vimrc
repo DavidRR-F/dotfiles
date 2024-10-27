@@ -44,13 +44,11 @@ nnoremap <silent> <Leader>bn :bnext<CR>
 nnoremap <silent> <Leader>bp :bprev<CR>
 nnoremap <silent> <Leader>bd :bd<CR>
 
-" Netrw file explorer
+" File/Git navigation
 nnoremap <silent> <Leader>fe :Explore<CR>
-" Fzf File Finder
 nnoremap <silent> <Leader>ff :Files<CR>
-" Fzf Git Commits
-nnoremap <silent> <Leader>fs :Commits<CR>
-" Git Diff
+nnoremap <silent> <Leader>fs :GF?<CR>
+nnoremap <silent> <Leader>ft :Tags<CR>
 nnoremap <silent> <Leader>gd :Gvdiffsplit<CR>
 
 
@@ -137,7 +135,7 @@ autocmd BufEnter *.py if filereadable(".venv/bin/activate") | execute 'silent! !
 
 set termguicolors
 colorscheme catppuccin_mocha
-set laststatus=0
+set laststatus=2
 set background=dark
 set signcolumn=yes
 set nocompatible
@@ -245,7 +243,7 @@ function! RunCtags()
 
     call system(ctags_command)
 
-    call add(v:oldtags, tags_file)
+    execute 'set tags=' . tags_file 
 endfunction
 
 augroup AutoCtags
