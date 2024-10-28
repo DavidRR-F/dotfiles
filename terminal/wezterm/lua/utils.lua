@@ -1,31 +1,42 @@
 local wezterm = require 'wezterm'
 
-local M = {}
+local direction_keys = {
+  Left = "h",
+  Down = "j",
+  Up = "k",
+  Right = "l",
+  h = "Left",
+  j = "Down",
+  k = "Up",
+  l = "Right",
+}
 
-M.isViProcess = function(pane)
-    return pane:get_title():find("n?vim") ~= nil
+local function is_vim(pane)
+  return pane:get_user_vars().IS_NVIM == 'true'
 end
 
-M.conditionalActivatePane = function(window, pane, pane_direction, vim_direction)
-    local vim_pane_changed = false
+local M = {}
 
-    if isViProcess(pane) then
-        local before = pane:get_cursor_position()
-        window:perform_action(
-            wezterm.action.SendKey({ key = vim_direction, mods = 'CTRL' }),
-            pane
-        )
-        wezterm.sleep_ms(50)
-        local after = pane:get_cursor_position()
+M.is_windows = package.config:sub(1, 1) == "\\"
 
-        if before.x ~= after.x and before.y ~= after.y then
-            vim_pane_changed = true
+M.split_nav = function(resize_or_move, key)
+  return {
+    key = key,
+    mods = resize_or_move == 'resize' and 'CTRL|SHIFT' or 'CTRL',
+    action = wezterm.action_callback(function(win, pane)
+      if is_vim(pane) then
+        win:perform_action({
+          SendKey = { key = key, mods = resize_or_move == 'resize' and 'CTRL|SHIFT' or 'CTRL' },
+        }, pane)
+      else
+        if resize_or_move == 'resize' then
+          win:perform_action({ AdjustPaneSize = { direction_keys[key], 3 } }, pane)
+        else
+          win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
         end
-    end
-
-    if not vim_pane_changed then
-        window:perform_action(wezterm.action.ActivatePaneDirection(pane_direction), pane)
-    end
+      end
+    end),
+  }
 end
 
 return M

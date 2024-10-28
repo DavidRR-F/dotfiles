@@ -31,14 +31,14 @@ Create `.dotter/local.toml`
 
 ```toml
 includes = [".dotter/include/linux.toml"]
-packages = ["shell", "terminal", "editor", "twm", "tui"]
+packages = ["shell", "terminal", "editor", "twm"]
 ```
 
 ##### If Windows
 
 ```toml
 includes = [".dotter/include/windows.toml"]
-packages = ["shell", "terminal", "editor", "twm", "tui"]
+packages = ["shell", "terminal", "editor", "twm"]
 ```
 
 ##### Run dotter

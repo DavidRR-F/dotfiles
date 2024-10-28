@@ -21,10 +21,14 @@ M.general = {
   { key = "q",     mods = "CTRL|SHIFT", action = act.QuitApplication },
   { key = "-",     mods = "CTRL",       action = act.DecreaseFontSize },
   { key = "=",     mods = "CTRL",       action = act.IncreaseFontSize },
-  { key = 'h', mods = 'CTRL', action = wezterm.action.EmitEvent('ActivatePaneDirection-left') },
-  { key = 'j', mods = 'CTRL', action = wezterm.action.EmitEvent('ActivatePaneDirection-down') },
-  { key = 'k', mods = 'CTRL', action = wezterm.action.EmitEvent('ActivatePaneDirection-up') },
-  { key = 'l', mods = 'CTRL', action = wezterm.action.EmitEvent('ActivatePaneDirection-right') },
+  utils.split_nav("move", "h"),
+  utils.split_nav("resize", "h"),
+  utils.split_nav("move", "j"),
+  utils.split_nav("resize", "j"),
+  utils.split_nav("move", "k"),
+  utils.split_nav("resize", "k"),
+  utils.split_nav("move", "l"),
+  utils.split_nav("resize", "l"),
 }
 
 M.tmux = {

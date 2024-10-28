@@ -10,10 +10,10 @@ return {
     { "<leader>fr", "<cmd>:Telescope registers<cr>",                                               desc = "Registers" },
     { "<leader>ff", "<cmd>:Telescope find_files<cr>",                                              desc = "Find Files" },
     { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
+    { "<leader>fm", "<cmd>:Telescope marks<cr>",                                               desc = "Telescope Marks" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
     { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                      desc = "Git Status List" },
     { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                      desc = "Telescope Ctags" },
-    { "<leader>fm", "<cmd>:lua require('telescope.builtin').man_pages()<cr>",                      desc = "Telescope Man Pages" },
     { "<leader>fh", "<cmd>:lua require('telescope.builtin').help_tags()<cr>",                      desc = "Telescope Help Tags" },
   },
   config = function()

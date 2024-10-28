@@ -34,19 +34,4 @@ font.apply_to_config(c)
 quick_domains.apply_to_config(c, plugin_config.quick_domains)
 smart_workspace.apply_to_config(c)
 
--- events
-
-wezterm.on('ActivatePaneDirection-right', function(window, pane)
-    utils.conditionalActivatePane(window, pane, 'Right', 'l')
-end)
-wezterm.on('ActivatePaneDirection-left', function(window, pane)
-    utils.conditionalActivatePane(window, pane, 'Left', 'h')
-end)
-wezterm.on('ActivatePaneDirection-up', function(window, pane)
-    utils.conditionalActivatePane(window, pane, 'Up', 'k')
-end)
-wezterm.on('ActivatePaneDirection-down', function(window, pane)
-    utils.conditionalActivatePane(window, pane, 'Down', 'j')
-end)
-
 return c

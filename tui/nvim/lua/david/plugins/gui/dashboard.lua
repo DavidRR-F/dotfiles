@@ -45,6 +45,16 @@ return {
             action = function() require('telescope.builtin').tags() end
           },
           {
+            icon = '󰍒 ',
+            icon_hl = 'Title',
+            desc = 'Find Marks',
+            desc_hl = 'String',
+            key = 't',
+            keymap = 'leader fm',
+            key_format = ' %s', 
+            action = function() vim.cmd("Telescope marks") end
+          },
+          {
             icon = '󰷊 ',
             icon_hl = 'Title',
             desc = 'File Explorer',
