@@ -7,12 +7,11 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'
+Plug 'girishji/scope.vim'
+Plug 'mhinz/vim-startify', {'branch': 'center'}
 call plug#end()
 
 
@@ -36,7 +35,7 @@ vnoremap <silent> <S-Tab> <gv
 nnoremap <silent> <Leader>sv :vsplit<CR>
 nnoremap <silent> <Leader>sh :split<CR>
 nnoremap <silent> <Leader>wk <C-w>K
-nnoremap <silent> <Leader>wj <C-w>J
+noremap <silent> <Leader>wj <C-w>J
 nnoremap <silent> <Leader>wh <C-w>H
 nnoremap <silent> <Leader>wl <C-w>L
 
@@ -45,11 +44,15 @@ nnoremap <silent> <Leader>bn :bnext<CR>
 nnoremap <silent> <Leader>bp :bprev<CR>
 nnoremap <silent> <Leader>bd :bd<CR>
 
-" File/Git navigation
+" File navigation
 nnoremap <silent> <Leader>fe :Explore<CR>
-nnoremap <silent> <Leader>ff :Files<CR>
-nnoremap <silent> <Leader>fs :GF?<CR>
-nnoremap <silent> <Leader>ft :Tags<CR>
+nnoremap <silent> <Leader>ff :Scope File<CR>
+nnoremap <silent> <Leader>fg :Scope Grep<CR>
+nnoremap <silent> <Leader>fm :Scope Mark<CR>
+nnoremap <silent> <Leader>ft :Scope Tag<CR>
+nnoremap <silent> <Leader>fr :Scope Register<CR>
+
+" Git
 nnoremap <silent> <Leader>gd :Gvdiffsplit<CR>
 
 
@@ -141,6 +144,18 @@ set background=dark
 set signcolumn=yes
 set nocompatible
 
+" scope 
+
+highlight ScopeBorder guifg=#89B4FA ctermfg=183
+highlight ScopeMenuMatch guifg=#F9E2AF ctermfg=183
+
+call scope#popup#OptionsSet({
+    \ 'borderhighlight': ['ScopeBorder'],
+    \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+    \ 'border': [2,2,2,2],
+    \ 'promptchar': '',
+\ })
+
 " gitsigns
 
 let g:gitgutter_sign_added = '┃'
@@ -180,10 +195,6 @@ let s:p.tabline.right = copy(s:p.inactive.right)
 let s:p.normal.error = [ [ s:mantle, s:red ] ]
 let s:p.normal.warning = [ [ s:mantle, s:yellow ] ]
 
-highlight GitStatusAdded guifg=#CBA6F7 ctermfg=183
-highlight GitStatusModified guifg=#F9E2AF ctermfg=223
-highlight GitStatusRemoved guifg=#F38BA8 ctermfg=211
-
 function! GitStatus()
   let [a, m, r] = GitGutterGetHunkSummary()
   return printf('+%d ~%d -%d', a, m, r)
@@ -217,6 +228,38 @@ let g:lightline = {
       \ }
 highlight CursorLine guibg=NONE
 highlight CursorLineNr guifg=#F9E2AF
+
+" startify
+
+let g:startify_custom_header = startify#center([
+            \ '                                                               ',
+            \ '                                                               ',
+            \ '                                                               ',
+            \ '                                                               ',
+            \ '  ____                _ _____ _          ____                  ',
+            \ ' |  _ \ ___  __ _  __| |_   _| |__   ___|  _ \  ___   ___ ___  ',
+            \ ' | |_) / _ \/ _` |/ _` | | | | ''_ \ / _ \ | | |/ _ \ / __/ __| ',
+            \ ' |  _ <  __/ (_| | (_| | | | | | | |  __/ |_| | (_) | (__\__ \ ',
+            \ ' |_| \_\___|\__,_|\__,_| |_| |_| |_|\___|____/ \___/ \___|___/ ',
+            \ '                                                               ',
+            \ '                                                               ',
+            \ '                                                               ',
+\ ])
+
+let g:startify_lists = [
+    \ { 'type': 'commands' },
+\ ]
+let g:startify_commands = [
+            \ {'f': ['󰱼 Find File', ':Scope File']},
+            \ {'t': ['󱤇 Find Tag', ':Scope Tag']},
+            \ {'e': ['󰷊 Explorer', ':Explore']},
+    \ ]
+highlight StartifyFooter guifg=#F9E2AF
+highlight StartifyPath guifg=#89b4fa
+highlight StartifyNumber guifg=#89b4fa
+highlight StartifySection guifg=#89b4fa
+let g:startify_center = 17
+let g:startify_custom_footer = startify#center(['','','','Do Math'])
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""" Custom """""""""""""""""""""""""""""""""
