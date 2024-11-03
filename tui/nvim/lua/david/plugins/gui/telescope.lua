@@ -3,18 +3,20 @@ return {
   tag = '0.1.5',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'kyazdani42/nvim-web-devicons'
+    'kyazdani42/nvim-web-devicons',
+    'ThePrimeagen/git-worktree.nvim'
   },
   keys = {
     { "<leader>fb", "<cmd>:Telescope buffers<cr>",                                                 desc = "Buffers" },
     { "<leader>fr", "<cmd>:Telescope registers<cr>",                                               desc = "Registers" },
     { "<leader>ff", "<cmd>:Telescope find_files<cr>",                                              desc = "Find Files" },
     { "<leader>fg", "<cmd>:Telescope live_grep<cr>",                                               desc = "Live Grep" },
-    { "<leader>fm", "<cmd>:Telescope marks<cr>",                                               desc = "Telescope Marks" },
-    { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                      desc = "Builtin Commands List" },
-    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                      desc = "Git Status List" },
-    { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                      desc = "Telescope Ctags" },
+    { "<leader>fm", "<cmd>:Telescope marks<cr>",                                                   desc = "Telescope Marks" },
+    { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                       desc = "Builtin Commands List" },
+    { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                     desc = "Git Status List" },
+    { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                           desc = "Telescope Ctags" },
     { "<leader>fh", "<cmd>:lua require('telescope.builtin').help_tags()<cr>",                      desc = "Telescope Help Tags" },
+    { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",  desc = "Telescope Git Worktrees" },
   },
   config = function()
     require('telescope').setup({
@@ -72,5 +74,6 @@ return {
         }
       }
     })
+    require("telescope").load_extension("git_worktree")
   end
 }

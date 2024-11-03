@@ -26,13 +26,15 @@ vim.api.nvim_set_keymap('n', '<Leader>wl', '<C-w>L', { noremap = true, silent = 
 -- buffers
 vim.api.nvim_set_keymap('n', '<Leader>bn', ':bnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>bp', ':bprevious<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>bl', ':b#<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent = true })
 
 -- Netrw
-vim.api.nvim_set_keymap('n', '<Leader>fe', ':Ex<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>fe', ':Explore<CR>', { noremap = true, silent = true })
 
--- messages
-vim.api.nvim_set_keymap('n', '<Leader>M', ':messages<CR>', { noremap = true, silent = true })
+-- zoom
+vim.api.nvim_set_keymap("n", "<Leader>i", ":wincmd _ | :wincmd |<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>o", ":wincmd =<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_create_user_command('Pydoc', function(opts)
   local pydoc_cmd = "pydoc " .. opts.args

@@ -45,14 +45,14 @@ return {
             action = function() require('telescope.builtin').tags() end
           },
           {
-            icon = '󰍒 ',
+            icon = '󱈆 ',
             icon_hl = 'Title',
-            desc = 'Find Marks',
+            desc = 'Find Worktree',
             desc_hl = 'String',
-            key = 't',
-            keymap = 'leader fm',
+            key = 'w',
+            keymap = 'leader fw',
             key_format = ' %s', 
-            action = function() vim.cmd("Telescope marks") end
+            action = function() require('telescope').extensions.git_worktree.git_worktrees() end
           },
           {
             icon = '󰷊 ',

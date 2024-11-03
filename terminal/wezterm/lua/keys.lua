@@ -18,7 +18,7 @@ M.general = {
   { key = "c",     mods = "CTRL|SHIFT", action = act.CopyTo 'Clipboard' },
   { key = "p",     mods = "CTRL|SHIFT", action = act.ActivateCommandPalette },
   { key = "d",     mods = "CTRL|SHIFT", action = act.ShowDebugOverlay },
-  { key = "q",     mods = "CTRL|SHIFT", action = act.QuitApplication },
+  { key = "w",     mods = "CTRL|SHIFT", action = act.QuitApplication },
   { key = "-",     mods = "CTRL",       action = act.DecreaseFontSize },
   { key = "=",     mods = "CTRL",       action = act.IncreaseFontSize },
   utils.split_nav("move", "h"),

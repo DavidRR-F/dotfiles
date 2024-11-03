@@ -4,7 +4,7 @@ require("david.lazy")
 local function run_ctags()
     local project_dir = vim.fn.expand('%:p:h')
     local project_name = vim.fn.fnamemodify(project_dir, ':p:h:t')
-    local tags_dir = vim.fn.expand('~/.ctags/' .. project_name)
+    local tags_dir = vim.fn.expand(vim.fn.stdpath('cache'), '/.ctags/' .. project_name)
     if vim.fn.isdirectory(tags_dir) == 1 then
       local tags_file = tags_dir .. '/tags'
       local exclude_dirs = {"node_modules", ".git", ".venv"}
@@ -25,7 +25,7 @@ end
 vim.api.nvim_create_user_command('CreateCtags', function(opts) 
     local project_dir = vim.fn.expand('%:p:h')
     local project_name = vim.fn.fnamemodify(project_dir, ':p:h:t')
-    local tags_dir = vim.fn.expand('~/.ctags/' .. project_name)
+    local tags_dir = vim.fn.expand(vim.fn.stdpath('cache'), '/.ctags/' .. project_name)
     vim.fn.mkdir(tags_dir, "p") 
     run_ctags()
 end, { nargs = 0 })
