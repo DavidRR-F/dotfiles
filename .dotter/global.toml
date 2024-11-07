@@ -2,7 +2,7 @@
 default_target_type = "symbolic"
 
 [editor.files]
-"tui/nvim" = "~/.config/nvim"
+"nvim" = "~/.config/nvim"
 
 [terminal.files]
-"terminal/wezterm" = "~/.config/wezterm"
+"wezterm" = "~/.config/wezterm"

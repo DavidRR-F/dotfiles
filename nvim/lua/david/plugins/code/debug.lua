@@ -1,10 +1,11 @@
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
-    "stevearc/dressing.nvim",
     "rcarriga/nvim-dap-ui",
-    "mfussenegger/nvim-dap-python"
+    "mfussenegger/nvim-dap-python",
+    "leoluz/nvim-dap-go"
   },
+  lazy = true,
   config = function()
     -- Keys
 
@@ -13,8 +14,9 @@ return {
 
     -- Language Adapters
 
-    local os = require('david.custom.os').get_os_settings()
-    require('dap-python').setup(os.python_host)
+    local os = require('david.custom.os')
+    require('dap-python').setup(os.settings.python_host)
+    require('dap-go').setup()
 
     -- UI Setup
     vim.fn.sign_define('DapBreakpoint', {text='', texthl='DiagnosticSignError', linehl='', numhl=''})

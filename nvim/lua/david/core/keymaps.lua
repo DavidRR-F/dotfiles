@@ -1,7 +1,6 @@
 -- set leader key to space
 local custom = require("david.custom.os")
 vim.g.mapleader = " "
-vim.g.python3_host_prog = vim.fn.expand(custom.get_os_settings().python_host)
 
 vim.o.clipboard = "unnamedplus"
 

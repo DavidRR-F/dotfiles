@@ -5,41 +5,7 @@ local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspac
 
 local M = {}
 
--- Catppuccin Mocha
--- ansi = [
---   '#45475a',
---   '#f38ba8',
---   '#a6e3a1',
---   '#f9e2af',
---   '#89b4fa',
---   '#f5c2e7',
---   '#94e2d5',
---   '#bac2de',
--- ]
--- background = '#1e1e2e'
--- brights = [
---   '#585b70',
---   '#f38ba8',
---   '#a6e3a1',
---   '#f9e2af',
---   '#89b4fa',
---   '#f5c2e7',
---   '#94e2d5',
---   '#a6adc8',
--- ]
--- compose_cursor = '#f2cdcd'
--- cursor_bg = '#f5e0dc'
--- cursor_border = '#f5e0dc'
--- cursor_fg = '#11111b'
--- foreground = '#cdd6f4'
--- scrollbar_thumb = '#585b70'
--- selection_bg = '#585b70'
--- selection_fg = '#cdd6f4'
--- split = '#6c7086'
--- visual_bell = '#313244'
-
 M.apply_to_config = function(c)
-  -- base config
   c.color_scheme = 'Catppuccin Mocha'
   local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
   c.colors = {
@@ -61,7 +27,6 @@ M.apply_to_config = function(c)
       }
     }
   }
-  --c.window_background_opacity = 0.9
   c.window_padding = {
     left = 5,
     right = 5,
@@ -79,11 +44,9 @@ M.apply_to_config = function(c)
   c.tab_bar_at_bottom = false
   c.tab_max_width = 50
   c.use_fancy_tab_bar = false
-  -- workspace choices
   workspace.get_choices = function(opts)
     return workspace.choices.get_workspace_elements({})
   end
-  -- tabline config
   tabline.setup(plugin_config.tabline)
 end
 

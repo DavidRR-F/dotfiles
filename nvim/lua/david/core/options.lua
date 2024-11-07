@@ -1,6 +1,8 @@
+local os = require("david.custom.os")
+vim.g.python3_host_prog = os.settings.python_host
+os.shell()
+
 local opt = vim.opt
-local custom = require("david.custom.os")
-opt.shell = vim.fn.expand(custom.get_os_settings().shell_exe)
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -44,9 +46,13 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 opt.spell = true
 opt.spelllang = "en_us"
+
+-- terminal
+
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
-  callback = function()
-    vim.opt_local.spell = false
-  end,
+    pattern = "*",
+    callback = function()
+        vim.wo.number = false
+        vim.wo.relativenumber = false
+    end,
 })

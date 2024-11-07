@@ -4,7 +4,8 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'kyazdani42/nvim-web-devicons',
-    'ThePrimeagen/git-worktree.nvim'
+    'ThePrimeagen/git-worktree.nvim',
+    'nvim-telescope/telescope-ui-select.nvim'
   },
   keys = {
     { "<leader>fb", "<cmd>:Telescope buffers<cr>",                                                 desc = "Buffers" },
@@ -72,8 +73,16 @@ return {
             unmerged = ''
           },
         }
+      },
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown {
+            -- even more opts
+          }
+        }
       }
     })
     require("telescope").load_extension("git_worktree")
+    require("telescope").load_extension("ui-select")
   end
 }
