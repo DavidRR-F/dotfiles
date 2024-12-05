@@ -16,7 +16,6 @@ return {
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                       desc = "Builtin Commands List" },
     { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                     desc = "Git Status List" },
     { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                           desc = "Telescope Ctags" },
-    { "<leader>fh", "<cmd>:lua require('telescope.builtin').help_tags()<cr>",                      desc = "Telescope Help Tags" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",  desc = "Telescope Git Worktrees" },
   },
   config = function()

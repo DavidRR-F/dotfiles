@@ -11,7 +11,7 @@ M.general = {
     mods = "NONE",
     action = act.ToggleFullScreen,
   },
-  { key = "Space", mods = "CTRL",       action = act.ActivateKeyTable { name = "tmux", one_shot = true }, },
+  { key = ";", mods = "CTRL",       action = act.ActivateKeyTable { name = "tmux", one_shot = true }, },
   { key = "Enter", mods = "CTRL",       action = wezterm.action { SendString = "\x1b[13;5u" } },
   { key = "Enter", mods = "SHIFT",      action = wezterm.action { SendString = "\x1b[13;2u" } },
   { key = "v",     mods = "CTRL|SHIFT", action = act.PasteFrom 'Clipboard' },

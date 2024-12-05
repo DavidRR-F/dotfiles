@@ -37,12 +37,12 @@ return {
           {
             icon = '󱤇 ',
             icon_hl = 'Title',
-            desc = 'Find Tags',
+            desc = 'Find Hooks',
             desc_hl = 'String',
-            key = 't',
-            keymap = 'leader ft',
+            key = 'h',
+            keymap = 'leader fh',
             key_format = ' %s', 
-            action = function() require('telescope.builtin').tags() end
+            action = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
           },
           {
             icon = '󱈆 ',

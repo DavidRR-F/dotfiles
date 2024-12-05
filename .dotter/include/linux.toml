@@ -2,7 +2,3 @@
 "shell/pwsh.ps1" = "~/.config/powershell/Microsoft.PowerShell_profile.ps1"
 "shell/.bashrc" = "~/.bashrc"
 "shell/starship.toml" = "~/.config/starship.toml"
-
-[twm.files]
-"twm/hypr" = "~/.config/hypr"
-"twm/hypr/waybar" = "~/.config/waybar"
