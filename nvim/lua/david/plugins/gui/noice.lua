@@ -1,9 +1,6 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
@@ -12,9 +9,6 @@ return {
       presets = {
         bottom_search = true,
         command_palette = true,
-        long_message_to_split = false,
-        inc_rename = true,
-        lsp_doc_border = false,
       },
       commands = {
         history = {
@@ -23,41 +17,8 @@ return {
         },
       },
       notify = {
-        enabled = true,
+        enabled = false,
         view = "notify",
-      },
-      routes = {
-        {
-          filter = {
-            event = "msg_show",
-            kind = "",
-            find = "written",
-          },
-          opts = { skip = true },
-        },
-        {
-          filter = {
-            event = "msg_show",
-            kind = "",
-            find = "created",
-          },
-          opts = { skip = true },
-        },
-        {
-          filter = {
-            event = "msg_show",
-            kind = "",
-            find = "removed",
-          },
-          opts = { skip = true },
-        },
-        {
-          filter = {
-            event = "notify",
-            kind = "warn",
-          },
-          opts = { skip = true },
-        },
       },
       cmdline = {
         enabled = true,

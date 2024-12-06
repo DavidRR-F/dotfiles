@@ -8,12 +8,13 @@ return {
     harpoon.setup({
       global_settings = {
         save_on_toggle = false,
-        sync_on_ui_close = false,
+        sync_on_ui_close = true,
         tabline = true
       }
     })
 
     keymap.set("n", "<leader>h", function() harpoon:list():add() end)
+    keymap.set("n", "<leader>hr", function() harpoon:list():remove() end)
     keymap.set("n", "<S-Tab>", function() harpoon:list():prev() end)
     keymap.set("n", "<Tab>", function() harpoon:list():next() end)
     keymap.set("n", "<leader>fh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
