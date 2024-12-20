@@ -17,21 +17,13 @@ local mode_icons = {
 
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 
-    'nvim-tree/nvim-web-devicons', 
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
     { 'catppuccin/nvim', as = 'catppuccin' },
-    {
-      "letieu/harpoon-lualine",
-      dependencies = {
-        {
-          "ThePrimeagen/harpoon",
-          branch = "harpoon2",
-        }
-      },
-    }
   },
   config = function()
     local colors = require('catppuccin.palettes').get_palette 'mocha'
+    local marks = require('david.custom.marks').lualine_marks
     local function mode_icon(str)
       return mode_icons[vim.fn.mode()] or str
     end
@@ -85,18 +77,8 @@ return {
             }
           }
         },
-        lualine_b = { 
-          { 
-              'harpoon2',
-              icon = '',
-              color = { bg = 'none', fg = colors.blue },
-              padding = { left = 0, right = 0 },
-              color_active = { fg = colors.mauve },
-              separator = { left = '%=', right = '%=' },
-              no_harpoon = ""
-            }
-        },
-        lualine_c = {},
+        lualine_b = {},
+        lualine_c = { marks },
         lualine_x = {},
         lualine_y = {},
         lualine_z = {

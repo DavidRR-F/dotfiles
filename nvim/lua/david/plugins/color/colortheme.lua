@@ -37,9 +37,10 @@ return {
         operators = {},
       },
       color_overrides = {},
-      custom_highlights = { 
+      custom_highlights = {
         CursorLineNr = { fg = colors.yellow },
-        CursorLine = { bg = "NONE" }
+        CursorLine = { bg = "NONE" },
+        SnacksIndent = { fg = colors.surface0 }
       },
       default_integrations = true,
       integrations = {

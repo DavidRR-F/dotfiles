@@ -1,17 +1,16 @@
 return {
-  "folke/snacks.nvim",
+ "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
   keys = {
     { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
     { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
     { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
     { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    { "<leader>t",  function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    { "<leader>t",  function() Snacks.terminal() end, desc = "Toggle Terminal" }
   },
   opts = {
     dashboard = {
@@ -37,12 +36,12 @@ return {
           },
           {
             text = {
-              { "󱤇  ", hl = "Title" },
-              { "Find Hooks", hl = "SnacksDashboardDesc", width = 55 },
-              { "[h]", hl = "SnacksDashboardKey" },
+              { "󰍒  ", hl = "Title" },
+              { "Find Mark", hl = "SnacksDashboardDesc", width = 55 },
+              { "[m]", hl = "SnacksDashboardKey" },
             },
-            key = 'h',
-            action = function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end
+            key = 'm',
+            action = function() require('telescope.builtin').marks() end
           },
           {
             text = {
@@ -84,6 +83,16 @@ return {
     quickfile = {enabled = true},
     gitbrowse = {enabled = true},
     terminal = {enabled = true},
+    indent = {
+      enabled = true,
+      hl = "SnacksIndent",
+      animate = {
+        enabled = false
+      },
+      scope = {
+        enabled = false
+      }
+    },
     statuscolumn = {
       enabled = true,
       left = { "mark", "sign" },

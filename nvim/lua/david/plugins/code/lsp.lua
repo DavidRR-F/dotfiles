@@ -5,27 +5,17 @@ return {
     dependencies = {'nvimdev/lspsaga.nvim'},
     config = function()
       local lspconfig = require("lspconfig")
-      local lspsaga = require("lspsaga")
-      lspsaga.setup({
-        ui = {
-          code_action = ' '
-        },
-        rename = {
-          auto_save = true
-        }
-      })
-      -- keybindings
       local keymap = vim.keymap
       local opts = { noremap = true, silent = true }
       local on_attach = function(_, bufnr)
         opts.buffer = bufnr
-        keymap.set('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
         keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
         keymap.set('n', 'gd', '<Cmd>Lspsaga goto_definition<CR>', opts)
-        keymap.set('n', 'gr', '<Cmd>Lspsaga lsp_finder<CR>', opts)
         keymap.set('v', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
         keymap.set('n', 'gD', '<Cmd>Lspsaga peek_definition<CR>', opts)
+        keymap.set('n', '<space>e', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
       end
+
       -- python
       lspconfig.pyright.setup({
         on_attach = on_attach,
@@ -97,12 +87,50 @@ return {
             schemas = {
               ["http://json.schemastore.org/github-workflow"] = "/.github/workflows/*",
               ["http://json.schemastore.org/github-action"] = "/.github/action/*",
-              ["https://kubernetesjsonschema.dev/v3.0.0"] = "/kubernetes/*",
               ["https://raw.githubusercontent.com/docker/compose/master/compose.schema.json"] = "/docker-compose/*",
-              ["http://json.schemastore.org/ansible-stable-2.9"] = "/roles/*",
             },
           },
         },
+      })
+
+      -- ansible
+      lspconfig.ansiblels.setup({
+        on_attach = on_attach,
+        filetypes = { "yaml.ansible" },
+        settings = {
+          ansible = {
+            ansible = {
+              path = "ansible"
+            },
+            executionEnvironment = {
+              enabled = false
+            },
+            python = {
+              interpreterPath = "python"
+            },
+            validation = {
+              enabled = true,
+              lint = {
+                enabled = true,
+                path = "ansible-lint"
+              }
+            }
+          }
+        }
+      })
+
+      -- helm
+      lspconfig.helm_ls.setup({
+        on_attach = on_attach,
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true
+            }
+          }
+        },
+        cmd = { "helm_ls", "serve" },
+        filetypes = { "helm" }
       })
 
       -- json
@@ -116,24 +144,6 @@ return {
         on_attach = on_attach,
         filetypes = {"dockerfile"}
       })
-
-      -- emmet
-      lspconfig.emmet_ls.setup({
-        on_attach = on_attach,
-        filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less", "templ" },
-      })
-
-      -- css
-      lspconfig.cssls.setup({
-        on_attach = on_attach,
-        filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less", "templ" },
-      })
-
-      -- html
-      lspconfig.html.setup({
-        on_attach = on_attach,
-        filetypes = { "html", "typescriptreact", "javascriptreact", "typescript.tsx", "css", "sass", "scss", "less", "templ" },
-      })
-    end,
+    end
   },
 }

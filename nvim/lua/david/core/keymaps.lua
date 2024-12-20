@@ -1,5 +1,4 @@
 -- set leader key to space
-local custom = require("david.custom.os")
 vim.g.mapleader = ";"
 
 vim.o.clipboard = "unnamedplus"
@@ -26,7 +25,7 @@ vim.api.nvim_set_keymap('n', '<Leader>wl', '<C-w>L', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<Leader>bn', ':bnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>bp', ':bprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>bl', ':b#<CR>', { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>bd', ':bd<CR>', { noremap = true, silent = true })
 
 -- Netrw
 vim.api.nvim_set_keymap('n', '<Leader>fe', ':Explore<CR>', { noremap = true, silent = true })

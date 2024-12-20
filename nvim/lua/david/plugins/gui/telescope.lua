@@ -4,8 +4,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'kyazdani42/nvim-web-devicons',
-    'ThePrimeagen/git-worktree.nvim',
-    'nvim-telescope/telescope-ui-select.nvim'
+    'ThePrimeagen/git-worktree.nvim'
   },
   keys = {
     { "<leader>fb", "<cmd>:Telescope buffers<cr>",                                                 desc = "Buffers" },
@@ -15,7 +14,6 @@ return {
     { "<leader>fm", "<cmd>:Telescope marks<cr>",                                                   desc = "Telescope Marks" },
     { "<leader>fc", "<cmd>:lua require('telescope.builtin').commands()<cr>",                       desc = "Builtin Commands List" },
     { "<leader>fs", "<cmd>:lua require('telescope.builtin').git_status()<cr>",                     desc = "Git Status List" },
-    { "<leader>ft", "<cmd>:lua require('telescope.builtin').tags()<cr>",                           desc = "Telescope Ctags" },
     { "<leader>fw", "<cmd>:lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",  desc = "Telescope Git Worktrees" },
   },
   config = function()
@@ -52,6 +50,17 @@ return {
             return { '--no-ignore' }
           end
         },
+        marks = {
+          layout_strategy = "vertical",
+          layout_config = {
+            vertical = {
+              height = 0.9,
+              preview_cutoff = 20,
+              prompt_position = "bottom",
+              width = 0.8
+            }
+          },
+        },
         git_status = {
           layout_strategy = "vertical",
           layout_config = {
@@ -73,15 +82,8 @@ return {
           },
         }
       },
-      extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown {
-            -- even more opts
-          }
-        }
-      }
+      extensions = {}
     })
     require("telescope").load_extension("git_worktree")
-    require("telescope").load_extension("ui-select")
   end
 }
