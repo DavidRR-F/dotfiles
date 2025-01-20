@@ -24,6 +24,7 @@ return {
   config = function()
     local colors = require('catppuccin.palettes').get_palette 'mocha'
     local marks = require('david.custom.marks').lualine_marks
+    local get_active_lsp_with_schema = require('david.custom.yaml_schema').get_active_lsp_with_schema
     local function mode_icon(str)
       return mode_icons[vim.fn.mode()] or str
     end
@@ -80,7 +81,14 @@ return {
         lualine_b = {},
         lualine_c = { marks },
         lualine_x = {},
-        lualine_y = {},
+        lualine_y = {
+          {
+            get_active_lsp_with_schema,
+            cond = function()
+                return #vim.lsp.get_active_clients() > 0
+            end
+          }
+        },
         lualine_z = {
           {
             'diff',

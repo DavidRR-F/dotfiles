@@ -6,10 +6,7 @@ return {
       ensure_installed = {
         "python",
         "java",
-        "c",
         "go",
-        "ruby",
-        "perl",
         "dockerfile",
         "html",
         "css",

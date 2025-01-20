@@ -1,8 +1,16 @@
+local function cwd()
+  if vim.loop.os_uname().sysname == "Window_NT" then
+    return string.gsub(vim.fn.getcwd(), "\\", "/")
+  else
+    return string.gsub(vim.fn.getcwd(), os.getenv("HOME"), "~")
+  end
+end
+
 local M = {}
 
 M.mark_state = {
   current_mark = nil,
-  cwd = vim.fn.getcwd()
+  cwd = cwd()
 }
 
 function M.is_in_cwd(file)
@@ -114,7 +122,7 @@ function M.config()
   vim.api.nvim_create_autocmd("DirChanged", {
     pattern = "*",
     callback = function()
-      M.mark_state.cwd = vim.fn.getcwd()
+      M.mark_state.cwd = cwd()
     end
   })
 

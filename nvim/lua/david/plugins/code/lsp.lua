@@ -5,6 +5,7 @@ return {
     dependencies = {'nvimdev/lspsaga.nvim'},
     config = function()
       local lspconfig = require("lspconfig")
+      local yaml_schemas = require("david.custom.yaml_schema").yaml_schemas
       local keymap = vim.keymap
       local opts = { noremap = true, silent = true }
       local on_attach = function(_, bufnr)
@@ -59,13 +60,6 @@ return {
         filetypes = {"bash"}
       })
 
-      -- powershell
-      lspconfig.powershell_es.setup({
-        on_attach = on_attach,
-        filetypes = {"powershell"},
-        bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/"
-      })
-
       -- lua
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
@@ -85,52 +79,16 @@ return {
         settings = {
           yaml = {
             schemas = {
-              ["http://json.schemastore.org/github-workflow"] = "/.github/workflows/*",
-              ["http://json.schemastore.org/github-action"] = "/.github/action/*",
-              ["https://raw.githubusercontent.com/docker/compose/master/compose.schema.json"] = "/docker-compose/*",
+                [yaml_schemas["Generic"]] = "*", -- Default schema
+                [yaml_schemas["Kubernetes"]] = "/*.k8s.yaml",
+                [yaml_schemas["Ansible"]] = "/*.ansible.yaml",
+                [yaml_schemas["GitLab CI"]] = "/.gitlab-ci.yml",
+                [yaml_schemas["GitHub Actions"]] = "/.github/workflows/*.yml",
+                [yaml_schemas["Helm"]] = "/charts/**/*.yaml",
+                [yaml_schemas["Docker Compose"]] = "/docker-compose*.yml",
             },
           },
         },
-      })
-
-      -- ansible
-      lspconfig.ansiblels.setup({
-        on_attach = on_attach,
-        filetypes = { "yaml.ansible" },
-        settings = {
-          ansible = {
-            ansible = {
-              path = "ansible"
-            },
-            executionEnvironment = {
-              enabled = false
-            },
-            python = {
-              interpreterPath = "python"
-            },
-            validation = {
-              enabled = true,
-              lint = {
-                enabled = true,
-                path = "ansible-lint"
-              }
-            }
-          }
-        }
-      })
-
-      -- helm
-      lspconfig.helm_ls.setup({
-        on_attach = on_attach,
-        capabilities = {
-          workspace = {
-            didChangeWatchedFiles = {
-              dynamicRegistration = true
-            }
-          }
-        },
-        cmd = { "helm_ls", "serve" },
-        filetypes = { "helm" }
       })
 
       -- json
