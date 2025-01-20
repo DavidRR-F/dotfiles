@@ -76,7 +76,7 @@ function M.get_active_lsp_with_schema()
             -- Find the matching schema for the current file
             for schema, pattern in pairs(client_schemas) do
                 if file_path:match(pattern:gsub("%*", ".*")) then
-                    return "%#LSPInfo# " .. client.name .. " (" .. get_key_by_value(M.yaml_schemas, schema) .. ")"
+                    return "%#LSPInfo# " .. client.name .. " (" .. get_key_by_value(M.yaml_schemas, schema) .. ")"
                 end
             end
         end
