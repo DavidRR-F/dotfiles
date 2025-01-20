@@ -83,7 +83,7 @@ function M.get_active_lsp_with_schema()
     end
 
     -- Return all active LSPs if not `yamlls` or no schema matches
-    return table.concat(active_lsps .. "%#LSPInfo#", ", ")
+    return  "%#LSPInfo# " .. table.concat(active_lsps, ", ")
 end
 
 function M.config()
