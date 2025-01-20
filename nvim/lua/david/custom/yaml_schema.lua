@@ -76,7 +76,7 @@ function M.get_active_lsp_with_schema()
             -- Find the matching schema for the current file
             for schema, pattern in pairs(client_schemas) do
                 if file_path:match(pattern:gsub("%*", ".*")) then
-                    return "%#LSPInfo# " .. client.name .. " (" .. get_key_by_value(M.yaml_schemas, schema) .. ")" 
+                    return "%#LSPInfo# " .. client.name .. " (" .. get_key_by_value(M.yaml_schemas, schema) .. ")"
                 end
             end
         end
@@ -89,6 +89,7 @@ end
 function M.config()
   vim.api.nvim_set_hl(0, 'LSPInfo', { fg = '#cba6f7', bg = 'NONE' })
   vim.api.nvim_create_user_command("SwitchYamlSchema", M.switch_project_schema, {})
+  vim.api.nvim_set_keymap('n', '<Leader>fy', ':SwitchYamlSchema<CR>', { noremap = true, silent = true })
 end
 
 return M
