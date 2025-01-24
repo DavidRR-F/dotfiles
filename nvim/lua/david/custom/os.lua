@@ -25,7 +25,7 @@ function M.shell()
 
   end
   if sysname == "Linux" then
-    vim.opt.shell = home_dir .. "/bin/bash"
+    vim.opt.shell = "/bin/bash"
     vim.g.python3_host_prog = home_dir .. "/.uv/virtualenvs/neovim3/bin/python"  
   end
 end
