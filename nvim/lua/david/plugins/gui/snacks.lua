@@ -59,7 +59,7 @@ return {
               { "[e]", hl = "SnacksDashboardKey" },
             },
             key = 'e',
-            action = function() vim.cmd('Ex') end
+            action = function() vim.cmd('NvimTreeToggle') end
           },
           {
             icon = '󰈆 ',

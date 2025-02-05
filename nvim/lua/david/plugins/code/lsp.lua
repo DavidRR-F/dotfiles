@@ -2,7 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {'nvimdev/lspsaga.nvim'},
+    dependencies = {
+      'nvimdev/lspsaga.nvim',
+      'nvim-java/nvim-java'
+    },
     config = function()
       local lspconfig = require("lspconfig")
       local yaml_schemas = require("david.custom.yaml_schema").yaml_schemas
@@ -16,6 +19,13 @@ return {
         keymap.set('n', 'gD', '<Cmd>Lspsaga peek_definition<CR>', opts)
         keymap.set('n', '<space>e', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
       end
+
+      -- java
+      require("java").setup()
+      lspconfig.jdtls.setup({
+        on_attach = on_attach,
+        filetypes = { "java" }
+      })
 
       -- python
       lspconfig.pyright.setup({

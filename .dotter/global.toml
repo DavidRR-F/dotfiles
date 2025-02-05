@@ -1,5 +1,6 @@
-[settings]
-default_target_type = "symbolic"
+[shell.files]
+"shell/.bashrc" = "~/.bashrc"
+"shell/starship.toml" = "~/.config/starship.toml"
 
 [editor.files]
 "nvim" = "~/.config/nvim"

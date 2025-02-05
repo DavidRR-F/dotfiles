@@ -20,7 +20,7 @@ M.tabline = {
   options = {
     icons_enabled = true,
     theme = 'Catppuccin Mocha',
-    color_overrides = {
+    theme_overrides = {
       normal_mode = {
         a = { fg = scheme.ansi[5], bg = M.tab_background },
         b = { fg = scheme.ansi[5], bg = M.tab_background },

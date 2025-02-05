@@ -1,5 +1,4 @@
 local wezterm = require 'wezterm'
-local utils = require 'lua.utils'
 local appearance = require 'lua.appearance'
 local font = require 'lua.font'
 local keys = require 'lua.keys'
@@ -13,7 +12,7 @@ local c = {}
 if wezterm.config_builder then
   c = wezterm.config_builder()
 end
-c.default_prog = utils.is_windows and { "pwsh", "-NoLogo" } or { "bash" }
+c.default_prog = { "bash" }
 c.default_workspace = "main"
 c.disable_default_key_bindings = true
 c.enable_wayland = false
