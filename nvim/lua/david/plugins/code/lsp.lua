@@ -29,43 +29,21 @@ return {
     end
   },
   {
-    'nvimdev/lspsaga.nvim',
-    config = function()
-        require('lspsaga').setup({
-          lightbulb = {
-            enable = false,
-            sign = false,
-            virtual_text = false
-          },
-          rename = {
-            auto_save = true
-          },
-        })
-    end,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-        'nvim-tree/nvim-web-devicons',
-    }
-  },
-  {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      'nvimdev/lspsaga.nvim',
-    },
     config = function()
       local lspconfig = require("lspconfig")
       local keymap = vim.keymap
       local opts = { noremap = true, silent = true }
       local on_attach = function(_, bufnr)
         opts.buffer = bufnr
-        keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-        keymap.set('n', 'gd', '<Cmd>Lspsaga goto_definition<CR>', opts)
-        keymap.set('v', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-        keymap.set('n', 'gD', '<Cmd>Lspsaga peek_definition<CR>', opts)
-        keymap.set('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
+        keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+        keymap.set('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+        keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        keymap.set('v', 'gr', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+        keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
       end
-      for _, server in ipairs(servers) do
+      for _, server in pairs(servers) do
         local lsp_opts = { on_attach = on_attach }
         local success, settings = pcall(require, "david.plugins.code.lang." .. server)
 
@@ -75,6 +53,33 @@ return {
           lspconfig[server].setup(lsp_opts)
         end
       end
+
+      vim.diagnostic.config {
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.INFO] = '',
+          },
+        },
+        virtual_text = false,
+        update_in_insert = false,
+        underline = true,
+        severity_sort = true,
+        float = {
+          focusable = true,
+          style = "minimal",
+          border = "rounded",
+          header = "",
+          prefix = "",
+        },
+      }
+
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      require("lspconfig.ui.windows").default_options.border = "rounded"
+
     end
   },
   {

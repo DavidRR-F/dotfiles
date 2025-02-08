@@ -1,12 +1,9 @@
-local os = require("david.custom.os")
-vim.g.python3_host_prog = os.settings.python_host
-os.shell()
-
 local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.tabstop = 2
+opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
