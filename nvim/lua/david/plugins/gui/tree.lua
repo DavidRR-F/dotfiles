@@ -3,6 +3,13 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     -- optionally enable 24-bit colour
     config = function()
+        vim.api.nvim_create_autocmd("BufEnter", {
+          callback = function()
+            if #vim.fn.getbufinfo({ buflisted = 1 }) == 1 and vim.fn.bufname() == "NvimTree_1" then
+              vim.cmd("quit")
+            end
+          end,
+        })
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
         vim.opt.termguicolors = true
@@ -25,6 +32,8 @@ return {
             },
             exclude = {
               '.gitignore',
+              '.gitlab-ci.yaml',
+              '.gitlab-ci.yml'
             },
           },
           update_focused_file = {
@@ -48,11 +57,15 @@ return {
             open_file = {
               resize_window = true,
             },
+            remove_file = {
+              close_window = true,
+            }
           },
           renderer = {
             root_folder_label = false,
             highlight_git = true,
             highlight_opened_files = "none",
+            indent_width = 1,
         
             indent_markers = {
               enable = false,
