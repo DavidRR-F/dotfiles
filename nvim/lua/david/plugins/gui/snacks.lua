@@ -13,7 +13,11 @@ return {
     { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Git Blame Line" },
     { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Git Blame Line" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    { "<leader>t",  function() Snacks.terminal() end, desc = "Toggle Terminal" }
+    { "<leader>t",  function() Snacks.terminal() end, desc = "Toggle Terminal" },
+    { "<leader>ff",  function() Snacks.picker.files() end, desc = "Find File" },
+    { "<leader>fg",  function() Snacks.picker.grep() end, desc = "Grep Word" },
+    { "<leader>fe",  function() Snacks.picker.explorer() end, desc = "File Explorer" },
+    { "<leader>fm",  function() Snacks.picker.man() end, desc = "Man Pages" },
   },
   opts = {
     dashboard = {
@@ -35,25 +39,7 @@ return {
             },
             desc = 'Find File',
             key = 'f',
-            action = function() require('telescope.builtin').find_files() end
-          },
-          {
-            text = {
-              { "󰍒  ", hl = "Title" },
-              { "Find Mark", hl = "SnacksDashboardDesc", width = 55 },
-              { "[m]", hl = "SnacksDashboardKey" },
-            },
-            key = 'm',
-            action = function() require('telescope.builtin').marks() end
-          },
-          {
-            text = {
-              { "󱈆  ", hl = "Title" },
-              { "Find Worktree", hl = "SnacksDashboardDesc", width = 55 },
-              { "[w]", hl = "SnacksDashboardKey" },
-            },
-            key = 'w',
-            action = function() require('telescope').extensions.git_worktree.git_worktrees() end
+            action = function() Snacks.picker.files() end
           },
           {
             text = {
@@ -62,7 +48,16 @@ return {
               { "[e]", hl = "SnacksDashboardKey" },
             },
             key = 'e',
-            action = function() vim.cmd('NvimTreeToggle') end
+            action = function() Snacks.picker.explorer() end
+          },
+          {
+            text = {
+              { "󱈆  ", hl = "Title" },
+              { "Find Man Page", hl = "SnacksDashboardDesc", width = 55 },
+              { "[w]", hl = "SnacksDashboardKey" },
+            },
+            key = 'w',
+            action = function() Snacks.picker.man() end
           },
           {
             icon = '󰈆 ',
@@ -87,6 +82,26 @@ return {
     gitbrowse = {enabled = true},
     terminal = {enabled = true},
     lazygit = {enabled = true},
+    picker = {
+      sources = {
+        grep = {
+          finder = "grep",
+          regex = true,
+          format = "file",
+          layout = {
+            preset = "dropdown",
+          }
+        },
+        man = {
+          layout = {
+            preset = "dropdown",
+          }
+        },
+        explorer = {
+          replace_netrw = true,
+        }
+      }
+    },
     indent = {
       enabled = true,
       hl = "SnacksIndent",

@@ -12,46 +12,28 @@ local function floating_doc_window(opts)
         opts.output[i] = line:gsub("\r", "")
     end
 
-    -- Prepare header
-    local header = (opts.name or "Output")
-    local width = math.floor(vim.o.columns * 0.8)
-    local centered_header = string.format("%s%s", string.rep(" ", math.floor((width - #header) / 2)), header)
+    table.insert(opts.output, 1, opts.name)
 
-    -- Create buffer and set content
-    local buf = vim.api.nvim_create_buf(false, true)
-    vim.api.nvim_buf_set_lines(buf, 1, -1, false, opts.output)
-    vim.api.nvim_buf_set_option(buf, "filetype", opts.filetype or "text")
-    vim.cmd("setlocal syntax=" .. opts.filetype)
-    vim.api.nvim_buf_set_virtual_text(buf, 0, 0, { { centered_header, "Comment" } }, {})
-
-
-
-    -- Set buffer to read-only mode
-    vim.api.nvim_buf_set_option(buf, "readonly", true)  -- Make buffer read-only
-    vim.api.nvim_buf_set_option(buf, "modified", false)  -- Ensure buffer is not marked as modified
-
-    -- Disable editing commands (optional)
-    vim.api.nvim_buf_set_keymap(buf, "n", "i", "<Nop>", { noremap = true, silent = true })  -- Disable insert mode
-    vim.api.nvim_buf_set_keymap(buf, "n", "a", "<Nop>", { noremap = true, silent = true })  -- Disable append mode
-    vim.api.nvim_buf_set_keymap(buf, "n", "o", "<Nop>", { noremap = true, silent = true })  -- Disable open new line
-    vim.api.nvim_buf_set_keymap(buf, "n", "O", "<Nop>", { noremap = true, silent = true })  -- Disable open new line above
-
-    local height = math.floor(vim.o.lines * 0.8)
-    local win_opts = {
-        style = "minimal",
-        relative = "editor",
-        width = width,
-        height = height,
-        row = math.floor((vim.o.lines - height) / 2),
-        col = math.floor((vim.o.columns - width) / 2),
-        border = "rounded",
-    }
-
-    -- Open window
-    local win = vim.api.nvim_open_win(buf, true, win_opts)
-
-    -- Add keymap for closing the window
-    vim.api.nvim_buf_set_keymap(buf, "n", "<Esc>", "<Cmd>close<CR>", { noremap = true, silent = true })
+    Snacks.win({
+      text = opts.output,
+      width = 0.4,
+      height = 0.8,
+      border = "rounded",
+      backdrop = 50,
+      resize = true,
+      fixbuf = true,
+      ft = "yaml",
+      wo = {
+        spell = false,
+        wrap = false,
+        signcolumn = "yes",
+        statuscolumn = " ",
+        conceallevel = 3,
+      },
+      keys = {
+        q = "close"
+      },
+    })
 end
 
 M.config = function()
@@ -78,7 +60,7 @@ M.config = function()
         floating_doc_window({
             output = output,
             args = opts.args,
-            name = "Kustomize Build: " .. relative_path,
+            name = "# Kustomize Build: " .. relative_path,
             filetype = "yaml",
         })
     end, { nargs = "?" })
