@@ -1,13 +1,4 @@
-# Minimal Cross-Platform Dotfiles
-
-| Tool | Windows | Linux | 
-|:-----|:--------|:------|
-| terminal | wezterm | wezterm |
-| shell | powershell | bash |
-| editor | neovim | neovim | 
-| window manager | glazewm | hyperland |
-
-### Installation
+### Dotter Installation
 
 #### **Clone the Repository**:
 
@@ -21,31 +12,25 @@ $ git clone https://github.com/DavidRR-F/dotfiles.git ~/.dotfiles
 
 ```bash 
 curl -L -o ~/.dotfiles/dotter https://github.com/SuperCuber/dotter/releases/download/<version>/<platform>
+
+or
+
+scoop install main/dotter
 ```
 
 Create `.dotter/local.toml`
 
 `Optional exclude packages you dont want to use`
 
-##### If Linux
-
-```toml
-includes = [".dotter/include/linux.toml"]
-packages = ["shell", "terminal", "editor", "twm"]
-```
-
-##### If Windows
-
-```toml
-includes = [".dotter/include/windows.toml"]
-packages = ["shell", "terminal", "editor", "twm"]
-```
-
 ##### Run dotter
 
 ```bash
 cd ~/.dotfiles
 ./dotter --force
+
+# if using package managed version
+
+dotter --force
 ```
 
 ### Vim Stuff I always forget
