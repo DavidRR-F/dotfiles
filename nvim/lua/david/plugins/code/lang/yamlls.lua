@@ -7,7 +7,6 @@ return {
       },
       hover = true,
       validate = true,
-      completion = true,
       schemas = {
         -- Kubernetes Schema
         ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.27.3-standalone-strict/all.json"] = {
@@ -23,7 +22,7 @@ return {
         },
         -- Gitlab Schema
         ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-          ".gitlab-ci*.{yml,yaml}",
+          ".gitlab-ci.{yml,yaml}",
           "*-common.{yml,yaml}",
           "*-template.{yml,yaml}"
         },

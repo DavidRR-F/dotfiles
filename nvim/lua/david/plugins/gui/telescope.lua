@@ -24,6 +24,14 @@ return {
           'rg', '--color=never', '--no-heading',
           '--with-filename', '--line-number', '--column', '--smart-case', '--no-ignore'
         },
+        layout_config = {
+          vertical = {
+            height = 0.9,
+            preview_cutoff = 20,
+            prompt_position = "bottom",
+            width = 0.8
+          }
+        },
         path_display = function(opts, path)
           local tail = require("telescope.utils").path_tail(path)
           return string.format("%s (%s)", tail, path)
@@ -46,31 +54,16 @@ return {
           }
         },
         live_grep = {
+          layout_strategy = "vertical",
           additional_args = function(opts)
             return { '--no-ignore' }
           end
         },
         marks = {
           layout_strategy = "vertical",
-          layout_config = {
-            vertical = {
-              height = 0.9,
-              preview_cutoff = 20,
-              prompt_position = "bottom",
-              width = 0.8
-            }
-          },
         },
         git_status = {
           layout_strategy = "vertical",
-          layout_config = {
-            vertical = {
-              height = 0.9,
-              preview_cutoff = 20,
-              prompt_position = "bottom",
-              width = 0.8
-            }
-          },
           git_icons = {
             added  = '',
             changed  = '',

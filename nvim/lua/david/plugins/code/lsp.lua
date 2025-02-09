@@ -4,6 +4,7 @@ local servers = {
   "bashls",
   "yamlls",
   "lua_ls",
+  "jsonls",
 }
 
 return {

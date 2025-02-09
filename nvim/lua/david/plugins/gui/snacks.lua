@@ -9,6 +9,9 @@ return {
     { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
     { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
+    { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Git Log" },
+    { "<leader>gf", function() Snacks.lazygit.log_file() end, desc = "Git Blame Line" },
+    { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Git Blame Line" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     { "<leader>t",  function() Snacks.terminal() end, desc = "Toggle Terminal" }
   },
@@ -83,6 +86,7 @@ return {
     quickfile = {enabled = true},
     gitbrowse = {enabled = true},
     terminal = {enabled = true},
+    lazygit = {enabled = true},
     indent = {
       enabled = true,
       hl = "SnacksIndent",
