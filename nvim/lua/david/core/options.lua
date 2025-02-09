@@ -10,6 +10,7 @@ opt.autoindent = true
 opt.wildmenu = true
 opt.wildmode = "longest:full,full"
 
+opt.cmdheight = 0
 opt.wrap = false
 
 opt.ignorecase = true
