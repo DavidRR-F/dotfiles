@@ -1,10 +1,13 @@
 local function cwd()
-  if vim.loop.os_uname().sysname == "Window_NT" then
-    return string.gsub(vim.fn.getcwd(), "\\", "/")
+  local current_dir = vim.fn.getcwd()
+  if vim.loop.os_uname().sysname == "Windows_NT" then
+    return current_dir:gsub("\\", "/")
   else
-    return string.gsub(vim.fn.getcwd(), os.getenv("HOME"), "~")
+    local home = os.getenv("HOME") or ""
+    return current_dir:gsub("^" .. vim.pesc(home), "~")
   end
 end
+
 
 local M = {}
 
@@ -22,7 +25,7 @@ function M.get_project_global_marks()
   local global_marks = {}
 
   for _, mark in ipairs(marks) do
-    if mark.mark:match('%u') and M.is_in_cwd(mark.file) then
+    if mark.mark:match('%u') and mark.file and M.is_in_cwd(mark.file) then
       table.insert(global_marks, mark)
     end
   end

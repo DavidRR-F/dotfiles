@@ -20,7 +20,9 @@ return {
           "service.yaml",
           "ingress.yaml",
           "secret.yaml",
-          "persistentClaim.yaml"
+          "persistentClaim.yaml",
+          "job.yml",
+          "job.yaml"
         },
         -- Kustomize Schema
         ["https://json.schemastore.org/kustomization.json"] = {
