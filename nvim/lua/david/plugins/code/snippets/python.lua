@@ -2,6 +2,8 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local d = ls.dynamic_node
+local r = ls.restore_node
 
 ls.add_snippets("python", {
     -- Python shebang
@@ -85,11 +87,11 @@ ls.add_snippets("python", {
         t("["),
         i(1, "x"),
         t(" for "),
-        i(2 ,"x"),
+        r(1),
         t(" in "),
-        i(3, "iterable"),
+        i(2, "iterable"),
         t(" if "),
-        i(4, "condition"),
+        i(3, "condition"),
         t("]"),
     }),
 
@@ -100,9 +102,9 @@ ls.add_snippets("python", {
         t(": "),
         i(2, "value"),
         t(", "),
-        i(3, "value"),
+        r(2),
         t(" in "),
-        i(4, "iterable.items()"),
+        i(3, "iterable.items()"),
         t("}"),
     }),
 

@@ -2,6 +2,8 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local d = ls.dynamic_node
+local r = ls.restore_node
 
 ls.add_snippets("yaml", {
     -- Deployment
@@ -29,25 +31,25 @@ ls.add_snippets("yaml", {
             "      labels:",
             "        app: ",
         }),
-        i(3, "my-app"),
+        r(2),
         t({
             "",
             "    spec:",
             "      containers:",
             "      - name: ",
         }),
-        i(4, "my-app-container"),
+        i(3, "my-app-container"),
         t({
             "",
             "        image: ",
         }),
-        i(5, "nginx:latest"),
+        i(4, "nginx:latest"),
         t({
             "",
             "        ports:",
             "        - containerPort: ",
         }),
-        i(6, "80"),
+        i(5, "80"),
     }),
 
     -- Service
