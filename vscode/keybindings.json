@@ -186,6 +186,14 @@
     },
     // disable
     {
+        "key": "ctrl+f",
+        "command": "-actions.find"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
         "key": "ctrl+\\",
         "command": "-workbench.action.splitEditor"
     },
