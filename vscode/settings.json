@@ -1,0 +1,229 @@
+{
+    // vim 
+    "vim.leader": ";",
+    "vim.easymotion": false,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.useSystemClipboard": true,
+    "vim.replaceWithRegister": true,
+    "vim.useCtrlKeys": true,
+    "editor.lineNumbers": "relative",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.cursorStylePerMode.visual": "block",
+    "vim.cursorStylePerMode.visualblock": "block",
+    "vim.cursorStylePerMode.visualline": "block",
+    "vim.showMarksInGutter": true,
+    "vim.commandLineModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "q",
+                "<Enter>"
+            ],
+            "commands": [
+                "workbench.action.closeEditorsInGroup"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Tab>"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ],
+        },
+        {
+            "before": [
+                "<S-Tab>"
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        // lsp
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "."
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.goToDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "d"
+            ],
+            "commands": [
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "I"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "I"
+            ],
+            "commands": [
+                "editor.action.peekImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "D"
+            ],
+            "commands": [
+                "editor.action.goToDeclaration"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "t"
+            ],
+            "commands": [
+                "editor.action.peekTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "R"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "*"
+            ],
+            "after": [
+                "*",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<Tab>"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<S-Tab>"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v"
+            ]
+        }
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    // style
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "catppuccin.customUIColors": {
+        "mocha": {
+            "statusBar.background": "mantle",
+        },
+    },
+    "editor.fontFamily": "'0xProto Nerd Font Mono', 'monospace', monospace",
+    "extensions.ignoreRecommendations": true,
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "single",
+    "apc.menubar.compact": true,
+    "window.menuBarVisibility": "hidden",
+    "window.enableMenuBarMnemonics": false,
+    "window.customMenuBarAltFocus": false,
+    "window.customTitleBarVisibility": "never",
+    "window.commandCenter": false,
+    "window.restoreWindows": "none",
+    "window.titleBarStyle": "native",
+    "window.dialogStyle": "custom",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "editor.minimap.enabled": false,
+    "editor.minimap.autohide": true,
+    "editor.accessibilitySupport": "off",
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlab.keybindingHints.enabled": false,
+    "gitlab.duo.enabledWithoutGitlabProject": false,
+    "gitlab.duoCodeSuggestions.openTabsContext": false,
+    "[shellscript]": {
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    },
+    "bashIde.enableSourceErrorDiagnostics": true,
+    "bashIde.shfmt.binaryNextLine": true,
+    "bashIde.shfmt.caseIndent": true,
+    "bashIde.shfmt.simplifyCode": true,
+    "editor.formatOnSave": true,
+}

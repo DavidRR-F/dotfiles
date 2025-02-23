@@ -119,16 +119,3 @@ format = '[ $loaded]($style) '
 style = 'fg:thm_yellow'
 loaded_msg = "󱎚"
 unloaded_msg = "󱚳"
-
-[aws]
-symbol = " "
-format = '[ $symbol$region]($style) '
-style = 'bold thm_orange'
-
-[azure]
-disabled = false
-format = '[ $symbol($subscription)]($style) '
-symbol = '󰠅 '
-style = 'bold thm_cyan'
-subscription_aliases = { "Microsoft Azure Enterprise" = "mc" }
-

@@ -2,8 +2,5 @@
 "shell/.bashrc" = "~/.bashrc"
 "shell/starship.toml" = "~/.config/starship.toml"
 
-[editor.files]
-"nvim" = "~/.config/nvim"
-
 [terminal.files]
 "wezterm" = "~/.config/wezterm"

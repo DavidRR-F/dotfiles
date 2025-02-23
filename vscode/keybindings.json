@@ -1,0 +1,208 @@
+[
+    {
+        "key": "; f f",
+        "command": "workbench.action.quickOpen",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; f g",
+        "command": "workbench.action.findInFiles",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !inputFocus && !terminalFocus)"
+    },
+    {
+        "key": "; f e",
+        "command": "workbench.view.explorer",
+        "when": "(vim.mode == 'Normal' && editorTextFocus && !explorerViewletVisible) || (!editorTextFocus && !explorerViewletVisible && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; f r",
+        "command": "workbench.action.openRecent",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; f c",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; e",
+        "command": "workbench.extensions.action.focusExtensionsView",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k n",
+        "command": "extension.vsKubernetesUseNamespace",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k s",
+        "command": "extension.vsKubernetesTerminal",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k d",
+        "command": "extension.vsKubernetesDescribe",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k l",
+        "command": "extension.vsKubernetesLogs",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k a",
+        "command": "remote-containers.attachToK8sContainer",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; k e",
+        "command": "workbench.view.extension.kubernetesView",
+        "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.kubernetesView.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.kubernetesView.enabled)"
+    },
+    {
+        "key": "; g e",
+        "command": "workbench.view.scm",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
+    },
+    {
+        "key": "; g l",
+        "command": "workbench.view.extension.gitlab-workflow",
+        "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.gitlab-workflow.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.gitlab-workflow.enabled)"
+    },
+    {
+        "key": "; s v",
+        "command": "workbench.action.splitEditor",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "; s h",
+        "command": "workbench.action.splitEditorDown",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "; w h",
+        "command": "workbench.action.moveActiveEditorGroupLeft",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "; w l",
+        "command": "workbench.action.moveActiveEditorGroupRight",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "; w j",
+        "command": "workbench.action.moveActiveEditorGroupDown",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    {
+        "key": "; w k",
+        "command": "workbench.action.moveActiveEditorGroupUp",
+        "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
+    },
+    // navigation
+    {
+        "key": "ctrl-h",
+        "command": "workbench.action.navigateLeft",
+    },
+    {
+        "key": "ctrl-l",
+        "command": "workbench.action.navigateRight",
+    },
+    {
+        "key": "ctrl-j",
+        "command": "workbench.action.navigateDown",
+    },
+    {
+        "key": "ctrl-k",
+        "command": "workbench.action.navigateUp",
+    },
+    // emac navigation
+    {
+        "key": "ctrl+n",
+        "command": "search.focus.nextSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "search.focus.previousSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "enter",
+        "command": "search.action.focusSearchList",
+        "when": "searchViewletVisible && inputFocus"
+    },
+    // explorer
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "x",
+        "command": "filesExplorer.cut",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // terminal
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    // other
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor",
+        "when": ""
+    },
+    // disable
+    {
+        "key": "ctrl+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+\\",
+        "command": "-workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    }
+]
