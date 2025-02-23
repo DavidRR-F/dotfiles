@@ -60,8 +60,8 @@
         "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.kubernetesView.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.kubernetesView.enabled)"
     },
     {
-        "key": "; g e",
-        "command": "workbench.view.scm",
+        "key": "; g g",
+        "command": "lazygit.openLazygit",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
@@ -102,19 +102,19 @@
     // navigation
     {
         "key": "ctrl-h",
-        "command": "workbench.action.navigateLeft",
+        "command": "workbench.action.navigateLeft"
     },
     {
         "key": "ctrl-l",
-        "command": "workbench.action.navigateRight",
+        "command": "workbench.action.navigateRight"
     },
     {
         "key": "ctrl-j",
-        "command": "workbench.action.navigateDown",
+        "command": "workbench.action.navigateDown"
     },
     {
         "key": "ctrl-k",
-        "command": "workbench.action.navigateUp",
+        "command": "workbench.action.navigateUp"
     },
     // emac navigation
     {
