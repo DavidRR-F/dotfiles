@@ -34,7 +34,7 @@
             ],
             "commands": [
                 "workbench.action.nextEditorInGroup"
-            ],
+            ]
         },
         {
             "before": [
@@ -145,7 +145,7 @@
             "commands": [
                 "editor.action.rename"
             ]
-        },
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -232,4 +232,5 @@
     "bashIde.shfmt.caseIndent": true,
     "bashIde.shfmt.simplifyCode": true,
     "editor.formatOnSave": true,
+    "editor.fontSize": 16
 }
