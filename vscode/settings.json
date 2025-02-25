@@ -187,7 +187,15 @@
     "catppuccin.customUIColors": {
         "mocha": {
             "statusBar.background": "mantle",
-        },
+            "sideBar.background": "mantle"
+        }
+    },
+    "window.titleBarStyle": "custom",
+    "workbench.colorCustomizations": {
+        "titleBar.forground": "#cba6f7",
+        "titleBar.activeForeground": "#cba6f7",
+        "titleBar.background": "#181825",
+        "titleBar.activeBackground": "#181825"
     },
     "editor.fontFamily": "'0xProto Nerd Font Mono', 'monospace', monospace",
     "extensions.ignoreRecommendations": true,
@@ -195,14 +203,12 @@
     "workbench.statusBar.visible": true,
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "single",
-    "apc.menubar.compact": true,
     "window.menuBarVisibility": "hidden",
     "window.enableMenuBarMnemonics": false,
     "window.customMenuBarAltFocus": false,
     "window.customTitleBarVisibility": "never",
     "window.commandCenter": false,
     "window.restoreWindows": "none",
-    "window.titleBarStyle": "native",
     "window.dialogStyle": "custom",
     "editor.scrollbar.vertical": "hidden",
     "editor.scrollbar.horizontal": "hidden",
