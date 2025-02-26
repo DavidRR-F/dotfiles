@@ -1,6 +1,6 @@
 {
     // vim 
-    "vim.leader": ";",
+    "vim.leader": "\\",
     "vim.easymotion": false,
     "vim.incsearch": true,
     "vim.hlsearch": true,
@@ -156,26 +156,6 @@
                 "*",
                 "<Esc>"
             ]
-        },
-        {
-            "before": [
-                "<Tab>"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                "<S-Tab>"
-            ],
-            "after": [
-                "<",
-                "g",
-                "v"
-            ]
         }
     ],
     "extensions.experimental.affinity": {
@@ -194,8 +174,10 @@
     "workbench.colorCustomizations": {
         "titleBar.forground": "#cba6f7",
         "titleBar.activeForeground": "#cba6f7",
+        "titleBar.inactiveForeground": "#cba6f7",
         "titleBar.background": "#181825",
-        "titleBar.activeBackground": "#181825"
+        "titleBar.activeBackground": "#181825",
+        "titleBar.inactiveBackground": "#181825"
     },
     "editor.fontFamily": "'0xProto Nerd Font Mono', 'monospace', monospace",
     "extensions.ignoreRecommendations": true,

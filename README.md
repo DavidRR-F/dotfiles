@@ -33,15 +33,68 @@ cd ~/.dotfiles
 dotter --force
 ```
 
-### Vim Stuff I always forget
+### Vim Stuff
 
-1. Remove lines with just whitespace
+#### Selecting
+
+##### Motions
+i -> between
+a -> around
+w -> word
+W -> non whitespace
+
+v<motion><open/close-charater>: visual select everything between open and close characters
+y<motion><open/close-charater>: yank everything between open and close characters
+d<motion><open/close-charater>: cut everything between open and close characters
+c<motion><open/close-charater>: cut everything between open and close characters
+
+gUw capitalize a word
+guw lowercase a word
+gUU calitalize line
+guu lowercase line
+~ in normal to capital or lowercase a letter
+
+##### vim surround
+
+cs<open/close-charater-source><open/close-charater-target>: change surrounding
+ys<motion><open/close-charater-target>: add surrounding
+ds<open/close-charater>: change surrounding
+
+#### Navigation
+
+f <character>: jump to next instance of character
+F <character>: jump to prev instance of character
+t <character>: jump to space before next instance of character
+T <character>: jump to space after next instance of character
+
+*Note*: , to jump back an instance ; to jump forward and instance
+
+#### Formating
+
+> .: indent . to continue
+= or == in visual: auto indent lines
+% in normal to jump between open and close charaters
+
+#### Macros
+
+q <character> to record macro
+q to stop record
+@ <character> to use macro
+<number> @ <character> to use macro n times
+
+Substitute string visual mode
+
+```
+'<,'>s/<source>/<replace>/g
+```
+
+Remove lines with just whitespace
 
 ```
 :g/^\s*$/d
 ```
 
-2. Remove all after prefix
+Remove all after prefix
 
 ```
 :%s:<prefix>.*::g
