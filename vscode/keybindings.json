@@ -1,101 +1,101 @@
 [
     {
-        "key": "\\ f f",
+        "key": "space f",
         "command": "workbench.action.quickOpen",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ f g",
+        "key": "space g",
         "command": "workbench.action.findInFiles",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !inputFocus && !terminalFocus)"
     },
     {
-        "key": "\\ f e",
+        "key": "space e",
         "command": "workbench.view.explorer",
         "when": "(vim.mode == 'Normal' && editorTextFocus && !explorerViewletVisible) || (!editorTextFocus && !explorerViewletVisible && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ f r",
+        "key": "space r",
         "command": "workbench.action.openRecent",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ f c",
+        "key": "space c",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ e",
+        "key": "space shift+e",
         "command": "workbench.extensions.action.focusExtensionsView",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k n",
+        "key": "space k n",
         "command": "extension.vsKubernetesUseNamespace",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k s",
+        "key": "space k s",
         "command": "extension.vsKubernetesTerminal",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k d",
+        "key": "space k d",
         "command": "extension.vsKubernetesDescribe",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k l",
+        "key": "space k l",
         "command": "extension.vsKubernetesLogs",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k a",
+        "key": "space k a",
         "command": "remote-containers.attachToK8sContainer",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ k e",
+        "key": "space k e",
         "command": "workbench.view.extension.kubernetesView",
         "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.kubernetesView.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.kubernetesView.enabled)"
     },
     {
-        "key": "\\ g g",
+        "key": "space l g",
         "command": "lazygit.openLazygit",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "\\ g l",
+        "key": "space p v",
         "command": "workbench.view.extension.gitlab-workflow",
         "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.gitlab-workflow.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.gitlab-workflow.enabled)"
     },
     {
-        "key": "\\ s v",
+        "key": "space s v",
         "command": "workbench.action.splitEditor",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
     {
-        "key": "\\ s h",
+        "key": "space s h",
         "command": "workbench.action.splitEditorDown",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
     {
-        "key": "\\ w h",
+        "key": "space w h",
         "command": "workbench.action.moveActiveEditorGroupLeft",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
     {
-        "key": "\\ w l",
+        "key": "space w l",
         "command": "workbench.action.moveActiveEditorGroupRight",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
     {
-        "key": "\\ w j",
+        "key": "space w j",
         "command": "workbench.action.moveActiveEditorGroupDown",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
     {
-        "key": "\\ w k",
+        "key": "space w k",
         "command": "workbench.action.moveActiveEditorGroupUp",
         "when": "vim.mode == 'Normal' && editorTextFocus && !terminalFocus"
     },
