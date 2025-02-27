@@ -25,7 +25,7 @@
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
-        "key": "space shift+e",
+        "key": "ctrl+shift+e",
         "command": "workbench.extensions.action.focusExtensionsView",
         "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
@@ -58,11 +58,6 @@
         "key": "space k e",
         "command": "workbench.view.extension.kubernetesView",
         "when": "(vim.mode == 'Normal' && editorTextFocus && viewContainer.workbench.view.extension.kubernetesView.enabled) || (!editorTextFocus && !terminalFocus && !inputFocus && viewContainer.workbench.view.extension.kubernetesView.enabled)"
-    },
-    {
-        "key": "space l g",
-        "command": "lazygit.openLazygit",
-        "when": "(vim.mode == 'Normal' && editorTextFocus) || (!editorTextFocus && !terminalFocus && !inputFocus)"
     },
     {
         "key": "space p v",
