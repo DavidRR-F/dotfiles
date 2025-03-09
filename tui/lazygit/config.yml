@@ -1,0 +1,23 @@
+theme:
+  activeBorderColor:
+    - '{{ magenta  }}'
+    - bold
+  inactiveBorderColor:
+    - '{{ black4  }}'
+  optionsTextColor:
+    - '{{ blue  }}'
+  selectedLineBgColor:
+    - '{{ gray  }}'
+  cherryPickedCommitBgColor:
+    - '{{ black4  }}'
+  cherryPickedCommitFgColor:
+    - '{{ magenta  }}'
+  unstagedChangesColor:
+    - '{{ red  }}'
+  defaultFgColor:
+    - '{{ fg  }}'
+  searchingActiveBorderColor:
+    - '{{ yellow  }}'
+
+authorColors:
+  '*': '{{ fg  }}'

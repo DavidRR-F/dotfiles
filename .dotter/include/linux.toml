@@ -1,8 +1,0 @@
-[vscode.files]
-"editor/vscode" = "~/.config/Code/User"
-
-[nvim.files]
-"editor/nvim" = "~/.config/nvim"
-
-[shell.files]
-"shell/.bashrc" = "~/.bashrc"

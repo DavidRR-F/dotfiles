@@ -1,0 +1,100 @@
+k9s:
+  body:
+    fgColor: '{{ fg  }}'
+    bgColor: default
+    logoColor: '{{ magenta  }}'
+  prompt:
+    fgColor: '{{ fg  }}'
+    bgColor: default
+    suggestColor: '{{ blue  }}'
+  help:
+    fgColor: '{{ fg  }}'
+    bgColor: default
+    sectionColor: '{{ green  }}'
+    keyColor: '{{ blue  }}'
+    numKeyColor: '{{ redActive  }}'
+  frame:
+    title:
+      fgColor: '{{ greenActive  }}'
+      bgColor: default
+      highlightColor: '{{ pink  }}'
+      counterColor: '{{ yellow  }}'
+      filterColor: '{{ green  }}'
+    border:
+      fgColor: '{{ magenta  }}'
+      focusColor: '{{ blueActive  }}'
+    menu:
+      fgColor: '{{ fg  }}'
+      keyColor: '{{ blue  }}'
+      numKeyColor: '{{ redActive  }}'
+    crumbs:
+      fgColor: '{{ bg  }}'
+      bgColor: default
+      activeColor: '{{ orangeActive  }}'
+    status:
+      newColor: '{{ blue  }}'
+      modifyColor: '{{ blueActive  }}'
+      addColor: '{{ green  }}'
+      pendingColor: '{{ orange  }}'
+      errorColor: '{{ red  }}'
+      highlightColor: '{{ cyan  }}'
+      killColor: '{{ magenta  }}'
+      completedColor: '{{ surface  }}'
+  info:
+    fgColor: '{{ orange  }}'
+    sectionColor: '{{ fg  }}'
+  views:
+    table:
+      fgColor: '{{ fg  }}'
+      bgColor: default
+      cursorFgColor: '{{ gray  }}'
+      cursorBgColor: '{{ black4  }}'
+      markColor: '{{ yellowActive  }}'
+      header:
+        fgColor: '{{ yellow  }}'
+        bgColor: default
+        sorterColor: '{{ cyan  }}'
+    xray:
+      fgColor: '{{ fg  }}'
+      bgColor: default
+      cursorColor: '{{ black4  }}'
+      cursorTextColor: '{{ bg  }}'
+      graphicColor: '{{ pink  }}'
+    charts:
+      bgColor: default
+      chartBgColor: default
+      dialBgColor: default
+      defaultDialColors:
+        - '{{ green  }}'
+        - '{{ red  }}'
+      defaultChartColors:
+        - '{{ green  }}'
+        - '{{ red  }}'
+      resourceColors:
+        cpu:
+          - '{{ magenta  }}'
+          - '{{ blue  }}'
+        mem:
+          - '{{ yellow  }}'
+          - '{{ orange  }}'
+    yaml:
+      keyColor: '{{ blue  }}'
+      valueColor: '{{ fg  }}'
+      colonColor: '{{ surface1  }}'
+    logs:
+      fgColor: '{{ fg  }}'
+      bgColor: default
+      indicator:
+        fgColor: '{{ blueActive  }}'
+        bgColor: default
+        toggleOnColor: '{{ green  }}'
+        toggleOffColor: '{{ surface1  }}'
+  dialog:
+    fgColor: '{{ yellow  }}'
+    bgColor: default
+    buttonFgColor: '{{ bg  }}'
+    buttonBgColor: default
+    buttonFocusFgColor: '{{ bg  }}'
+    buttonFocusBgColor: '{{ pink  }}'
+    labelFgColor: '{{ yellowActive  }}'
+    fieldFgColor: '{{ fg  }}'

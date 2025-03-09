@@ -14,22 +14,22 @@ $direnv\
 $line_break$character\
 """
 
-palette = 'catpuccin_mocha'
+palette = 'theme'
 
-[palettes.catpuccin_mocha]
-thm_bg = "#1e1e2e"
-thm_fg = "#cdd6f4"
-thm_cyan = "#89dceb"
-thm_black = "#181825"
-thm_gray = "#313244"
-thm_magenta = "#cba6f7"
-thm_pink = "#f5c2e7"
-thm_red = "#f38ba8"
-thm_green = "#a6e3a1"
-thm_yellow = "#f9e2af"
-thm_blue = "#89b4fa"
-thm_orange = "#fab387"
-thm_black4 = "#4e5166"
+[palettes.theme]
+thm_bg = '{{ bg }}'
+thm_fg = '{{ fg }}'
+thm_cyan = '{{ cyan }}'
+thm_black = '{{ black }}'
+thm_gray = '{{ gray }}'
+thm_magenta = '{{ magenta }}'
+thm_pink = '{{ pink }}'
+thm_red = '{{ red }}'
+thm_green = '{{ green }}'
+thm_yellow = '{{ yellow }}'
+thm_blue = '{{ blue }}'
+thm_orange = '{{ orange }}'
+thm_black4 = '{{ black4 }}'
 
 [shell]
 bash_indicator = ''

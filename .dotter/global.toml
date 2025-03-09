@@ -1,5 +1,11 @@
+[prompt]
+depends = ["theme"]
+
 [prompt.files]
 "shell/starship.toml" = "~/.config/starship.toml"
+
+[terminal]
+depends = ["theme"]
 
 [terminal.files]
 "wezterm" = "~/.config/wezterm"
