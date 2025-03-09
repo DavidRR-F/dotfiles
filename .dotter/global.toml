@@ -1,5 +1,4 @@
-[shell.files]
-"shell/.bashrc" = "~/.bashrc"
+[prompt.files]
 "shell/starship.toml" = "~/.config/starship.toml"
 
 [terminal.files]

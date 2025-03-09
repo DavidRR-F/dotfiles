@@ -1,2 +1,9 @@
-[editor.files]
-"vscode" = "~/AppData/Roaming/Code/User"
+[vscode.files]
+"editor/vscode" = "~/AppData/Roaming/Code/User"
+
+[nvim.files]
+"editor/nvim" = "~/AppData/Local/nvim"
+
+[shell.files]
+"shell/.bashrc" = "~/.bashrc"
+"shell/pswh.ps1" = "~/Documents/Powershell/pwsh.ps1"
