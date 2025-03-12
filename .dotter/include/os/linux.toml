@@ -15,3 +15,13 @@ depends = ["theme"]
 "tui/lazydocker/config.yml" = "~/.config/lazydocker/config.yml"
 "tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
 "tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+
+[twm.files]
+"twm/i3/config" = "~/.config/i3/config"
+"twm/i3/style.conf" = "~/.config/i3/style.conf"
+"twm/i3/monitors.conf" = "~/.config/i3/monitors.conf"
+"twm/i3/ubuntu-black-4k.png" = "~/.config/i3/ubuntu-black-4k.png"
+"twm/i3/config.ini" = "~/.config/polybar/config.ini"
+"twm/i3/polyfix.sh" = "~/.config/polybar/polyfix.sh"
+"twm/i3/config.rasi" = "~/.config/rofi/config.rasi"
+"twm/i3/theme.rasi" = "~/.config/rofi/theme.rasi"
