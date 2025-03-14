@@ -12,6 +12,6 @@ depends = ["theme"]
 
 [tui.files]
 "tui/lazygit/config.yml" = "~/Library/Application Support/lazygit/config.yml"
-"tui/lazydocker/config.yml" = "~/Library/Application Support/lazydocker/config.yml"
 "tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
 "tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+"tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"

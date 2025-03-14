@@ -1,64 +1,64 @@
 k9s:
   body:
-    fgColor: '{{ fg  }}'
+    fgColor: '{{ text }}'
     bgColor: default
-    logoColor: '{{ magenta  }}'
+    logoColor: '{{ mauve }}'
   prompt:
-    fgColor: '{{ fg  }}'
+    fgColor: '{{ text }}'
     bgColor: default
     suggestColor: '{{ blue  }}'
   help:
-    fgColor: '{{ fg  }}'
+    fgColor: '{{ text }}'
     bgColor: default
     sectionColor: '{{ green  }}'
     keyColor: '{{ blue  }}'
-    numKeyColor: '{{ redActive  }}'
+    numKeyColor: '{{ maroon }}'
   frame:
     title:
-      fgColor: '{{ greenActive  }}'
+      fgColor: '{{ teal }}'
       bgColor: default
       highlightColor: '{{ pink  }}'
       counterColor: '{{ yellow  }}'
       filterColor: '{{ green  }}'
     border:
-      fgColor: '{{ magenta  }}'
-      focusColor: '{{ blueActive  }}'
+      fgColor: '{{ mauve }}'
+      focusColor: '{{ lavender }}'
     menu:
-      fgColor: '{{ fg  }}'
+      fgColor: '{{ text }}'
       keyColor: '{{ blue  }}'
-      numKeyColor: '{{ redActive  }}'
+      numKeyColor: '{{ maroon }}'
     crumbs:
-      fgColor: '{{ bg  }}'
+      fgColor: '{{ base }}'
       bgColor: default
-      activeColor: '{{ orangeActive  }}'
+      activeColor: '{{ flamingo }}'
     status:
       newColor: '{{ blue  }}'
-      modifyColor: '{{ blueActive  }}'
+      modifyColor: '{{ lavender }}'
       addColor: '{{ green  }}'
-      pendingColor: '{{ orange  }}'
+      pendingColor: '{{ peach }}'
       errorColor: '{{ red  }}'
-      highlightColor: '{{ cyan  }}'
-      killColor: '{{ magenta  }}'
-      completedColor: '{{ surface  }}'
+      highlightColor: '{{ sky }}'
+      killColor: '{{ mauve }}'
+      completedColor: '{{ subtext0 }}'
   info:
-    fgColor: '{{ orange  }}'
-    sectionColor: '{{ fg  }}'
+    fgColor: '{{ peach }}'
+    sectionColor: '{{ text }}'
   views:
     table:
-      fgColor: '{{ fg  }}'
+      fgColor: '{{ text }}'
       bgColor: default
-      cursorFgColor: '{{ gray  }}'
-      cursorBgColor: '{{ black4  }}'
-      markColor: '{{ yellowActive  }}'
+      cursorFgColor: '{{ surface0 }}'
+      cursorBgColor: '{{ mantle }}'
+      markColor: '{{ rosewater }}'
       header:
         fgColor: '{{ yellow  }}'
         bgColor: default
-        sorterColor: '{{ cyan  }}'
+        sorterColor: '{{ sky }}'
     xray:
-      fgColor: '{{ fg  }}'
+      fgColor: '{{ text }}'
       bgColor: default
-      cursorColor: '{{ black4  }}'
-      cursorTextColor: '{{ bg  }}'
+      cursorColor: '{{ mantle }}'
+      cursorTextColor: '{{ base }}'
       graphicColor: '{{ pink  }}'
     charts:
       bgColor: default
@@ -72,29 +72,29 @@ k9s:
         - '{{ red  }}'
       resourceColors:
         cpu:
-          - '{{ magenta  }}'
+          - '{{ mauve }}'
           - '{{ blue  }}'
         mem:
           - '{{ yellow  }}'
-          - '{{ orange  }}'
+          - '{{ peach }}'
     yaml:
       keyColor: '{{ blue  }}'
-      valueColor: '{{ fg  }}'
-      colonColor: '{{ surface1  }}'
+      valueColor: '{{ text }}'
+      colonColor: '{{ subtext0 }}'
     logs:
-      fgColor: '{{ fg  }}'
+      fgColor: '{{ text }}'
       bgColor: default
       indicator:
-        fgColor: '{{ blueActive  }}'
+        fgColor: '{{ lavender }}'
         bgColor: default
         toggleOnColor: '{{ green  }}'
-        toggleOffColor: '{{ surface1  }}'
+        toggleOffColor: '{{ subtext0 }}'
   dialog:
     fgColor: '{{ yellow  }}'
     bgColor: default
-    buttonFgColor: '{{ bg  }}'
+    buttonFgColor: '{{ base }}'
     buttonBgColor: default
-    buttonFocusFgColor: '{{ bg  }}'
+    buttonFocusFgColor: '{{ base }}'
     buttonFocusBgColor: '{{ pink  }}'
-    labelFgColor: '{{ yellowActive  }}'
-    fieldFgColor: '{{ fg  }}'
+    labelFgColor: '{{ rosewater }}'
+    fieldFgColor: '{{ text }}'

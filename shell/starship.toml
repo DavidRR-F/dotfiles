@@ -17,19 +17,19 @@ $line_break$character\
 palette = 'theme'
 
 [palettes.theme]
-thm_bg = '{{ bg }}'
-thm_fg = '{{ fg }}'
-thm_cyan = '{{ cyan }}'
-thm_black = '{{ black }}'
-thm_gray = '{{ gray }}'
-thm_magenta = '{{ magenta }}'
+thm_bg = '{{ base }}'
+thm_fg = '{{ text }}'
+thm_cyan = '{{ blue }}'
+thm_black = '{{ mantle }}'
+thm_gray = '{{ surface0 }}'
+thm_magenta = '{{ mauve }}'
 thm_pink = '{{ pink }}'
 thm_red = '{{ red }}'
 thm_green = '{{ green }}'
 thm_yellow = '{{ yellow }}'
 thm_blue = '{{ blue }}'
-thm_orange = '{{ orange }}'
-thm_black4 = '{{ black4 }}'
+thm_orange = '{{ peach }}'
+thm_black4 = '{{ crust }}'
 
 [shell]
 bash_indicator = ''

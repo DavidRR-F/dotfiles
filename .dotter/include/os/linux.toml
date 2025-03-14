@@ -12,9 +12,12 @@ depends = ["theme"]
 
 [tui.files]
 "tui/lazygit/config.yml" = "~/.config/lazygit/config.yml"
-"tui/lazydocker/config.yml" = "~/.config/lazydocker/config.yml"
 "tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
 "tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+"tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
+
+[twm]
+depends = ["theme"]
 
 [twm.files]
 "twm/i3/config" = "~/.config/i3/config"

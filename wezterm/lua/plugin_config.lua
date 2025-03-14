@@ -3,8 +3,8 @@ local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 local M = {}
 
-M.tab_background = '{{ black }}'
-M.catpuccin_purple = '{{ magenta }}'
+M.tab_background = '{{ mantle }}'
+M.catpuccin_purple = '{{ mauve }}'
 
 local mode_icons = {
   NO = '', -- Normal Mode
