@@ -1,3 +1,9 @@
+[helpers]
+i3_mod = ".dotter/helpers/i3_mod.rasi"
+
+[vscode]
+depends = ["theme"]
+
 [vscode.files]
 "editor/vscode" = "~/.config/Code/User"
 

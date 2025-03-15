@@ -22,6 +22,11 @@ Create `.dotter/local.toml`
 
 `Optional exclude packages you dont want to use`
 
+```toml
+includes = ['.dotter/include/os/linux.toml']
+packages = ['nvim', 'prompt', 'shell', 'terminal', 'tui', 'twm']
+```
+
 ##### Run dotter
 
 ```bash

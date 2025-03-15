@@ -1,19 +1,41 @@
 include $HOME/.config/i3/style.conf
 include $HOME/.config/i3/monitors.conf
 
-set $mod Mod1
+set $mod {{ i3_mod mod }}
+
+#exec --no-startup-id $HOME/.config/i3/windows.sh
+
+bindsym $mod+{{ application_menu }} exec --no-startup-id rofi -show drun
+bindsym $mod+{{ open_terminal }} exec {{ terminal }}
+bindsym $mod+{{ snipping_tool }} exec --no-startup-id flameshot gui 
+bindsym $mod+{{ quit }} kill
+bindsym $mod+{{ next_workspace }} workspace next
+bindsym $mod+{{ prev_workspace }} workspace prev
+bindsym $mod+{{ focus_left }} focus left
+bindsym $mod+{{ focus_down }} focus down
+bindsym $mod+{{ focus_up }} focus up
+bindsym $mod+{{ focus_right }} focus right
+bindsym $mod+{{ focus_left }} move left
+bindsym $mod+{{ move_down }} move down
+bindsym $mod+{{ move_up }} move up
+bindsym $mod+{{ move_right }} move right
+bindsym $mod+{{ split_horizontal }} split h
+bindsym $mod+{{ split_vertical }} split v
+bindsym $mod+{{ toggle_fullscreen }} fullscreen toggle
+bindsym $mod+{{ layout_stacking }} layout stacking
+bindsym $mod+{{ layout_tabbed }} layout tabbed
+bindsym $mod+{{ toggle_split }} layout toggle split
+bindsym $mod+{{ reload }} reload
+bindsym $mod+{{ restart }} restart
+bindsym $mod+{{ increase_width }} resize grow width 10 px or 10 ppt
+bindsym $mod+{{ decrease_width }} resize shrink width 10 px or 10 ppt
+bindsym $mod+{{ increase_height }} resize grow height 10 px or 10 ppt
+bindsym $mod+{{ decrease_height }} resize shrink height 10 px or 10 ppt
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/polyfix.sh
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/ubuntu-black-4k.png
 exec --no-startup-id compton
-#exec --no-startup-id $HOME/.config/i3/windows.sh
-
-bindsym $mod+space exec --no-startup-id rofi -show window
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Return exec wezterm
-bindsym $mod+Shift+s exec --no-startup-id flameshot gui 
-
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -22,27 +44,3 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-bindsym $mod+Shift+q kill
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+minus split h
-bindsym $mod+equal split v
-bindsym $mod+f fullscreen toggle
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+u resize shrink width 10 px or 10 ppt
-bindsym $mod+i resize grow height 10 px or 10 ppt
-bindsym $mod+o resize shrink height 10 px or 10 ppt
-bindsym $mod+p resize grow width 10 px or 10 ppt
