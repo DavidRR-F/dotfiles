@@ -1,7 +1,11 @@
 include $HOME/.config/i3/style.conf
 include $HOME/.config/i3/monitors.conf
 
-set $mod {{ i3_mod mod }}
+{{#if (eq mod "alt")}}
+set $mod Mod1
+{{else}}
+set $mod Mod4
+{{/if}}
 
 #exec --no-startup-id $HOME/.config/i3/windows.sh
 
@@ -15,7 +19,7 @@ bindsym $mod+{{ focus_left }} focus left
 bindsym $mod+{{ focus_down }} focus down
 bindsym $mod+{{ focus_up }} focus up
 bindsym $mod+{{ focus_right }} focus right
-bindsym $mod+{{ focus_left }} move left
+bindsym $mod+{{ move_left }} move left
 bindsym $mod+{{ move_down }} move down
 bindsym $mod+{{ move_up }} move up
 bindsym $mod+{{ move_right }} move right

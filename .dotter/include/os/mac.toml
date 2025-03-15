@@ -1,6 +1,3 @@
-[helpers]
-aerospace_bind = ".dotter/helpers/aerospace_bind.rhai"
-
 [vscode]
 depends = ["theme"]
 
@@ -12,6 +9,9 @@ depends = ["theme"]
 
 [shell.files]
 "shell/.zshrc" = "~/.zshrc"
+
+[shell.variables]
+shell = "zsh"
 
 [tui]
 depends = ["theme"]

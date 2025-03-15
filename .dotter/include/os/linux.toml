@@ -1,6 +1,3 @@
-[helpers]
-i3_mod = ".dotter/helpers/i3_mod.rasi"
-
 [vscode]
 depends = ["theme"]
 
@@ -12,6 +9,9 @@ depends = ["theme"]
 
 [shell.files]
 "shell/.bashrc" = "~/.bashrc"
+
+[shell.variables]
+shell = "bash"
 
 [tui]
 depends = ["theme"]

@@ -5,12 +5,15 @@ depends = ["theme"]
 "shell/starship.toml" = "~/.config/starship.toml"
 
 [terminal]
-depends = ["theme"]
+depends = ["theme", "shell"]
 
 [terminal.files]
 "wezterm" = "~/.config/wezterm"
 
 [theme.variables]
+font = "0xProto Nerd Font Mono"
+font_italic = "0xProto"
+font_size = "14"
 crust = "#11111b"
 mantle = "#181825"
 base = "#1e1e2e"
@@ -46,18 +49,18 @@ restart = "shift+r"
 reload = "shift+c"
 quit = "shift+q"
 exit = "shift+e"
-open_terminal = "enter"
+open_terminal = "Enter"
 snipping_tool = "shift+s"
 application_menu = "space"
 toggle_fullscreen = "f"
 minimize = "m"
-split_vertical = "-"
-split_horizontal = "="
+split_vertical = "equal"
+split_horizontal = "minus"
 toggle_split = "e"
 layout_stacking = "s"
 layout_tabbed = "w"
-next_workspace = "tab"
-prev_workspace = "shift+tab"
+next_workspace = "Tab"
+prev_workspace = "shift+Tab"
 recent_workspace = "d"
 focus_up = "k"
 focus_down = "j"

@@ -242,8 +242,8 @@ M.quick_domains = {
     ssh_ignore = false,
     exec_ignore = {
       ssh = false,
-      docker = true,
-      kubernetes = true,
+      docker = false,
+      kubernetes = false,
     },
   }
 }

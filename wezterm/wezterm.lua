@@ -12,14 +12,14 @@ local c = {}
 if wezterm.config_builder then
   c = wezterm.config_builder()
 end
-c.default_prog = { "bash" }
+c.default_prog = { "{{ shell }}" }
 c.default_workspace = "main"
 c.disable_default_key_bindings = true
 c.enable_wayland = false
 c.keys = keys.general
 c.key_tables = { tmux = keys.tmux }
 c.launch_menu = {
-  { label = "󰊢 GitHub Dashboard", args = { "gh", "dash" } },
+  { label = "󰊢 Lazy Git", args = { "lazygit" } },
   { label = " Lazy Docker", args = { "lazydocker" } },
   { label = "󱃾 K9S", args = { "k9s" } },
   { label = "󰻫 Yazi", args = { "yazi" } },
