@@ -18,22 +18,16 @@ or
 scoop install main/dotter
 ```
 
-Make `pre-deploy.sh` executable
-
-```bash
-chmod +x ~/.dotfiles/.dotter/pre-deploy.sh
-```
-
 ##### Run dotter
 
 ```bash
 cd ~/.dotfiles
-./dotter -f -y --pre-deploy ./.dotter/pre-deploy.sh
+./dotter -f -y -l .dotter/<os>.toml
 
 # if using package managed version
 
 cd ~/.dotfiles
-dotter -f -y --pre-deploy ./.dotter/pre-deploy.sh
+dotter -f -y -l .dotter/<os>.toml
 ```
 
 ### Vim Stuff

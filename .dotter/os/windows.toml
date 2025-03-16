@@ -1,0 +1,30 @@
+[vscode] 
+depends = ["theme"]
+
+[vscode.files]
+"editor/vscode" = "~/AppData/Roaming/Code/User"
+
+[nvim.files]
+"editor/nvim" = "~/AppData/Local/nvim"
+
+[shell.files]
+"shell/.bashrc" = "~/.bashrc"
+"shell/pswh.ps1" = "~/Documents/Powershell/pwsh.ps1"
+
+[shell.variables]
+shell = "bash"
+
+[tui]
+depends = ["theme"]
+
+[tui.files]
+"tui/lazygit/config.yml" = "~/.config/lazygit/config.yml"
+"tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
+"tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+"tui/yazi/theme.toml" = "~/AppData/Local/yazi/config/theme.toml"
+
+[twm]
+depends = ["theme"]
+
+[twm.files]
+"twm/glaze/config.yaml" = "~/.config/.glzr/glazewm/config.yaml"
