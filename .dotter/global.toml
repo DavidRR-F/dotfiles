@@ -1,5 +1,6 @@
 [helpers]
 replace = ".dotter/helpers/replace.rhai"
+lower = ".dotter/helpers/lower.rhai"
 
 [theme.variables]
 font = "0xProto Nerd Font Mono"
@@ -64,6 +65,7 @@ depends = ["theme"]
 "tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
 
 [twm.variables]
+# use i3 syntax (will be translated for others)
 mod = "alt"
 terminal = "wezterm"
 restart = "shift+r"
