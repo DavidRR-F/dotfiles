@@ -1,1 +1,2 @@
 includes = [".dotter/os/linux.toml"]
+packages = ["shell", "twm"]
