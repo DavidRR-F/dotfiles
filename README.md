@@ -1,3 +1,7 @@
+# My Dotfile (Linux, Mac, Windows)
+
+![image](https://github.com/user-attachments/assets/32816d68-aab1-43f4-b0f4-cf7c8838c958)
+
 ### Dotter Installation
 
 #### **Clone the Repository**:
