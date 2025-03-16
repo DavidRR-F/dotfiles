@@ -21,3 +21,6 @@ depends = ["theme"]
 "tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
 "tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
 "tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
+
+[twm.files]
+"twm/aerospace/aerospace.toml" = "~/.config/aerospace/aerospace.toml"

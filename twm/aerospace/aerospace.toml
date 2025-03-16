@@ -12,7 +12,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-    {{ mod }}-{{ aerospace_bind open_terminal }} = '''exec-and-forget osascript -e '
+    {{ mod }}-{{ replace open_terminal + - }} = '''exec-and-forget osascript -e '
     tell application "{{ terminal }}"
         do script
         activate
@@ -20,41 +20,41 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     '''
 
     # i3 wraps focus by default
-    {{ mod }}-{{ aerospace_bind focus_left }} = 'focus --boundaries-action wrap-around-the-workspace left'
-    {{ mod }}-{{ aerospace_bind focus_down }} = 'focus --boundaries-action wrap-around-the-workspace down'
-    {{ mod }}-{{ aerospace_bind focus_up }} = 'focus --boundaries-action wrap-around-the-workspace up'
-    {{ mod }}-{{ aerospace_bind focus_right }} = 'focus --boundaries-action wrap-around-the-workspace right'
+    {{ mod }}-{{ replace focus_left + - }} = 'focus --boundaries-action wrap-around-the-workspace left'
+    {{ mod }}-{{ replace focus_down + - }} = 'focus --boundaries-action wrap-around-the-workspace down'
+    {{ mod }}-{{ replace focus_up + - }} = 'focus --boundaries-action wrap-around-the-workspace up'
+    {{ mod }}-{{ replace focus_right + - }} = 'focus --boundaries-action wrap-around-the-workspace right'
 
-    {{ mod }}-{{ aerospace_bind move_left }} = 'move left'
-    {{ mod }}-{{ aerospace_bind move_down }} = 'move down'
-    {{ mod }}-{{ aerospace_bind move_up }} = 'move up'
-    {{ mod }}-{{ aerospace_bind move_right }} = 'move right'
-    {{ mod }}-{{ split_horizontal }} = 'split horizontal'
-    {{ mod }}-{{ split_vertical }} = 'split vertical'
-    {{ mod }}-{{ aerospace_bind fullscreen }} = 'fullscreen'
-    {{ mod }}-{{ layout_stacking }} = 'layout v_accordion' # 'layout stacking' in i3
-    {{ mod }}-{{ layout_tabbed }} = 'layout h_accordion' # 'layout tabbed' in i3
-    {{ mod }}-{{ toggle_split }} = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
-    {{ mod }}-{{ focus_workspace_1 }} = 'workspace 1'
-    {{ mod }}-{{ focus_workspace_2 }} = 'workspace 2'
-    {{ mod }}-{{ focus_workspace_3 }} = 'workspace 3'
-    {{ mod }}-{{ focus_workspace_4 }} = 'workspace 4'
-    {{ mod }}-{{ focus_workspace_5 }} = 'workspace 5'
-    {{ mod }}-{{ focus_workspace_6 }} = 'workspace 6'
-    {{ mod }}-{{ focus_workspace_7 }} = 'workspace 7'
-    {{ mod }}-{{ focus_workspace_8 }} = 'workspace 8'
-    {{ mod }}-{{ focus_workspace_9 }} = 'workspace 9'
-    {{ mod }}-{{ move_workspace_1 }} = 'move-node-to-workspace 1'
-    {{ mod }}-{{ move_workspace_2 }} = 'move-node-to-workspace 2'
-    {{ mod }}-{{ move_workspace_3 }} = 'move-node-to-workspace 3'
-    {{ mod }}-{{ move_workspace_4 }} = 'move-node-to-workspace 4'
-    {{ mod }}-{{ move_workspace_5 }} = 'move-node-to-workspace 5'
-    {{ mod }}-{{ move_workspace_6 }} = 'move-node-to-workspace 6'
-    {{ mod }}-{{ move_workspace_7 }} = 'move-node-to-workspace 7'
-    {{ mod }}-{{ move_workspace_8 }} = 'move-node-to-workspace 8'
-    {{ mod }}-{{ move_workspace_9 }} = 'move-node-to-workspace 9'
-    {{ mod }}-{{ reload }} = 'reload-config'
-    {{ mod }}-{{ increase_width }} = 'resize width +50'
-    {{ mod }}-{{ decrease_width }} = 'resize width -50'
-    {{ mod }}-{{ increase_height }} = 'resize height +50'
-    {{ mod }}-{{ decrease_height }} = 'resize height -50'
+    {{ mod }}-{{ replace move_left + - }} = 'move left'
+    {{ mod }}-{{ replace move_down + - }} = 'move down'
+    {{ mod }}-{{ replace move_up + - }} = 'move up'
+    {{ mod }}-{{ replace move_right + - }} = 'move right'
+    {{ mod }}-{{ replace split_horizontal + - }} = 'split horizontal'
+    {{ mod }}-{{ replace split_vertical + - }} = 'split vertical'
+    {{ mod }}-{{ replace fullscreen + - }} = 'fullscreen'
+    {{ mod }}-{{ replace layout_stacking + - }} = 'layout v_accordion' # 'layout stacking' in i3
+    {{ mod }}-{{ replace layout_tabbed + - }} = 'layout h_accordion' # 'layout tabbed' in i3
+    {{ mod }}-{{ replace toggle_split + - }} = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+    {{ mod }}-{{ replace focus_workspace_1 + - }} = 'workspace 1'
+    {{ mod }}-{{ replace focus_workspace_2 + - }} = 'workspace 2'
+    {{ mod }}-{{ replace focus_workspace_3 + - }} = 'workspace 3'
+    {{ mod }}-{{ replace focus_workspace_4 + - }} = 'workspace 4'
+    {{ mod }}-{{ replace focus_workspace_5 + - }} = 'workspace 5'
+    {{ mod }}-{{ replace focus_workspace_6 + - }} = 'workspace 6'
+    {{ mod }}-{{ replace focus_workspace_7 + - }} = 'workspace 7'
+    {{ mod }}-{{ replace focus_workspace_8 + - }} = 'workspace 8'
+    {{ mod }}-{{ replace focus_workspace_9 + - }} = 'workspace 9'
+    {{ mod }}-{{ replace move_workspace_1 + - }} = 'move-node-to-workspace 1'
+    {{ mod }}-{{ replace move_workspace_2 + - }} = 'move-node-to-workspace 2'
+    {{ mod }}-{{ replace move_workspace_3 + - }} = 'move-node-to-workspace 3'
+    {{ mod }}-{{ replace move_workspace_4 + - }} = 'move-node-to-workspace 4'
+    {{ mod }}-{{ replace move_workspace_5 + - }} = 'move-node-to-workspace 5'
+    {{ mod }}-{{ replace move_workspace_6 + - }} = 'move-node-to-workspace 6'
+    {{ mod }}-{{ replace move_workspace_7 + - }} = 'move-node-to-workspace 7'
+    {{ mod }}-{{ replace move_workspace_8 + - }} = 'move-node-to-workspace 8'
+    {{ mod }}-{{ replace move_workspace_9 + - }} = 'move-node-to-workspace 9'
+    {{ mod }}-{{ replace reload + - }} = 'reload-config'
+    {{ mod }}-{{ replace increase_width + - }} = 'resize width +50'
+    {{ mod }}-{{ replace decrease_width + - }} = 'resize width -50'
+    {{ mod }}-{{ replace increase_height + - }} = 'resize height +50'
+    {{ mod }}-{{ replace decrease_height + - }} = 'resize height -50'

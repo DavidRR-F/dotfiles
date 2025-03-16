@@ -1,3 +1,6 @@
+[helpers]
+replace = ".dotter/helpers/replace.rhai"
+
 [prompt]
 depends = ["theme"]
 
