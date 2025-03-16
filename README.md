@@ -18,24 +18,22 @@ or
 scoop install main/dotter
 ```
 
-Create `.dotter/local.toml`
+Make `pre-deploy.sh` executable
 
-`Optional exclude packages you dont want to use`
-
-```toml
-includes = ['.dotter/include/os/linux.toml']
-packages = ['nvim', 'prompt', 'shell', 'terminal', 'tui', 'twm']
+```bash
+chmod +x ~/.dotfiles/.dotter/pre-deploy.sh
 ```
 
 ##### Run dotter
 
 ```bash
 cd ~/.dotfiles
-./dotter --force
+./dotter -f -y --pre-deploy ./.dotter/pre-deploy.sh
 
 # if using package managed version
 
-dotter --force
+cd ~/.dotfiles
+dotter -f -y --pre-deploy ./.dotter/pre-deploy.sh
 ```
 
 ### Vim Stuff

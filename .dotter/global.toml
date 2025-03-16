@@ -1,18 +1,6 @@
 [helpers]
 replace = ".dotter/helpers/replace.rhai"
 
-[prompt]
-depends = ["theme"]
-
-[prompt.files]
-"shell/starship.toml" = "~/.config/starship.toml"
-
-[terminal]
-depends = ["theme", "shell"]
-
-[terminal.files]
-"wezterm" = "~/.config/wezterm"
-
 [theme.variables]
 font = "0xProto Nerd Font Mono"
 font_italic = "0xProto"
@@ -44,6 +32,55 @@ pink = "#f5c2e7"
 flamingo = "#f2cdcd"
 rosewater = "#f5e0dc"
 transparent = "#FF00000"
+
+[prompt]
+depends = ["theme"]
+
+[prompt.files]
+"shell/starship.toml" = "~/.config/starship.toml"
+
+[shell.files]
+"shell/.bashrc" = "~/.bashrc"
+
+[shell.variables]
+shell = "bash"
+
+[vscode]
+depends = ["theme"]
+
+[vscode.files]
+"editor/vscode" = "~/.config/Code/User"
+
+[nvim.files]
+"editor/nvim" = "~/.config/nvim"
+
+[wezterm]
+depends = ["theme", "shell"]
+
+[wezterm.files]
+"wezterm" = "~/.config/wezterm"
+
+[tui]
+depends = ["theme"]
+
+[tui.files]
+"tui/lazygit/config.yml" = "~/.config/lazygit/config.yml"
+"tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
+"tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+"tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
+
+[twm]
+depends = ["theme"]
+
+[twm.files]
+"twm/i3/config" = "~/.config/i3/config"
+"twm/i3/style.conf" = "~/.config/i3/style.conf"
+"twm/i3/monitors.conf" = "~/.config/i3/monitors.conf"
+"twm/i3/ubuntu-black-4k.png" = "~/.config/i3/ubuntu-black-4k.png"
+"twm/i3/config.ini" = "~/.config/polybar/config.ini"
+"twm/i3/polyfix.sh" = "~/.config/polybar/polyfix.sh"
+"twm/i3/config.rasi" = "~/.config/rofi/config.rasi"
+"twm/i3/theme.rasi" = "~/.config/rofi/theme.rasi"
 
 [twm.variables]
 mod = "alt"

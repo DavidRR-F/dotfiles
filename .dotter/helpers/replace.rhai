@@ -1,8 +1,8 @@
-let text = params[0];
-let src_char = parems[1];
-let dest_char = parems[2];
+let txt = params[0].to_string();
+let src = params[1].to_string();
+let dst = params[2].to_string();
 
 
-text.replace(src_char, dest_char)
+"txt.replace(src, dst)"
 
 
