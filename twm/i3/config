@@ -7,7 +7,9 @@ set $mod Mod1
 set $mod Mod4
 {{/if}}
 
-#exec --no-startup-id $HOME/.config/i3/windows.sh
+gaps inner {{ inner_gap }}
+gaps outer {{ outer_gap }}
+for_window [class="^.*"] border pixel 3
 
 bindsym $mod+{{ application_menu }} exec --no-startup-id rofi -show drun
 bindsym $mod+{{ open_terminal }} exec {{ terminal }}
@@ -39,7 +41,6 @@ bindsym $mod+{{ decrease_height }} resize shrink height 10 px or 10 ppt
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/polyfix.sh
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
-exec --no-startup-id compton
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet

@@ -10,13 +10,13 @@ general:
     trigger: 'monitor_focus'
 
 gaps:
-  inner_gap: '20px'
+  inner_gap: '{{ inner_gap }}'
 
   outer_gap:
     top: '60px'
-    right: '20px'
-    bottom: '20px'
-    left: '20px'
+    right: '{{ outer_gap }}'
+    bottom: '{{ outer_gap }}'
+    left: '{{ outer_gap }}'
 
 window_effects:
   focused_window:
