@@ -8,7 +8,7 @@
     fg-col2: {{ red }};
     grey: {{ surface1 }};
     width: 600;
-    font: "0xProto Nerd Font Mono 16";
+    font: "{{ font }} {{ font_size }}";
 }
 
 element-text, element-icon , mode-switcher {

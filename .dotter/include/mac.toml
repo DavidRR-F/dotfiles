@@ -1,2 +1,2 @@
 includes = [".dotter/os/mac.toml"]
-packages = ["shell", "tui", "twm"]
+packages = ["theme", "prompt", "shell", "wezterm", "nvim", "vscode", "tui", "twm"]

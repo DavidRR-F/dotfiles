@@ -38,7 +38,7 @@ bindsym $mod+{{ decrease_height }} resize shrink height 10 px or 10 ppt
 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/polyfix.sh
-exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/ubuntu-black-4k.png
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
 exec --no-startup-id compton
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork

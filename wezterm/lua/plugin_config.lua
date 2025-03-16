@@ -3,7 +3,7 @@ local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 local M = {}
 
-M.tab_background = '{{ mantle }}'
+M.tab_background = '{{ hextorgba mantle opacity }}'
 M.catpuccin_purple = '{{ mauve }}'
 
 local mode_icons = {
