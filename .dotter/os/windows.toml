@@ -9,7 +9,7 @@ depends = ["theme"]
 
 [shell.files]
 "shell/.bashrc" = "~/.bashrc"
-"shell/pswh.ps1" = "~/Documents/Powershell/pwsh.ps1"
+"shell/pwsh.ps1" = "~/Documents/Powershell/pwsh.ps1"
 
 [shell.variables]
 shell = "bash"
