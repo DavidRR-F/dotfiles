@@ -19,10 +19,10 @@ c.enable_wayland = false
 c.keys = keys.general
 c.key_tables = { tmux = keys.tmux }
 c.launch_menu = {
-  { label = "󰊢 Lazy Git", args = { "lazygit" } },
-  { label = " Lazy Docker", args = { "lazydocker" } },
   { label = "󱃾 K9S", args = { "k9s" } },
   { label = "󰻫 Yazi", args = { "yazi" } },
+  { label = "󰊢 Lazy Git", args = { "lazygit" } },
+  { label = " Lazy Docker", args = { "lazydocker" } },
 }
 
 appearance.apply_to_config(c)
