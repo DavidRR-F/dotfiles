@@ -27,4 +27,4 @@ depends = ["theme"]
 depends = ["theme"]
 
 [twm.files]
-"twm/glaze/config.yaml" = "~/.config/.glzr/glazewm/config.yaml"
+"twm/windows/config.yaml" = "~/.config/.glzr/glazewm/config.yaml"

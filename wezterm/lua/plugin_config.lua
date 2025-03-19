@@ -223,8 +223,8 @@ M.tabline = {
 M.quick_domains = {
   keys = {
     attach = {
-      key = 's',
-      mods = 'SHIFT',
+      key = 'd',
+      mods = '',
       tbl = 'tmux',
     },
     vsplit = {

@@ -14,4 +14,5 @@ depends = ["theme"]
 "tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
 
 [twm.files]
-"twm/aerospace/aerospace.toml" = "~/.config/aerospace/aerospace.toml"
+"twm/mac/aerospace.toml" = "~/.config/aerospace/aerospace.toml"
+"twm/mac/skechybar" = "~/.config/sketchybar"

@@ -1,4 +1,4 @@
-# My Dotfile (Linux, Mac, Windows)
+# My Dotfiles (Linux, Mac, Windows)
 
 ![image](https://github.com/user-attachments/assets/32816d68-aab1-43f4-b0f4-cf7c8838c958)
 
@@ -20,6 +20,10 @@ curl -L -o ~/.dotfiles/dotter https://github.com/SuperCuber/dotter/releases/down
 or
 
 scoop install main/dotter
+
+or 
+
+brew install dotter
 ```
 
 ##### Run dotter

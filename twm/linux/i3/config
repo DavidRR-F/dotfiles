@@ -7,8 +7,8 @@ set $mod Mod1
 set $mod Mod4
 {{/if}}
 
-gaps inner {{ inner_gap }}
-gaps outer {{ outer_gap }}
+gaps inner {{ px inner_gap }}
+gaps outer {{ px outer_gap }}
 for_window [class="^.*"] border pixel 3
 
 bindsym $mod+{{ application_menu }} exec --no-startup-id rofi -show drun
@@ -25,8 +25,6 @@ bindsym $mod+{{ move_left }} move left
 bindsym $mod+{{ move_down }} move down
 bindsym $mod+{{ move_up }} move up
 bindsym $mod+{{ move_right }} move right
-bindsym $mod+{{ split_horizontal }} split h
-bindsym $mod+{{ split_vertical }} split v
 bindsym $mod+{{ toggle_fullscreen }} fullscreen toggle
 bindsym $mod+{{ layout_stacking }} layout stacking
 bindsym $mod+{{ layout_tabbed }} layout tabbed

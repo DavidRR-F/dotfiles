@@ -8,11 +8,6 @@ shell = "bash"
 depends = ["theme"]
 
 [twm.files]
-"twm/i3/config" = "~/.config/i3/config"
-"twm/i3/style.conf" = "~/.config/i3/style.conf"
-"twm/i3/monitors.conf" = "~/.config/i3/monitors.conf"
-"twm/i3/wallpaper.jpg" = "~/.config/i3/wallpaper.jpg"
-"twm/i3/config.ini" = "~/.config/polybar/config.ini"
-"twm/i3/polyfix.sh" = "~/.config/polybar/polyfix.sh"
-"twm/i3/config.rasi" = "~/.config/rofi/config.rasi"
-"twm/i3/theme.rasi" = "~/.config/rofi/theme.rasi"
+"twm/linux/i3" = "~/.config/i3"
+"twm/linux/polybar" = "~/.config/polybar"
+"twm/linux/rofi" = "~/.config/rofi"
