@@ -3,6 +3,10 @@
 
 [shell.variables]
 shell = "bash"
+extras = """
+alias cat='batcat'
+alias ls='eza'
+"""
 
 [twm]
 depends = ["theme"]

@@ -1,8 +1,3 @@
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
@@ -20,6 +15,8 @@ BASH_COMPLETION_FILE=/usr/share/bash-completion/bash_completion
 if [ -f "$BASH_COMPLETION_FILE" ]; then
     . "$BASH_COMPLETION_FILE"
 fi
+
+{{ extras }}
 
 # cli tool hooks
 eval "$(starship init bash)"

@@ -55,7 +55,7 @@ return {
     require('lualine').setup {
       theme = 'catppuccin',
       globalstatus = true,
-      options = { section_separators = '', component_separators = '' },
+      options = { section_separators = '', component_separators = '', always_show_tabline = false },
       sections = {
         lualine_a = {
           {

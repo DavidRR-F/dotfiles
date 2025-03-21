@@ -26,7 +26,7 @@ M.split_nav = function(resize_or_move, key)
     action = wezterm.action_callback(function(win, pane)
       if is_vim(pane) then
         win:perform_action({
-          SendKey = { key = key, mods = resize_or_move == 'resize' and 'CTRL|SHIFT' or 'CTRL' },
+          SendKey = { key = key, mods = resize_or_move == 'resize' and 'ALT' or 'CTRL' },
         }, pane)
       else
         if resize_or_move == 'resize' then

@@ -13,10 +13,11 @@ for_window [class="^.*"] border pixel 3
 
 bindsym $mod+{{ application_menu }} exec --no-startup-id rofi -show drun
 bindsym $mod+{{ open_terminal }} exec {{ terminal }}
-bindsym $mod+{{ snipping_tool }} exec --no-startup-id flameshot gui 
+bindsym $mod+{{ snipping_tool }} exec --no-startup-id {{ snipper }} 
 bindsym $mod+{{ quit }} kill
 bindsym $mod+{{ next_workspace }} workspace next
 bindsym $mod+{{ prev_workspace }} workspace prev
+bindsym $mod+{{ recent_workspace }} workspace back_and_forth
 bindsym $mod+{{ focus_left }} focus left
 bindsym $mod+{{ focus_down }} focus down
 bindsym $mod+{{ focus_up }} focus up
@@ -26,6 +27,8 @@ bindsym $mod+{{ move_down }} move down
 bindsym $mod+{{ move_up }} move up
 bindsym $mod+{{ move_right }} move right
 bindsym $mod+{{ toggle_fullscreen }} fullscreen toggle
+bindsym $mod+{{ minimize }} move scratchpad
+bindsym $mod+{{ show_minimized }} scratchpad show
 bindsym $mod+{{ layout_stacking }} layout stacking
 bindsym $mod+{{ layout_tabbed }} layout tabbed
 bindsym $mod+{{ toggle_split }} layout toggle split
