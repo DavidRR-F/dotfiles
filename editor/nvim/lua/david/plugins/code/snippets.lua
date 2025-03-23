@@ -2,17 +2,15 @@ return {
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
-      "saadparwaiz1/cmp_luasnip" -- Only LuaSnip-related dependencies
+      "saadparwaiz1/cmp_luasnip"
     },
     config = function()
       local ls = require("luasnip")
 
-      -- Load snippets
       require("luasnip.loaders.from_lua").load({
         paths = vim.fn.expand("~/.config/nvim/lua/david/plugins/code/snippets")
       })
 
-      -- Set up keymaps for LuaSnip
       vim.keymap.set({ "i", "s" }, "<Tab>", function()
         if ls.expand_or_jumpable() then
           ls.expand_or_jump()
@@ -28,6 +26,8 @@ return {
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline"
     },
     config = function()
       local cmp = require("cmp")
@@ -56,6 +56,23 @@ return {
           { name = "luasnip" },
           { name = "path" }
         })
+      })
+
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false }
       })
 
       -- Set completeopt

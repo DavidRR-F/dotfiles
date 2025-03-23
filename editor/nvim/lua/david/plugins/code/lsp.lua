@@ -1,13 +1,3 @@
-local servers = {
-  "pyright",
-  "gopls",
-  "bashls",
-  "yamlls",
-  "lua_ls",
-  "jsonls",
-}
-
-
 return {
   {
     "williamboman/mason.nvim",
@@ -25,7 +15,7 @@ return {
         },
       })
       require("mason-lspconfig").setup({
-        ensure_installed = servers,
+        ensure_installed = vim.g.lang.mason.lsp,
         automatic_installation = true,
       })
     end
@@ -45,14 +35,11 @@ return {
         keymap.set('v', 'gr', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
         keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
       end
-      for _, server in pairs(servers) do
+      for _, config_path in pairs(vim.g.lang.config_paths) do
         local lsp_opts = { on_attach = on_attach }
-        local success, settings = pcall(require, "david.plugins.code.lang." .. server)
-
+        local success, code = pcall(require, config_path)
         if success then
-          lspconfig[server].setup(vim.tbl_deep_extend("force", settings, lsp_opts))
-        else
-          lspconfig[server].setup(lsp_opts)
+          lspconfig[code.name.lsp].setup(vim.tbl_deep_extend("force", code.lsp, lsp_opts))
         end
       end
 

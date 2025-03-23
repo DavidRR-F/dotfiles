@@ -36,7 +36,7 @@ opt.conceallevel = 2
 
 -- folding
 
-opt.foldlevel = 5
+opt.foldlevel = 8
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
@@ -69,3 +69,29 @@ vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSi
 vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
 vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+
+-- global variables
+
+vim.g.lang = {
+  mason = {
+    dap = {
+      "python",
+      "bash",
+      "delve"
+    },
+    lsp = {
+      "pyright",
+      "bashls",
+      "gopls",
+      "yamlls",
+      "lua_ls"
+    }
+  },
+  config_paths = {
+      "david.plugins.code.lang.python",
+      "david.plugins.code.lang.bash",
+      "david.plugins.code.lang.go",
+      "david.plugins.code.lang.lua",
+      "david.plugins.code.lang.yaml"
+  }
+}

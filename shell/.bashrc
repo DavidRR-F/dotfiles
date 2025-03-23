@@ -20,5 +20,21 @@ fi
 
 # cli tool hooks
 eval "$(starship init bash)"
-eval "$(zoxide init --cmd cd bash)"
+eval "$(zoxide init bash)"
 eval "$(direnv hook bash)"
+
+# Automatically activate virtualenvs
+function activate_venv() {
+  [ -f 'bin/activate' ] && source bin/activate
+  [ -f '.venv/bin/activate' ] && source .venv/bin/activate
+  [ -f 'environment.yml' ] && conda activate $(cat environment.yml | grep name: | head -n 1 | cut -f 2 -d ':')
+  [ -f 'environment.yaml' ] && conda activate $(cat environment.yaml | grep name: | head -n 1 | cut -f 2 -d ':')
+  return 0
+}
+
+cd() {
+    z "$@"
+    activate_venv
+}
+
+activate_venv
