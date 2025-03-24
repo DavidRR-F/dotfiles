@@ -77,16 +77,7 @@ return {
             }
           }
         },
-        lualine_b = {
-          {
-            function()
-              return vim.fn.getcmdline()
-            end,
-            cond = function()
-              return vim.fn.getcmdwintype() == ''
-            end,
-          },
-        },
+        lualine_b = {},
         lualine_c = { marks },
         lualine_x = {},
         lualine_y = {},

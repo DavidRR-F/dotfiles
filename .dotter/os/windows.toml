@@ -1,18 +1,22 @@
-[vscode] 
-depends = ["theme"]
-
-[vscode.files]
-"editor/vscode" = "~/AppData/Roaming/Code/User"
-
-[nvim.files]
-"editor/nvim" = "~/AppData/Local/nvim"
-
 [shell.files]
 "shell/.bashrc" = "~/.bashrc"
 
 [shell.variables]
 shell = "bash"
 extras = ""
+
+[editor]
+depends = ["theme"]
+
+[editor.files]
+"editor/vscode" = "~/AppData/Roaming/Code/User"
+"editor/nvim" = "~/AppData/Local/nvim"
+
+[terminal]
+depends = ["theme", "shell"]
+
+[terminal.files]
+"terminal/wezterm" = "~/.config/wezterm"
 
 [tui]
 depends = ["theme"]

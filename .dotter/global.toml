@@ -45,29 +45,12 @@ depends = ["theme"]
 [prompt.files]
 "shell/starship.toml" = "~/.config/starship.toml"
 
-[vscode]
+[editor]
 depends = ["theme"]
 
-[vscode.files]
+[editor.files]
 "editor/vscode" = "~/.config/Code/User"
-
-[nvim.files]
 "editor/nvim" = "~/.config/nvim"
-
-[wezterm]
-depends = ["theme", "shell"]
-
-[wezterm.files]
-"wezterm" = "~/.config/wezterm"
-
-[tui]
-depends = ["theme"]
-
-[tui.files]
-"tui/lazygit/config.yml" = "~/.config/lazygit/config.yml"
-"tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
-"tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
-"tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
 
 [twm.variables]
 # use i3 syntax (will be translated for others)

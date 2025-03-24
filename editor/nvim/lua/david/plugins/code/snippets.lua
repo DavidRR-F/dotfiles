@@ -54,7 +54,8 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "luasnip" },
-          { name = "path" }
+          { name = "path" },
+          { name = "render-markdown" }
         })
       })
 

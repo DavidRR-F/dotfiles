@@ -104,8 +104,8 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = ' [󱞩](bold fg:thm_green)'
-error_symbol = ' [󱞩](bold fg:thm_red)'
+success_symbol = ' [](bold fg:thm_green)'
+error_symbol = ' [](bold fg:thm_red)'
 vimcmd_symbol = ' [](bold fg:thm_green)'
 vimcmd_replace_one_symbol = ' [](bold fg:thm_magenta)'
 vimcmd_replace_symbol = ' [](bold fg:thm_magenta)'
