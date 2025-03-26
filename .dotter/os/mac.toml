@@ -1,8 +1,8 @@
 [shell.files]
-"shell/.bashrc" = "~/.bashrc"
+"shell/.zshrc" = "~/.zshrc"
 
 [shell.variables]
-shell = "bash"
+shell = "zsh"
 extras = ""
 
 [terminal]

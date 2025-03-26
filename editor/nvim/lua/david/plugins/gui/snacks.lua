@@ -14,6 +14,7 @@ return {
     { "<leader>un", function() Snacks.notifier.hide() end,                                  desc = "Dismiss All Notifications" },
     { "<leader>t",  function() Snacks.terminal() end,                                       desc = "Toggle Terminal" },
     { "<leader>f",  function() Snacks.picker.files() end,                                   desc = "Find File" },
+    { "z=",         function() Snacks.picker.spelling() end,                                desc = "Spell Suggestions" },
     { "<leader>nf", function() Snacks.picker.files({ cwd = "~/notes", search = "md" }) end, desc = "Find Notes" },
     { "<leader>ng", function() Snacks.picker.grep({ cwd = "~/notes" }) end,                 desc = "Grep Notes" },
     { "<leader>g",  function() Snacks.picker.grep() end,                                    desc = "Grep Word" },
@@ -27,7 +28,7 @@ return {
       enabled = true,
       preset = {
         header = [[
- ____                _ _____ _          ____
+ ____                _ _____ _          ____   (╯°□°）╯︵ ┻━┻
 |  _ \ ___  __ _  __| |_   _| |__   ___|  _ \  ___   ___ ___
 | |_) / _ \/ _` |/ _` | | | | '_ \ / _ \ | | |/ _ \ / __/ __|
 |  _ <  __/ (_| | (_| | | | | | | |  __/ |_| | (_) | (__\__ \
@@ -97,19 +98,19 @@ return {
             preset = "dropdown",
           }
         },
-        man = {
-          layout = {
-            preset = "dropdown",
-          }
-        },
         explorer = {
           replace_netrw = true,
           hidden = true,
           layout = { layout = { position = "right" } }
         },
         files = {
-          hidden = true
-        }
+          hidden = true,
+        },
+        projects = {
+          layout = {
+            preset = "vscode"
+          }
+        },
       }
     },
     indent = {
