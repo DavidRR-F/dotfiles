@@ -1,6 +1,7 @@
- font-family = 0xProto Nerd Font Mono
- font-size = 14
- macos-titlebar-style = hidden
- window-decoration = none
- gtk-tabs-location = hidden
- theme = catppuccin-mocha
+font-family = {{ font }}
+font-size = {{ font_size }}
+command = /bin/{{ shell }}
+macos-titlebar-style = hidden
+window-decoration = none
+gtk-tabs-location = hidden
+theme = catppuccin-mocha

@@ -87,7 +87,7 @@ return {
     gitbrowse = { enabled = true },
     terminal = { enabled = true },
     lazygit = { enabled = true },
-    image = { enabled = true },
+    image = { enabled = true, doc = { enabled = true, inline = true, float = false } },
     picker = {
       sources = {
         grep = {

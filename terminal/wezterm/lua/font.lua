@@ -4,7 +4,7 @@ local M = {}
 -- The Font rules are being applied here.
 M.apply_to_config = function(c)
   c.font = wez.font { family = "{{ font }}", weight = "Regular" }
-  c.font_size = {{ font_size }}
+  c.font_size = { { font_size } }
   c.font_rules = {
     {
       intensity = "Normal",

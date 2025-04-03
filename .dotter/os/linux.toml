@@ -9,7 +9,7 @@ alias ls='eza'
 """
 
 [terminal]
-depends = ["theme"]
+depends = ["theme", "shell"]
 
 [terminal.files]
 "terminal/ghostty/config" = "~/.config/ghostty/config"
