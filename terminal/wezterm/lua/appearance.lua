@@ -9,7 +9,7 @@ M.apply_to_config = function(c)
   c.color_scheme = 'Catppuccin Mocha'
   local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
   c.colors = {
-    background = '{{ hextorgba base opacity }}',
+    background = '{{ base }}',
     cursor_border = scheme.ansi[2],
     tab_bar = {
       background = plugin_config.tab_background,
@@ -28,10 +28,10 @@ M.apply_to_config = function(c)
     }
   }
   c.window_padding = {
-    left = 5,
-    right = 5,
+    left = 0,
+    right = 0,
     top = 5,
-    bottom = 5,
+    bottom = 0,
   }
   c.window_background_image_hsb = {
     brightness = 1,

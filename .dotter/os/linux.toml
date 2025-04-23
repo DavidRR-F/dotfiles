@@ -12,7 +12,7 @@ alias ls='eza'
 depends = ["theme", "shell"]
 
 [terminal.files]
-"terminal/ghostty/config" = "~/.config/ghostty/config"
+"terminal/wezterm" = "~/.config/wezterm"
 
 [tui]
 depends = ["theme", "shell"]
@@ -28,6 +28,9 @@ depends = ["theme", "shell"]
 depends = ["theme"]
 
 [twm.files]
-"twm/linux/i3" = "~/.config/i3"
 "twm/linux/polybar" = "~/.config/polybar"
 "twm/linux/rofi" = "~/.config/rofi"
+"twm/linux/picom" = "~/.config/picom"
+"twm/linux/dunst" = "~/.config/dunst"
+"twm/linux/sxhkd" = "~/.config/sxhkd"
+"twm/linux/bspwm" = "~/.config/bspwm"

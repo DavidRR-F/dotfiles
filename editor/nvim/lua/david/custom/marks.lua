@@ -104,21 +104,19 @@ function M.delete_project_global_marks()
     M.delete_mark_for_key(mark.mark:sub(2))
   end
   M.mark_state.current_mark = nil
-
 end
 
 function M.config()
-
   vim.api.nvim_create_autocmd("CursorMoved", {
     callback = function()
-        local cur_pos = vim.api.nvim_win_get_cursor(0)
-        local buf_id = vim.api.nvim_win_get_buf(0)
-        for _, mark in ipairs(M.get_project_global_marks()) do
-            if buf_id == mark.pos[1] and cur_pos[1] == mark.pos[2] then
-                M.mark_state.current_mark = mark.mark
-                break
-            end
+      local cur_pos = vim.api.nvim_win_get_cursor(0)
+      local buf_id = vim.api.nvim_win_get_buf(0)
+      for _, mark in ipairs(M.get_project_global_marks()) do
+        if buf_id == mark.pos[1] and cur_pos[1] == mark.pos[2] then
+          M.mark_state.current_mark = mark.mark
+          break
         end
+      end
     end,
   })
 
@@ -132,9 +130,11 @@ function M.config()
   vim.keymap.set("n", "<Tab>", M.next_project_global_marks)
   vim.keymap.set("n", "<S-Tab>", M.prev_project_global_marks)
   vim.keymap.set("n", "<leader>dm", M.delete_project_global_marks)
-  for _, mark in ipairs({'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-                       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}) do
-    vim.api.nvim_set_keymap('n', 'dm' .. mark, '<cmd>lua require("david.custom.marks").delete_mark_for_key("' .. mark .. '")<CR>', { noremap = true, silent = true })
+  for _, mark in ipairs({ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }) do
+    vim.api.nvim_set_keymap('n', 'dm' .. mark,
+      '<cmd>lua require("david.custom.marks").delete_mark_for_key("' .. mark .. '")<CR>',
+      { noremap = true, silent = true })
   end
 
   vim.api.nvim_set_hl(0, 'CurrentMark', { fg = '#cba6f7', bg = 'NONE' })
@@ -145,7 +145,7 @@ end
 function M.lualine_marks()
   local marks = M.get_project_global_marks()
   local mark_list = {}
-  
+
   if #marks == 0 then
     table.insert(mark_list, "%#NoMark#" .. "󰍑")
     return table.concat(mark_list, " ")

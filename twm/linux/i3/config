@@ -7,8 +7,8 @@ set $mod Mod1
 set $mod Mod4
 {{/if}}
 
-gaps inner {{ px inner_gap }}
-gaps outer {{ px outer_gap }}
+gaps inner {{ px gap }}
+gaps outer {{ px gap }}
 for_window [class="^.*"] border pixel 3
 
 bindsym $mod+{{ application_menu }} exec --no-startup-id rofi -show drun
@@ -38,7 +38,8 @@ bindsym $mod+{{ increase_width }} resize grow width 10 px or 10 ppt
 bindsym $mod+{{ decrease_width }} resize shrink width 10 px or 10 ppt
 bindsym $mod+{{ increase_height }} resize grow height 10 px or 10 ppt
 bindsym $mod+{{ decrease_height }} resize shrink height 10 px or 10 ppt
-
+bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+t sticky enable
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id $HOME/.config/polybar/polyfix.sh
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg

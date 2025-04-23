@@ -47,10 +47,12 @@ bindkey '^[.' insert-last-word        # Alt+. -> Insert last argument from the p
 
 {{ extras }}
 
+# Hooks
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
+# Auto Activate Virtualenvs
 function activate_venv() {
   [ -f 'bin/activate' ] && source bin/activate
   [ -f '.venv/bin/activate' ] && source .venv/bin/activate
@@ -65,10 +67,3 @@ cd() {
 }
 
 activate_venv
-
-if [ -z "$TMUX" ]; then
-  if ! tmux has-session -t main 2>/dev/null; then
-    tmux new-session -d -s main
-  fi
-  tmux attach -t main
-fi
