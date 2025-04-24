@@ -12,7 +12,7 @@ alias ls='eza'
 depends = ["theme", "shell"]
 
 [terminal.files]
-"terminal/wezterm" = "~/.config/wezterm"
+"terminal/ghostty" = "~/.config/ghostty"
 
 [tui]
 depends = ["theme", "shell"]

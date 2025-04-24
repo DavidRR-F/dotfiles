@@ -1,6 +1,10 @@
 font-family = {{ font }}
 font-size = {{ font_size }}
 command = /bin/{{ shell }}
+window-padding-x = 0,0
+window-padding-y = 0,0
+window-padding-balance = true
+window-padding-color = extend
 macos-titlebar-style = hidden
 window-decoration = none
 gtk-tabs-location = hidden

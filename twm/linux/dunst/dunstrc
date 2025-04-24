@@ -1,6 +1,5 @@
 [global]
-frame_color = "{{ blue }}"
-separator_color= frame
+separator_color=frame
 highlight = "{{ blue }}"
 
 [urgency_low]
@@ -14,4 +13,3 @@ foreground = "{{ text }}"
 [urgency_critical]
 background = "{{ base }}"
 foreground = "{{ text }}"
-frame_color = "{{ peach }}"
