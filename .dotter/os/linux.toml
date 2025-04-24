@@ -13,6 +13,7 @@ depends = ["theme", "shell"]
 
 [terminal.files]
 "terminal/ghostty" = "~/.config/ghostty"
+"terminal/wezterm" = "~/.config/wezterm"
 
 [tui]
 depends = ["theme", "shell"]

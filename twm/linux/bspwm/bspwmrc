@@ -26,7 +26,3 @@ bspc config single_monocle false
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config focus_follows monocle true
-
-#bspc config normal_border_color "{{ mauve }}"
-#bspc config active_border_color "{{ green }}"
-#bspc config focused_border_color "{{ blue }}"

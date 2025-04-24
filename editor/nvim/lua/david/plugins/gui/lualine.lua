@@ -50,12 +50,12 @@ return {
         ['!'] = colors.red,
         t = colors.red,
       }
-      return { fg = colors.base, bg = colors[vim.fn.mode()] }
+      return { fg = color[vim.fn.mode()], bg = 'none' }
     end
     require('lualine').setup {
       theme = 'catppuccin',
       globalstatus = true,
-      options = { section_separators = { left = '', right = '' }, component_separators = '', always_show_tabline = false },
+      options = { section_separators = '', component_separators = '', always_show_tabline = false },
       sections = {
         lualine_a = {
           {
@@ -64,12 +64,11 @@ return {
             color = mode_color,
             padding = { left = 1, right = 1 },
           },
-        },
-        lualine_b = {
           {
             'filename',
             path = 0,
-            padding = { left = 1, right = 1 },
+            color = mode_color,
+            padding = { left = 0, right = 0 },
             symbols = {
               modified = '',
               readonly = '󰈡',
@@ -78,24 +77,21 @@ return {
             }
           }
         },
+        lualine_b = {},
         lualine_c = { marks },
-        lualine_x = {
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {
           {
             'diff',
             symbols = { added = ' ', modified = ' ', removed = ' ' },
+            color = { bg = 'none' },
           },
-        },
-        lualine_y = {
           {
             'branch',
             icon = '󰊢',
-            padding = { left = 1, right = 1 },
-          }
-        },
-        lualine_z = {
-          {
-            'fileformat',
-            color = mode_color
+            color = mode_color,
+            padding = { left = 0, right = 1 },
           }
         },
       },
