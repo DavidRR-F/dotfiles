@@ -1,6 +1,6 @@
 # My Dotfiles (Linux, Mac)
 
-![image](https://github.com/user-attachments/assets/daa1001e-7faf-46c9-8409-85ae93d0cffd)
+![image](https://github.com/user-attachments/assets/0632362b-2bbb-4a5e-9887-1ed5e73543f6)
 
 ### Dotter Installation
 
