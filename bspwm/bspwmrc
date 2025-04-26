@@ -1,9 +1,11 @@
 #!/bin/bash
 
 # Daemons
-polybar bar1 &
-sleep 1 &
-polybar bar2 &
+polybar date &
+polybar time &
+polybar space &
+polybar volume &
+polybar network &
 flameshot &
 dunst &
 nitrogen --restore &

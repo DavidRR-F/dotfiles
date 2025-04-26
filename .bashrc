@@ -6,15 +6,15 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Environment Variables
-export PATH="$PATH:/bin/zsh:$HOME/.local/bin:/usr/local/go/bin"
+export PATH="$PATH:/bin/bash:$HOME/.local/bin:/usr/local/go/bin"
 export EDITOR="nvim"
 
 {{ shell_extras }}
 
 # Hooks
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(direnv hook zsh)"
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+eval "$(direnv hook bash)"
 
 # Auto Activate Virtualenvs
 function activate_venv() {
