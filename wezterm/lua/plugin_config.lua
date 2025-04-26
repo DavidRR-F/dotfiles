@@ -239,7 +239,7 @@ M.quick_domains = {
     },
   },
   auto = {
-    ssh_ignore = false,
+    ssh_ignore = true,
     exec_ignore = {
       ssh = false,
       docker = false,

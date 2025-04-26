@@ -1,5 +1,7 @@
 [global]
-separator_color=frame
+frame_width = 0
+separator_color = frame
+frame_color = "{{ blue }}"
 highlight = "{{ blue }}"
 
 [urgency_low]

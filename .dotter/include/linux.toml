@@ -1,2 +1,2 @@
 includes = [".dotter/os/linux.toml"]
-packages = ["theme", "prompt", "shell", "terminal", "editor", "tui", "twm"]
+packages = ["theme", "linux", "common", "twm"]

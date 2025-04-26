@@ -14,12 +14,21 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + shift + s
+  flameshot gui
+
 #
 # bspwm hotkeys
 #
 
 super + r
   bspc desktop -f last
+
+super + d
+  ~/.local/bin/toggle-show-floating.sh discord
+
+super + p
+  ~/.local/bin/toggle-show-floating.sh 1password
 
 # quit/restart bspwm
 super + alt + {q,r}

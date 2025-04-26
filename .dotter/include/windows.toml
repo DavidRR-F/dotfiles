@@ -1,2 +1,0 @@
-includes = [".dotter/os/windows.toml"]
-packages = ["theme", "prompt", "shell", "terminal", "editor", "tui", "twm"]

@@ -42,21 +42,19 @@ flamingo = "#f2cdcd"
 rosewater = "#f5e0dc"
 transparent = "#FF00000"
 
-[prompt]
-depends = ["theme"]
+[common]
+depends = ["theme", "twm"]
 
-[prompt.files]
-"shell/starship.toml" = "~/.config/starship.toml"
+[common.files]
+"starship.toml" = "~/.config/starship.toml"
+"wezterm" = "~/.config/wezterm"
+".bashrc" = "~/.bashrc"
+"nvim" = "~/.config/nvim"
 
-[editor]
-depends = ["theme"]
-
-[editor.files]
-"editor/vscode" = "~/.config/Code/User"
-"editor/nvim" = "~/.config/nvim"
+[common.variables]
+shell = "bash"
 
 [twm.variables]
-# use i3 syntax (will be translated for others)
 mod = "cmd"
 terminal = "wezterm"
 snipper = "flameshot gui"

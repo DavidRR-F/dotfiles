@@ -1,37 +1,19 @@
-[shell.files]
-"shell/.zshrc" = "~/.zshrc"
+[linux.variables]
+shell_extras = ""
 
-[shell.variables]
-shell = "zsh"
-extras = """
-alias cat='batcat'
-alias ls='eza'
-"""
+[linux]
+depends = ["theme", "twm", "common"]
 
-[terminal]
-depends = ["theme", "shell"]
-
-[terminal.files]
-"terminal/ghostty" = "~/.config/ghostty"
-"terminal/wezterm" = "~/.config/wezterm"
-
-[tui]
-depends = ["theme", "shell"]
-
-[tui.files]
-"tui/lazygit/config.yml" = "~/.config/lazygit/config.yml"
-"tui/k9s/config.yaml" = "~/.config/k9s/config.yaml"
-"tui/k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
-"tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
-"tui/tmux/.tmux.conf" = "~/.tmux.conf"
-
-[twm]
-depends = ["theme"]
-
-[twm.files]
-"twm/linux/polybar" = "~/.config/polybar"
-"twm/linux/rofi" = "~/.config/rofi"
-"twm/linux/picom" = "~/.config/picom"
-"twm/linux/dunst" = "~/.config/dunst"
-"twm/linux/sxhkd" = "~/.config/sxhkd"
-"twm/linux/bspwm" = "~/.config/bspwm"
+[linux.files]
+"lazygit/config.yml" = "~/.config/lazygit/config.yml"
+"k9s/config.yaml" = "~/.config/k9s/config.yaml"
+"k9s/theme.yaml" = "~/.config/k9s/skins/theme.yaml"
+"yazi/theme.toml" = "~/.config/yazi/theme.toml"
+"polybar" = "~/.config/polybar"
+"rofi" = "~/.config/rofi"
+"picom" = "~/.config/picom"
+"dunst" = "~/.config/dunst"
+"sxhkd" = "~/.config/sxhkd"
+"bspwm" = "~/.config/bspwm"
+"scripts/toggle-show-floating.sh" = "~/.local/bin/toggle-show-floating.sh"
+"scripts/floating-position.sh" = "~/.local/bin/floating-position.sh"

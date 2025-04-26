@@ -9,7 +9,6 @@ dunst &
 nitrogen --restore &
 picom --config ~/.config/picom/picom.conf &
 sxhkd &
-#blueman-applet &
 
 # Monitors
 
@@ -26,3 +25,9 @@ bspc config single_monocle false
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config focus_follows monocle true
+
+bspc rule -a discord state=floating
+bspc rula -a slack state=floating
+bspc rule -a steam state=floating
+bspc rule -a 1Password state=floating
+bspc rula -a pulseaudio state=floating

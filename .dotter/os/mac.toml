@@ -1,26 +1,13 @@
-[shell.files]
-"shell/.zshrc" = "~/.zshrc"
+[mac.variables]
+shell_extras = ""
 
-[shell.variables]
-shell = "zsh"
-extras = ""
+[mac]
+depends = ["theme", "twm", "common"]
 
-[terminal]
-depends = ["theme", "shell"]
-
-[terminal.files]
-"terminal/ghostty/config" = "~/.config/ghostty/config"
-
-[tui]
-depends = ["theme", "shell"]
-
-[tui.files]
+[mac.files]
 "tui/lazygit/config.yml" = "~/Library/Application Support/lazygit/config.yml"
 "tui/k9s/config.yaml" = "~/Library/Application Support/k9s/config.yaml"
 "tui/k9s/theme.yaml" = "~/Library/Application Support/k9s/skins/theme.yaml"
 "tui/yazi/theme.toml" = "~/.config/yazi/theme.toml"
-"tui/tmux/.tmux.conf" = "~/.tmux.conf"
-
-[twm.files]
 "twm/mac/aerospace.toml" = "~/.config/aerospace/aerospace.toml"
 "twm/mac/skechybar" = "~/.config/sketchybar"
