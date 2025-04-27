@@ -25,10 +25,10 @@ super + r
   bspc desktop -f last
 
 super + d
-  ~/.local/bin/toggle-show-floating.sh discord
+  ~/.config/sxhkd/scripts/toggle-show-floating.sh discord
 
 super + p
-  ~/.local/bin/toggle-show-floating.sh 1password
+  ~/.config/sxhkd/scripts/toggle-show-floating.sh 1password
 
 # quit/restart bspwm
 super + alt + {q,r}

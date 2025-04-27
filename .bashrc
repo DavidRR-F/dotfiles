@@ -9,6 +9,8 @@ alias egrep='egrep --color=auto'
 export PATH="$PATH:/bin/bash:$HOME/.local/bin:/usr/local/go/bin"
 export EDITOR="nvim"
 
+{{ shell_extras }}
+
 # Hooks
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"

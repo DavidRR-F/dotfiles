@@ -1,0 +1,23 @@
+theme:
+  activeBorderColor:
+    - "{{ mauve  }}"
+    - bold
+  inactiveBorderColor:
+    - "{{ mantle }}"
+  optionsTextColor:
+    - "{{ blue }}"
+  selectedLineBgColor:
+    - "{{ surface0 }}"
+  cherryPickedCommitBgColor:
+    - "{{ mantle }}"
+  cherryPickedCommitFgColor:
+    - "{{ mauve }}"
+  unstagedChangesColor:
+    - "{{ red }}"
+  defaultFgColor:
+    - "{{ text }}"
+  searchingActiveBorderColor:
+    - "{{ yellow }}"
+
+authorColors:
+  "*": "{{ text }}"
