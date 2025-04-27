@@ -1,17 +1,3 @@
 [global]
 frame_width = 0
 separator_color = frame
-frame_color = "{{ blue }}"
-highlight = "{{ blue }}"
-
-[urgency_low]
-background = "{{ base }}"
-foreground = "{{ text }}"
-
-[urgency_normal]
-background = "{{ base }}"
-foreground = "{{ text }}"
-
-[urgency_critical]
-background = "{{ base }}"
-foreground = "{{ text }}"

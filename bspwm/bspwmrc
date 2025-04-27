@@ -18,8 +18,8 @@ bspc monitor DP-1 -d 1 2 3 4 5
 
 # Configuration
 
-bspc config border_width {{ border_width }}
-bspc config window_gap {{ gap }}
+bspc config border_width 0
+bspc config window_gap 8
 bspc config top_padding 22
 
 bspc config split_ratio 0.5

@@ -3,60 +3,44 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-after-startup-command = ['exec-and-forget sketchybar']
-exec-on-workspace-change = ['/bin/bash', '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-  'exec-and-forget borders active_color=0x{{ mauve }} inactive_color=0x{{ base }} width=5.0'
-]
-
 [gaps]
-    inner.horizontal = {{ inner_gap }}
-    inner.vertical = {{ inner_gap }}
-    outer.left = {{ outer_gap }}
-    outer.right = {{ outer_gap }}
-    outer.top = {{ outer_gap }}
-    outer.bottom = {{ outer_gap }}
+    inner.horizontal = 8
+    inner.vertical = 8
+    outer.left = 8
+    outer.right = 8
+    outer.top = 8
+    outer.bottom = 8
 
 
 [mode.main.binding]
-    {{ mod }}-{{ lower (replace open_terminal "+" "-") }} = 'exec-and-forget {{ terminal }}'
-    {{ mod }}-{{ lower (replace snipping_tool "+" "-") }} = 'exec-and-forget {{ snipper }}'
-    {{ mod }}-{{ lower (replace focus_left "+" "-") }} = 'focus --boundaries-action wrap-around-the-workspace left'
-    {{ mod }}-{{ lower (replace focus_down "+" "-") }} = 'focus --boundaries-action wrap-around-the-workspace down'
-    {{ mod }}-{{ lower (replace focus_up "+" "-") }} = 'focus --boundaries-action wrap-around-the-workspace up'
-    {{ mod }}-{{ lower (replace focus_right "+" "-") }} = 'focus --boundaries-action wrap-around-the-workspace right'
-    {{ mod }}-{{ lower (replace move_left "+" "-") }} = 'move left'
-    {{ mod }}-{{ lower (replace move_down "+" "-") }} = 'move down'
-    {{ mod }}-{{ lower (replace move_up "+" "-") }} = 'move up'
-    {{ mod }}-{{ lower (replace move_right "+" "-") }} = 'move right'
-    {{ mod }}-{{ lower (replace toggle_fullscreen "+" "-") }} = 'fullscreen'
-    {{ mod }}-{{ lower (replace minimize "+" "-") }} = "macos-native-minimize"
-    {{ mod }}-{{ lower (replace layout_stacking "+" "-") }} = 'layout v_accordion'
-    {{ mod }}-{{ lower (replace layout_tabbed "+" "-") }} = 'layout h_accordion'
-    {{ mod }}-{{ lower (replace toggle_split "+" "-") }} = 'layout horizontal vertical'
-    {{ mod }}-{{ lower (replace next_workspace "+" "-") }} = 'workspace --wrap-around next'
-    {{ mod }}-{{ lower (replace prev_workspace "+" "-") }} = 'workspace --wrap-around prev'
-    {{ mod }}-{{ lower (replace recent_workspace "+" "-") }} = 'workspace-back-and-forth'
-    {{ mod }}-{{ lower (replace focus_workspace_1 "+" "-") }} = 'workspace 1'
-    {{ mod }}-{{ lower (replace focus_workspace_2 "+" "-") }} = 'workspace 2'
-    {{ mod }}-{{ lower (replace focus_workspace_3 "+" "-") }} = 'workspace 3'
-    {{ mod }}-{{ lower (replace focus_workspace_4 "+" "-") }} = 'workspace 4'
-    {{ mod }}-{{ lower (replace focus_workspace_5 "+" "-") }} = 'workspace 5'
-    {{ mod }}-{{ lower (replace focus_workspace_6 "+" "-") }} = 'workspace 6'
-    {{ mod }}-{{ lower (replace focus_workspace_7 "+" "-") }} = 'workspace 7'
-    {{ mod }}-{{ lower (replace focus_workspace_8 "+" "-") }} = 'workspace 8'
-    {{ mod }}-{{ lower (replace focus_workspace_9 "+" "-") }} = 'workspace 9'
-    {{ mod }}-{{ lower (replace move_workspace_1 "+" "-") }} = 'move-node-to-workspace 1'
-    {{ mod }}-{{ lower (replace move_workspace_2 "+" "-") }} = 'move-node-to-workspace 2'
-    {{ mod }}-{{ lower (replace move_workspace_3 "+" "-") }} = 'move-node-to-workspace 3'
-    {{ mod }}-{{ lower (replace move_workspace_4 "+" "-") }} = 'move-node-to-workspace 4'
-    {{ mod }}-{{ lower (replace move_workspace_5 "+" "-") }} = 'move-node-to-workspace 5'
-    {{ mod }}-{{ lower (replace move_workspace_6 "+" "-") }} = 'move-node-to-workspace 6'
-    {{ mod }}-{{ lower (replace move_workspace_7 "+" "-") }} = 'move-node-to-workspace 7'
-    {{ mod }}-{{ lower (replace move_workspace_8 "+" "-") }} = 'move-node-to-workspace 8'
-    {{ mod }}-{{ lower (replace move_workspace_9 "+" "-") }} = 'move-node-to-workspace 9'
-    {{ mod }}-{{ lower (replace reload "+" "-") }} = 'reload-config'
-    {{ mod }}-{{ lower (replace increase_width "+" "-") }} = 'resize width +50'
-    {{ mod }}-{{ lower (replace decrease_width "+" "-") }} = 'resize width -50'
-    {{ mod }}-{{ lower (replace increase_height "+" "-") }} = 'resize height +50'
-    {{ mod }}-{{ lower (replace decrease_height "+" "-") }} = 'resize height -50'
+    cmd-enter = 'exec-and-forget wezterm'
+    cmd-shift-s = 'exec-and-forget flameshot gui'
+    cmd-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    cmd-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    cmd-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    cmd-l = 'focus --boundaries-action wrap-around-the-workspace right'
+    cmd-shift-h = 'move left'
+    cmd-shift-j = 'move down'
+    cmd-shift-k = 'move up'
+    cmd-shift-l = 'move right'
+    cmd-f = 'fullscreen'
+    cmd-m = "macos-native-minimize"
+    cmd-e = 'layout tiles horizontal vertical'
+    cmd-Tab = 'workspace --wrap-around next'
+    cmd-shift-Tab = 'workspace --wrap-around prev'
+    cmd-r = 'workspace-back-and-forth'
+    cmd-1 = 'workspace 1'
+    cmd-2 = 'workspace 2'
+    cmd-3 = 'workspace 3'
+    cmd-4 = 'workspace 4'
+    cmd-5 = 'workspace 5'
+    cmd-shift-1 = 'move-node-to-workspace 1'
+    cmd-shift-2 = 'move-node-to-workspace 2'
+    cmd-shift-3 = 'move-node-to-workspace 3'
+    cmd-shift-4 = 'move-node-to-workspace 4'
+    cmd-shift-5 = 'move-node-to-workspace 5'
+    cmd-r = 'reload-config'
+    cmd-p = 'resize width +50'
+    cmd-u = 'resize width -50'
+    cmd-o = 'resize height +50'
+    cmd-i = 'resize height -50'

@@ -12,7 +12,7 @@ local c = {}
 if wezterm.config_builder then
   c = wezterm.config_builder()
 end
-c.default_prog = { "{{ shell }}" }
+c.default_prog = { "bash" }
 c.default_workspace = "main"
 c.disable_default_key_bindings = true
 c.enable_wayland = false

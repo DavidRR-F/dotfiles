@@ -1,2 +1,0 @@
-includes = [".dotter/os/mac.toml"]
-packages = ["theme", "mac", "common", "twm"]

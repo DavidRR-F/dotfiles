@@ -3,8 +3,8 @@ local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 local M = {}
 
-M.tab_background = '{{ hextorgba mantle opacity }}'
-M.catpuccin_purple = '{{ mauve }}'
+M.tab_background = '#181825'
+M.catpuccin_purple = '#cba6f7'
 
 local mode_icons = {
   NO = '', -- Normal Mode
@@ -239,7 +239,7 @@ M.quick_domains = {
     },
   },
   auto = {
-    ssh_ignore = true,
+    ssh_ignore = false,
     exec_ignore = {
       ssh = false,
       docker = false,
