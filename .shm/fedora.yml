@@ -1,0 +1,18 @@
+links:
+  - src: ~/.dotfiles/linux/scripts/toggle-audio-devices.sh
+    dst: ~/.local/bin/toggle_audio_devices
+    exe: true
+  - src: ~/.dotfiles/linux/dunst
+    dst: ~/.config/dunst
+  - src: ~/.dotfiles/linux/rofi
+    dst: ~/.config/rofi
+  - src: ~/.dotfiles/linux/i3
+    dst: ~/.config/i3
+  - src: ~/.dotfiles/all/k9s
+    dst: ~/.config/k9s
+  - src: ~/.dotfiles/all/lazygit
+    dst: ~/.config/lazygit
+
+managers:
+  - dnf
+  - flatpak

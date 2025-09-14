@@ -1,0 +1,10 @@
+links:
+  - src: ~/.dotfiles/all/lazygit
+    dst: ~/Library/Application Support/lazygit
+  - src: ~/.dotfiles/all/k9s
+    dst: ~/Library/Application Support/k9s
+  - src: ~/.dotfiles/mac/aerospace.toml
+    dst: ~/.config/aerospace/aerospace.toml
+
+manager:
+  - brew

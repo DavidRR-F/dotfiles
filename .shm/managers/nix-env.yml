@@ -1,0 +1,15 @@
+name: nix-env
+command: ["nix-env"]
+args: ["-iA"]
+install:
+  pre: ["sh", "<(curl -L https://nixos.org/nix/install)", "--daemon"]
+  post: [".", "/etc/profile.d/nix.sh"]
+packages:
+  - nixpkgs.lazygit
+  - nixpkgs.kubectl
+  - nixpkgs.k9s
+  - nixpkgs.neovim
+  - nixpkgs.gcc
+  - nixpkgs.golang
+  - nixpkgs.ripgrep
+  - nixpkgs.nushell

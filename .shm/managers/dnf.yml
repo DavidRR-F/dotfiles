@@ -1,0 +1,11 @@
+name: dnf
+command: ["sudo", "dnf"]
+args: ["install", "-y"]
+packages:
+  - i3
+  - rofi
+  - dunst
+  - feh
+  - flameshot
+  - flatpak
+  - https://github.com/wezterm/wezterm/releases/download/nightly/wezterm-nightly-fedora40.rpm

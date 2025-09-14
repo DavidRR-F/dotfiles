@@ -9,6 +9,9 @@ dotter
 .dotter/cache.toml
 .dotter/cache
 
+# nushell
+history.txt
+
 # Compiled Lua sources
 luac.out
 

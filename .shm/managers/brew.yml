@@ -1,0 +1,6 @@
+name: brew
+command: ["brew"]
+args: ["install"]
+packages:
+  - kubelogin
+  - obsidian

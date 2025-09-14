@@ -1,0 +1,12 @@
+links:
+  - src: ~/.dotfiles/all/nushell
+    dst: ~/.config/nushell
+  - src: ~/.dotfiles/all/nvim
+    dst: ~/.config/nvim
+  - src: ~/.dotfiles/all/wezterm
+    dst: ~/.config/wezterm
+  - src: ~/.dotfiles/all/starship.toml
+    dst: ~/.config/starship.toml
+
+managers:
+  - nix-env
