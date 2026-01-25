@@ -9,6 +9,7 @@
 } || export PACKAGE_MANAGER_PATH="$HOME/.nix-profile"
 
 export PATH="$PATH:$PACKAGE_MANAGER_PATH/bin:$HOME/.local/bin:$HOME/.docker/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="nvim"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
