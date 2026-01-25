@@ -1,0 +1,118 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$shell\
+$directory\
+$git_branch\
+$git_status\
+$golang\
+$nodejs\
+$java\
+$python\
+$docker_context\
+$mise\
+$line_break$character\
+"""
+
+palette = 'theme'
+
+[palettes.theme]
+thm_bg = '#1e1e2e'
+thm_fg = '#cdd6f4'
+thm_cyan = '#89b4fa'
+thm_black = '#181825'
+thm_gray = '#313244'
+thm_magenta = '#cba6f7'
+thm_pink = '#f5c2e7'
+thm_red = '#f38ba8'
+thm_green = '#a6e3a1'
+thm_yellow = '#f9e2af'
+thm_blue = '#89b4fa'
+thm_orange = '#fab387'
+thm_black4 = '#11111b'
+
+[shell]
+bash_indicator = ''
+zsh_indicator = ''
+pwsh_indicator = '󰨊'
+powershell_indicator = '󰨊'
+cmd_indicator = ''
+nu_indicator = '󱋶'
+unknown_indicator = ''
+style = 'thm_blue'
+disabled = false
+format = '[ $indicator]($style)'
+
+[username]
+show_always = true
+style_user = "bg:thm_gray fg:thm_green"
+style_root = "bg:thm_gray fg:thm_green"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:thm_blue"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "fg:thm_magenta"
+format = '[[$symbol $branch ](fg:thm_magenta)]($style)'
+
+[git_status]
+style = "fg:thm_magenta"
+format = '[[($all_status$ahead_behind)](fg:thm_magenta)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:thm_blue"
+format = '[[ $symbol( $version) ](fg:thm_green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:thm_blue"
+format = '[[ $symbol( $version) ](fg:thm_cyan)]($style)'
+
+[java]
+symbol = ""
+style = "bg:thm_blue"
+format = '[[ $symbol( $version) ](fg:thm_red)]($style)'
+
+[python]
+symbol = ""
+style = "bg:thm_blue"
+format = '[[ $symbol( $version) ](fg:thm_yellow)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:thm_gray"
+format = '[[ $symbol( $context) ](fg:thm_blue)]($style)'
+
+[terraform]
+symbol = ""
+style = "bg:thm_gray"
+format = '[[ $symbol( $context) ](fg:thm_magenta)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = ' [:](fg:thm_green)'
+error_symbol = ' [!](fg:thm_red)'
+
+[mise]
+disabled = false
+style = "bg:thm_gray"
+symbol = ""
+format = '[[$symbol($health) ](fg:thm_orange)]($style)'
+healthy_symbol = ''
+unhealthy_symbol = ''

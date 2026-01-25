@@ -1,0 +1,42 @@
+cd() {
+  z "$@"
+  __activate_venv
+}
+
+chezmise() {
+  mise use --global "$@"
+  chezmoi add ~/.config/mise/config.toml
+}
+
+__command_hook() {
+  local -a cmd_parts
+  cmd_parts=(${(z)1})
+
+  local cmd="${cmd_parts[1]}"
+  if command -v "$cmd" >/dev/null 2>&1; then
+    eval "$("$cmd" "${cmd_parts[@]:1}")"
+  else
+    echo "Command not found: $cmd" >&2
+  fi
+}
+
+__command_completion() {
+  local -a cmd_parts
+  cmd_parts=(${(z)1})
+
+  local cmd="${cmd_parts[1]}"
+  if command -v "$cmd" >/dev/null 2>&1; then
+    source <("$cmd" "${cmd_parts[@]:1}")
+  else
+    echo "Command not found: $cmd" >&2
+  fi
+}
+
+__get_share() {
+  local share="$PACKAGE_MANAGER_PATH/share"
+  [[ -d "$share/$1" ]] && source "$share/$1/$1.zsh" || echo "$1 not found in share"
+}
+
+__activate_venv() {
+  [[ -f '.venv/bin/activate' ]] && source .venv/bin/activate 
+}

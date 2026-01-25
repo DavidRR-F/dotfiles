@@ -1,0 +1,71 @@
+{
+  "k-patch": {
+    "prefix": "k-patch",
+    "body": [
+      "patches:",
+      "\t- target:",
+      "\t\t\tversion: v1",
+      "\t\t\tkind: ${1:Deployment}",
+      "\t\tpatch: |-",
+      "\t\t\t- op: ${2:add}",
+      "\t\t\t\tpath: ${3:/spec/template/spec/containers/0/envFrom/-}",
+      "\t\t\t\tvalue: ${4:{secretRef: { name: fwapp-secret }}}"
+    ],
+    "description": "Kustomize patch object"
+  },
+  "k-base": {
+    "prefix": "k-base",
+    "body": [
+      "apiVersion: kustomize.config.k8s.io/v1beta1",
+      "kind: Kustomization",
+      "",
+      "components:",
+      "\t- ../../ci-temp-framework-common/kustomize/components/imagePullSecrets"
+    ]
+  },
+  "k-overlay": {
+    "prefix": "k-overlay",
+    "body": [
+      "apiVersion: kustomize.config.k8s.io/v1beta1",
+      "kind: Kustomization",
+      "",
+      "resources:",
+      "\t- ../../base",
+      "",
+      "components:",
+      "\t- ../../ci-temp-framework-common/kustomize/env/all"
+    ]
+  },
+  "ci-keycloak": {
+    "prefix": "ci-keycloak",
+    "body": [
+      "keycloak:",
+      "\tdev:",
+      "\t\tclients:",
+      "\t\t\t- name: \\${APP_SET_NAME}-oauth2-test",
+      "\t\t\t\tredirectUris:",
+      "\t\t\t\t\t- https://\\${APP_INGRESS_HOST}/*",
+      "\tstage:",
+      "\t\tclients:",
+      "\t\t\t- name: \\${APP_SET_NAME}-oauth2-test",
+      "\t\t\t\tredirectUris:",
+      "\t\t\t\t\t- https://\\${APP_INGRESS_HOST}/*",
+      "\tprod:",
+      "\t\tclients:",
+      "\t\t\t- name: \\${APP_SET_NAME}-oauth2",
+      "\t\t\t\tredirectUris:",
+      "\t\t\t\t\t- https://\\${APP_INGRESS_HOST}/*"
+    ]
+  },
+  "ci-monitors": {
+    "prefix": "ci-monitors",
+    "body": [
+      "monitors:",
+      "\tcurrent:",
+      "\t\tall:",
+      "\t\t\t- name: \\${APP_INSTANCE_NAME}-\\${APP_COMPONENT_NAME}-fwapp-ingress",
+      "\t\t\t\ttype: http",
+      "\t\t\t\turl: https://\\${APP_INGRESS_HOST}"
+    ]
+  }
+}
