@@ -82,6 +82,7 @@ return {
         "markdown_inline",
         "python",
         "go",
+        "dockerfile",
         "regex",
         "tsx",
         "typescript",

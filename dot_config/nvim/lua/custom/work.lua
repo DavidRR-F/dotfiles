@@ -5,8 +5,8 @@ M.config = function()
     local name = opts.args
     local common_src = vim.fn.expand("~/dev/frameworks/common")
     local appset_src = vim.fn.expand("~/dev/frameworks/" .. name)
-    local common_dest = "./deploy/ci-temp-frameework-common"
-    local appset_dest = "./deploy/ci-temp-frameework-app"
+    local common_dest = "./deploy/ci-temp-framework-common"
+    local appset_dest = "./deploy/ci-temp-framework-app"
 
     local common_ok = os.execute(string.format("ln -s %s %s", common_src, common_dest))
     if common_ok == 0 then

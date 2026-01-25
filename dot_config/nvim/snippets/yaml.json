@@ -33,7 +33,7 @@
       "\t- ../../base",
       "",
       "components:",
-      "\t- ../../ci-temp-framework-common/kustomize/env/all"
+      "\t- ../../../ci-temp-framework-common/kustomize/env/all"
     ]
   },
   "ci-keycloak": {

@@ -42,7 +42,7 @@ M.config = function()
     local output = vim.fn.systemlist(cmd)
 
     if vim.v.shell_error ~= 0 then
-      vim.notify("Error: Could not run kustomize build\n" + output, vim.log.levels.ERROR)
+      vim.notify("Error: Could not run kustomize build\n" .. table.concat(output, "\n"), vim.log.levels.ERROR)
       return
     end
 
