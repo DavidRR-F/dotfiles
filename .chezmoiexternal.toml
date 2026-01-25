@@ -1,0 +1,14 @@
+[".config/k9s/skins"]
+  type = "archive"
+  url = "https://github.com/catppuccin/k9s/archive/main.tar.gz"
+  exact = true
+  refreshPeriod = "168h"
+  stripComponents = 2
+  path = "k9s-main/dist"
+[".config/lazygit/config.yml"]
+  type = "archive-file"
+  url = "https://github.com/catppuccin/lazygit/archive/refs/tags/v2.2.0.tar.gz"
+  exact = true
+  refreshPeriod = "168h"
+  stripComponents = 2
+  path = "mocha/mauve.yml"
