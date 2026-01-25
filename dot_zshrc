@@ -4,8 +4,6 @@ source $HOME/.zsh/.zsh_functions
 
 bindkey -e
 
-__activate_venv
-
 __get_share "zsh-syntax-highlighting"
 __get_share "zsh-autosuggestions"
 
@@ -19,3 +17,5 @@ compinit
 __command_completion "kubectl completion zsh"
 __command_completion "uv generate-shell-completion zsh"
 __command_completion "chezmoi completion zsh"
+
+__activate_venv
