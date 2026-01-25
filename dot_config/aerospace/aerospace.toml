@@ -1,0 +1,46 @@
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+    inner.horizontal = 8
+    inner.vertical = 8
+    outer.left = 8
+    outer.right = 8
+    outer.top = 8
+    outer.bottom = 8
+
+
+[mode.main.binding]
+    cmd-enter = 'exec-and-forget wezterm'
+    cmd-shift-s = 'exec-and-forget flameshot gui'
+    cmd-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    cmd-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    cmd-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    cmd-l = 'focus --boundaries-action wrap-around-the-workspace right'
+    cmd-shift-h = 'move left'
+    cmd-shift-j = 'move down'
+    cmd-shift-k = 'move up'
+    cmd-shift-l = 'move right'
+    cmd-f = 'fullscreen'
+    cmd-m = "macos-native-minimize"
+    cmd-e = 'layout tiles horizontal vertical'
+    cmd-Tab = 'workspace --wrap-around next'
+    cmd-shift-Tab = 'workspace --wrap-around prev'
+    cmd-r = 'workspace-back-and-forth'
+    cmd-1 = 'workspace 1'
+    cmd-2 = 'workspace 2'
+    cmd-3 = 'workspace 3'
+    cmd-4 = 'workspace 4'
+    cmd-5 = 'workspace 5'
+    cmd-shift-1 = 'move-node-to-workspace 1'
+    cmd-shift-2 = 'move-node-to-workspace 2'
+    cmd-shift-3 = 'move-node-to-workspace 3'
+    cmd-shift-4 = 'move-node-to-workspace 4'
+    cmd-shift-5 = 'move-node-to-workspace 5'
+    cmd-r = 'reload-config'
+    cmd-p = 'resize width +50'
+    cmd-u = 'resize width -50'
+    cmd-o = 'resize height +50'
+    cmd-i = 'resize height -50'
