@@ -10,6 +10,7 @@
 
 export PATH="$PATH:$PACKAGE_MANAGER_PATH/bin:$HOME/.local/bin:$HOME/.docker/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
+export K9S_CONFIG_DIR="$XDG_CONFIG_HOME/k9s"
 export MISE_ENV_CACHE=1
 export EDITOR="nvim"
 export FZF_DEFAULT_OPTS=" \
