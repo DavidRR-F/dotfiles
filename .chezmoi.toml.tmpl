@@ -1,0 +1,11 @@
+[git]
+  autoCommit = true
+  autoPush = true
+
+[hooks.git-auto-commit.pre]
+command = "gitleaks"
+args = ["detect", "--verbose"]
+
+[hooks.apply.post]
+command = "mise"
+args = ["install"]
