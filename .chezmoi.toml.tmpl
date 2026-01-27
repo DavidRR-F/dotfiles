@@ -4,7 +4,7 @@
 
 [hooks.git-auto-commit.pre]
 command = "gitleaks"
-args = ["detect", "--verbose"]
+args = ["detect", "--verbose", "--source", "~/.local/share/chezmoi"]
 
 [hooks.apply.post]
 command = "mise"
