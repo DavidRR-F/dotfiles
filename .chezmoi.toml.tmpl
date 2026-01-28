@@ -12,7 +12,7 @@ args = ["update", "-a"]
 
 [hooks.edit-config-template.post]
 command = "chezmoi"
-args = ["apply"]
+args = ["init"]
 
 [hooks.git-auto-commit.pre]
 command = "gitleaks"
