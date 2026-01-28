@@ -2,6 +2,14 @@
   autoCommit = true
   autoPush = true
 
+[hooks.edit.pre]
+command = "chezmoi"
+args = ["update", "-a"]
+
+[hooks.edit-config-template.pre]
+command = "chezmoi"
+args = ["update", "-a"]
+
 [hooks.git-auto-commit.pre]
 command = "gitleaks"
 args = ["detect", "--verbose", "--source", "{{ .chezmoi.sourceDir }}"]
