@@ -1,5 +1,6 @@
 [tools]
 1password = "latest"
+argo = "latest"
 chezmoi = "latest"
 envsubst = "latest"
 fd = "latest"
