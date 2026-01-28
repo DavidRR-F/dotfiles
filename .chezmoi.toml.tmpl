@@ -10,6 +10,10 @@ args = ["update", "-a"]
 command = "chezmoi"
 args = ["update", "-a"]
 
+[hooks.edit-config-template.post]
+command = "chezmoi"
+args = ["apply"]
+
 [hooks.git-auto-commit.pre]
 command = "gitleaks"
 args = ["detect", "--verbose", "--source", "{{ .chezmoi.sourceDir }}"]
