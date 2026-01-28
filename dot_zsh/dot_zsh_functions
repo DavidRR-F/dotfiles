@@ -33,10 +33,10 @@ __command_completion() {
 }
 
 __get_share() {
-  local share="$PACKAGE_MANAGER_PATH/share"
+  local share="$HOME/.local/share"
   [[ -d "$share/$1" ]] && source "$share/$1/$1.zsh" || echo "$1 not found in share"
 }
 
 __activate_venv() {
-  [[ -f '.venv/bin/activate' ]] && source .venv/bin/activate 
+  [[ -f '.venv/bin/activate' ]] && source .venv/bin/activate
 }
