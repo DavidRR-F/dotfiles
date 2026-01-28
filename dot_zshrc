@@ -10,7 +10,7 @@ __get_share "zsh-autosuggestions"
 __command_hook "mise activate zsh"
 __command_hook "starship init zsh"
 __command_hook "zoxide init zsh"
-  
+
 autoload -Uz compinit
 compinit
 
@@ -18,5 +18,6 @@ __command_completion "helm completion zsh"
 __command_completion "kubectl completion zsh"
 __command_completion "uv generate-shell-completion zsh"
 __command_completion "chezmoi completion zsh"
+__command_completion "mise completion zsh"
 
 __activate_venv
