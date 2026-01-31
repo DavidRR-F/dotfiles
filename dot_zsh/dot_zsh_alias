@@ -7,4 +7,4 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias k="kubectl"
 alias lazygit="lazygit --use-config-dir=$HOME/.config/lazygit"
-alias jqp="jqp --theme catpuccin-mocha"
+alias jqp="jqp --theme=catppuccin-mocha"
