@@ -334,9 +334,9 @@ return {
               text = {
                 { "󱈆  ", hl = "Title" },
                 { "Find Dotfile", hl = "SnacksDashboardDesc", width = 55 },
-                { "[d]", hl = "SnacksDashboardKey" },
+                { "[.]", hl = "SnacksDashboardKey" },
               },
-              key = "d",
+              key = ".",
               action = function()
                 require("chezmoi.pick").snacks()
               end,
