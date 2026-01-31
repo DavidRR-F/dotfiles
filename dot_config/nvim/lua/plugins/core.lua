@@ -168,13 +168,6 @@ return {
     lazy = false,
     keys = {
       {
-        "<leader>.",
-        function()
-          Snacks.scratch()
-        end,
-        desc = "Toggle Scratch Buffer",
-      },
-      {
         "<leader>S",
         function()
           Snacks.scratch.select()
@@ -245,7 +238,7 @@ return {
         desc = "Find File",
       },
       {
-        "<leader>d",
+        "<leader>.",
         function()
           require("chezmoi.pick").snacks()
         end,
@@ -473,6 +466,20 @@ return {
     end,
   },
   {
+    "cbochs/grapple.nvim",
+    opts = {
+      scope = "git",
+      icons = true,
+      status = false,
+    },
+    keys = {
+      { "<leader>h", "<cmd>Grapple toggle<cr>",          desc = "Tag a file" },
+      { "<leader>H", "<cmd>Grapple toggle_tags<cr>",     desc = "Toggle tags menu" },
+      { "<Tab>",     "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
+      { "<S-Tab>",   "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
+    },
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -480,7 +487,6 @@ return {
     },
     config = function()
       local colors = require("catppuccin.palettes").get_palette("mocha")
-      local marks = require("custom.marks").lualine_marks
       local mode_icons = {
         n = "", -- Normal Mode
         i = "󰷫", -- Insert Mode
@@ -551,7 +557,7 @@ return {
             },
           },
           lualine_b = {},
-          lualine_c = { marks },
+          lualine_c = { "grapple" },
           lualine_x = {},
           lualine_y = {},
           lualine_z = {

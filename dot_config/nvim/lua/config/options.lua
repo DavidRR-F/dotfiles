@@ -63,5 +63,4 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignIn
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 require("custom.kustomize").config()
-require("custom.marks").config()
 require("custom.work").config()
