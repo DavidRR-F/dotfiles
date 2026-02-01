@@ -381,7 +381,7 @@ return {
           explorer = {
             replace_netrw = true,
             hidden = true,
-            layout = { layout = { position = "right" } },
+            layout = { layout = { position = 'right' } },
           },
           files = {
             hidden = true,
@@ -466,6 +466,21 @@ return {
     end,
   },
   {
+    "DavidRR-F/kustomize.nvim",
+    -- if dev testing
+    --"kustomzie.nvim",
+    --dir = "~/dev/kustomize.nvim",
+    opts = {
+      provider = "snacks",
+      path = "./deploy",
+      commands = {
+        build = {
+          enable_helm = true,
+        },
+      },
+    }
+  },
+  {
     "cbochs/grapple.nvim",
     opts = {
       scope = "git",
@@ -545,7 +560,7 @@ return {
             },
             {
               "filename",
-              path = 0,
+              path = 1,
               color = mode_color,
               padding = { left = 0, right = 0 },
               symbols = {
