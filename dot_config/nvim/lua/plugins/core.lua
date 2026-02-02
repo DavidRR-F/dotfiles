@@ -293,6 +293,13 @@ return {
         end,
         desc = "Lazy Git",
       },
+      {
+        "<leader>oc",
+        function()
+          Snacks.terminal.open("opencode")
+        end,
+        desc = "Open Code",
+      },
     },
     opts = {
       dashboard = {
