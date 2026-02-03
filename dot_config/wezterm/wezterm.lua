@@ -1,6 +1,5 @@
 local wezterm = require 'wezterm'
 local appearance = require 'lua.appearance'
-local font = require 'lua.font'
 local keys = require 'lua.keys'
 local plugin_config = require 'lua.plugin_config'
 local smart_workspace = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
@@ -20,19 +19,7 @@ c.enable_wayland = false
 c.leader = keys.leader
 c.keys = keys.general
 
-local ssh_domains = {}
-for host, _ in pairs(wezterm.enumerate_ssh_hosts()) do
-  table.insert(ssh_domains, {
-    name = host,
-    remote_address = host,
-    multiplexing = "None",
-    assume_shell = 'Posix',
-  })
-end
-c.ssh_domains = ssh_domains
-
 appearance.apply_to_config(c)
-font.apply_to_config(c)
 
 -- plugins
 
