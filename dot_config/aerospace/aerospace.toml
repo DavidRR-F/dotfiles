@@ -25,6 +25,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     cmd-shift-l = 'move right'
     cmd-f = 'fullscreen'
     cmd-m = "macos-native-minimize"
+    cmd-w = 'layout accordion horizontal vertical'
     cmd-e = 'layout tiles horizontal vertical'
     cmd-r = 'workspace-back-and-forth'
     cmd-1 = 'workspace 1'

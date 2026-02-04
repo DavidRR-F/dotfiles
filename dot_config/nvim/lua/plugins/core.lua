@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-mocha",
     },
   },
   {
@@ -579,9 +579,9 @@ return {
             },
           },
           lualine_b = {},
-          lualine_c = { "grapple" },
+          lualine_c = {},
           lualine_x = {},
-          lualine_y = {},
+          lualine_y = { "grapple" },
           lualine_z = {
             {
               "diff",
