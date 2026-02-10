@@ -21,14 +21,30 @@ __command_hook() {
 }
 
 __command_completion() {
+  local completions_dir="$HOME/.completions"
+  if [[ ! -d "$completions_dir" ]]; then
+    mkdir -p "$completions_dir" 
+  fi
+
   local -a cmd_parts
   cmd_parts=(${(z)1})
 
   local cmd="${cmd_parts[1]}"
-  if command -v "$cmd" >/dev/null 2>&1; then
-    source <("$cmd" "${cmd_parts[@]:1}")
-  else
+
+  if ! command -v "$cmd" >/dev/null 2>&1; then
     echo "Command not found: $cmd" >&2
+    return 1
+  fi
+
+  local cache_file="$completions_dir/${cmd}.zsh"
+
+  if [[ -f "$cache_file" ]]; then
+    source "$cache_file"
+  else
+    local output
+    output="$("$cmd" "${cmd_parts[@]:1}")" || return
+    print -r "$output" >| "$cache_file"
+    source "$cache_file"
   fi
 }
 
