@@ -388,7 +388,9 @@ return {
           explorer = {
             replace_netrw = true,
             hidden = true,
-            layout = { layout = { position = 'right' } },
+            auto_close = true,
+            jump = { close = false },
+            layout = { preset = "dropdown", preview = true },
           },
           files = {
             hidden = true,
