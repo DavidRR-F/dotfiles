@@ -2,6 +2,7 @@
 1password = "latest"
 argo = "latest"
 chezmoi = "latest"
+datree = "latest"
 envsubst = "latest"
 fd = "latest"
 fnox = "latest"
