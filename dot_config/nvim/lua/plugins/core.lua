@@ -481,18 +481,24 @@ return {
     end,
   },
   {
-    "DavidRR-F/kustomize.nvim",
-    -- if dev testing
-    --"kustomzie.nvim",
-    --dir = "~/dev/kustomize.nvim",
+    "DavidRR-F/manifest.nvim",
     opts = {
-      provider = "snacks",
-      path = "./deploy",
-      commands = {
-        build = {
-          enable_helm = true,
-        },
+      yq = {
+        enabled = true
       },
+      kustomize = {
+        enabled = true,
+        path = "./deploy/kustomize",
+        args = {
+          enable_helm = true
+        }
+      },
+      helm = {
+        enabled = true
+      },
+      cue = {
+        enabled = false
+      }
     }
   },
   {

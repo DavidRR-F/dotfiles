@@ -31,21 +31,16 @@ return {
         },
         -- Helm Schema
         ["https://json.schemastore.org/chart.json"] = {
-          "**/templates/*.yml",
-          "**/templates/*.yaml",
-          "values.yml",
-          "values.yaml",
+          "Chart.yaml"
         },
         -- GitLab Schema
         ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-          ".gitlab-ci.yml",
           "pipeline-*.yml",
           "pipeline-*.yaml",
           "*-common.yml",
-          "*-template.yml",
-          ".gitlab-ci.yaml",
           "*-common.yaml",
-          "*-template.yaml",
+          ".gitlab-ci.yml",
+          ".gitlab-ci.yaml",
         },
         -- Ansible Playbooks Schema
         ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] = {
@@ -57,6 +52,11 @@ return {
           "*inventory.yml",
           "*inventory.yaml",
         }
+      },
+      customTags = {
+        "!reference",
+        "!reference sequence",
+        "!reference mapping",
       },
       schemaStore = {
         enable = true

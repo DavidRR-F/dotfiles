@@ -63,3 +63,14 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignIn
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 require("custom.work").config()
+
+vim.filetype.add({
+  pattern = {
+    [".*/templates/.*%.yaml"] = "helm",
+    [".*/templates/.*%.yml"] = "helm",
+    ["values.yml"] = "helm",
+    ["values.yaml"] = "helm",
+    ["helm-values.yml"] = "helm",
+    ["helm-values.yaml"] = "helm",
+  },
+})

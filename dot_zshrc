@@ -8,6 +8,7 @@ __get_share "zsh-syntax-highlighting"
 __get_share "zsh-autosuggestions"
 
 __command_hook "mise activate zsh"
+__command_hook "fnox activate zsh"
 __command_hook "starship init zsh"
 __command_hook "zoxide init zsh"
 

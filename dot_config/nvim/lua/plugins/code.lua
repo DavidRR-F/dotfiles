@@ -23,6 +23,7 @@ return {
         "yaml-language-server",
         "yamlfmt",
         "yamllint",
+        "helm-ls",
         "jq",
         "stylua",
         "emmet-language-server",

@@ -1,5 +1,4 @@
 local wez = require "wezterm"
-local plugin_config = require "lua.plugin_config"
 local tabline = wez.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
@@ -9,20 +8,20 @@ M.apply_to_config = function(c)
   c.color_scheme = 'Catppuccin Mocha'
   local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
   c.colors = {
-    background = '#181825',
+    background = scheme.background,
     cursor_border = scheme.ansi[2],
     tab_bar = {
-      background = plugin_config.tab_background,
+      background = scheme.background,
       active_tab = {
         bg_color = scheme.background,
         fg_color = scheme.ansi[3],
       },
       inactive_tab = {
-        bg_color = plugin_config.tab_background,
+        bg_color = scheme.background,
         fg_color = scheme.ansi[1],
       },
       inactive_tab_hover = {
-        bg_color = plugin_config.tab_background,
+        bg_color = scheme.background,
         fg_color = scheme.ansi[1],
       }
     }

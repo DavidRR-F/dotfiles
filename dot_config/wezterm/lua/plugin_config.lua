@@ -3,9 +3,6 @@ local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
 
 local M = {}
 
-M.tab_background = '#1e1e2e'
-M.catpuccin_purple = '#cba6f7'
-
 local mode_icons = {
   NO = '', -- Normal Mode
   CO = '', -- Visual Mode
@@ -22,34 +19,34 @@ M.tabline = {
     theme = 'Catppuccin Mocha',
     theme_overrides = {
       normal_mode = {
-        a = { fg = scheme.ansi[5], bg = M.tab_background },
-        b = { fg = scheme.ansi[5], bg = M.tab_background },
+        a = { fg = scheme.ansi[5], bg = scheme.background },
+        b = { fg = scheme.ansi[5], bg = scheme.background },
       },
       copy_mode = {
-        a = { fg = scheme.ansi[4], bg = M.tab_background },
-        b = { fg = scheme.ansi[4], bg = M.tab_background },
+        a = { fg = scheme.ansi[4], bg = scheme.background },
+        b = { fg = scheme.ansi[4], bg = scheme.background },
       },
       search_mode = {
-        a = { fg = scheme.ansi[3], bg = M.tab_background },
-        b = { fg = scheme.ansi[3], bg = M.tab_background },
+        a = { fg = scheme.ansi[3], bg = scheme.background },
+        b = { fg = scheme.ansi[3], bg = scheme.background },
       },
       -- Defining colors for a new key table
       window_mode = {
-        a = { fg = M.catpuccin_purple, bg = M.tab_background },
-        b = { fg = M.catpuccin_purple, bg = M.tab_background },
+        a = { fg = scheme.ansi[6], bg = scheme.background },
+        b = { fg = scheme.ansi[6], bg = scheme.background },
       },
       tab = {
         active = {
-          bg = '#181825',
+          bg = scheme.background,
           fg = scheme.ansi[3],
         },
         inactive = {
-          bg = M.tab_background,
-          fg = M.catpuccin_purple,
+          bg = scheme.background,
+          fg = scheme.ansi[2],
         },
         inactive_hover = {
-          bg = M.tab_background,
-          fg = M.catpuccin_purple,
+          bg = scheme.background,
+          fg = scheme.ansi[6],
         }
       }
     },
@@ -147,8 +144,8 @@ M.tabline = {
         },
       },
       colors = {
-        a = { fg = scheme.ansi[6], bg = M.tab_background },
-        b = { fg = scheme.ansi[6], bg = M.tab_background },
+        a = { fg = scheme.ansi[6], bg = scheme.background },
+        b = { fg = scheme.ansi[6], bg = scheme.background },
       },
     },
     {
@@ -179,8 +176,8 @@ M.tabline = {
         },
       },
       colors = {
-        a = { fg = scheme.ansi[2], bg = M.tab_background },
-        b = { fg = scheme.ansi[2], bg = M.tab_background },
+        a = { fg = scheme.ansi[2], bg = scheme.background },
+        b = { fg = scheme.ansi[2], bg = scheme.background },
       },
     },
   },
