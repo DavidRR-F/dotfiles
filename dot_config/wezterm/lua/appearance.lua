@@ -1,5 +1,4 @@
 local wez = require "wezterm"
-local tabline = wez.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 
 local M = {}
@@ -46,7 +45,6 @@ M.apply_to_config = function(c)
   workspace.get_choices = function(opts)
     return workspace.choices.get_workspace_elements({})
   end
-  tabline.setup(plugin_config.tabline)
 end
 
 return M
