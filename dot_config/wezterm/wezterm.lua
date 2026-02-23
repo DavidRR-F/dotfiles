@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local appearance = require 'lua.appearance'
+local plugin_config = require 'lua.plugin_config'
 local keys = require 'lua.keys'
 
 -- config
@@ -19,7 +20,6 @@ appearance.apply_to_config(c)
 
 -- plugins
 
-local plugin_config = require 'lua.plugin_config'
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 local smart_workspace = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 local smart_splits = wezterm.plugin.require('https://github.com/mrjones2014/smart-splits.nvim')
