@@ -1,33 +1,21 @@
 local wezterm = require 'wezterm'
 local appearance = require 'lua.appearance'
-local plugin_config = require 'lua.plugin_config'
+local plugins = require 'lua.plugins'
 local keys = require 'lua.keys'
 
--- config
-
-local c = {}
+--- @class _Wezterm
+local _Wezterm = {}
 if wezterm.config_builder then
-  c = wezterm.config_builder()
+  _Wezterm = wezterm.config_builder()
 end
-c.default_prog = { "zsh" }
-c.default_workspace = "main"
-c.disable_default_key_bindings = true
-c.enable_wayland = false
-c.leader = keys.leader
-c.keys = keys.general
+_Wezterm.default_prog = { "zsh" }
+_Wezterm.default_workspace = "main"
+_Wezterm.disable_default_key_bindings = true
+_Wezterm.enable_wayland = false
+_Wezterm.leader = keys.leader
+_Wezterm.keys = keys.general
 
-appearance.apply_to_config(c)
+appearance.apply_to_config(_Wezterm)
+plugins.apply_to_config(_Wezterm)
 
--- plugins
-
-local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
-local smart_workspace = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
-local smart_splits = wezterm.plugin.require('https://github.com/mrjones2014/smart-splits.nvim')
-local smart_ssh = wezterm.plugin.require('https://github.com/DavidRR-F/smart_ssh.wezterm')
-
-smart_splits.apply_to_config(c, plugin_config.smart_splits)
-smart_workspace.apply_to_config(c)
-smart_ssh.apply_to_config(c)
-tabline.setup(plugin_config.tabline)
-
-return c
+return _Wezterm

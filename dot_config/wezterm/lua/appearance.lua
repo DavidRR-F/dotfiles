@@ -1,16 +1,26 @@
-local wez = require "wezterm"
-local workspace = wez.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+local wezterm = require "wezterm"
 
-local M = {}
+--- @class _Appearence
+local _Appearence = {}
 
-M.apply_to_config = function(c)
+_Appearence.apply_to_config = function(c)
   c.color_scheme = 'Catppuccin Mocha'
-  local scheme = wez.color.get_builtin_schemes()["Catppuccin Mocha"]
+  local scheme = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+  c.font = wezterm.font { family = "0xProto Nerd Font", weight = "Regular" }
+  c.font_size = 12
+  c.font_rules = {
+    {
+      intensity = "Normal",
+      italic = true,
+      font = wezterm.font { family = "0xProto Nerd Font", weight = "Regular", italic = true, harfbuzz_features = { "ss01" } }
+    }
+  }
+  c.adjust_window_size_when_changing_font_size = false
   c.colors = {
     background = scheme.background,
     cursor_border = scheme.ansi[2],
     tab_bar = {
-      background = scheme.background,
+      background = scheme.tab_bar.inactive_tab.bg_color,
       active_tab = {
         bg_color = scheme.background,
         fg_color = scheme.ansi[3],
@@ -42,9 +52,6 @@ M.apply_to_config = function(c)
   c.tab_bar_at_bottom = false
   c.tab_max_width = 50
   c.use_fancy_tab_bar = false
-  workspace.get_choices = function(opts)
-    return workspace.choices.get_workspace_elements({})
-  end
 end
 
-return M
+return _Appearence

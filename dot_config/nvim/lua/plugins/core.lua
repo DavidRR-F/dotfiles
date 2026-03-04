@@ -45,6 +45,9 @@ return {
       custom_highlights = {
         CursorLineNr = { fg = require("catppuccin.palettes.mocha").yellow },
         SnacksIndent = { fg = require("catppuccin.palettes.mocha").surface0 },
+        NormalFloat = { bg = require("catppuccin.palettes.mocha").base },
+        FloatBorder = { bg = require("catppuccin.palettes.mocha").base },
+        FloatTitle = { bg = require("catppuccin.palettes.mocha").base },
       },
       default_integrations = true,
       integrations = {
@@ -91,6 +94,7 @@ return {
         "hcl",
         "gitignore",
         "helm",
+        "cue",
         "toml",
         "zsh",
         "vimdoc"
@@ -169,6 +173,42 @@ return {
     },
   },
   {
+    "DavidRR-F/worktree.nvim",
+    lazy = false,
+    opts = {},
+  },
+  {
+    "DavidRR-F/manifest.nvim",
+    opts = {
+      yq = {
+        enabled = true
+      },
+      kustomize = {
+        enabled = true,
+        path = "./deploy/kustomize",
+        args = {
+          enable_helm = true
+        }
+      },
+      helm = {
+        enabled = true
+      },
+      cue = {
+        enabled = false
+      }
+    }
+  },
+  {
+    'nvim-mini/mini.nvim',
+    version = false,
+    config = function()
+      require("mini.surround").setup({})
+      require("mini.comment").setup({})
+      require("mini.icons").setup({})
+      require("mini.ai").setup({})
+    end
+  },
+  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -232,7 +272,7 @@ return {
       {
         "<leader>t",
         function()
-          Snacks.terminal()
+          require("worktree").snacks()
         end,
         desc = "Toggle Terminal",
       },
@@ -299,13 +339,6 @@ return {
         end,
         desc = "Lazy Git",
       },
-      {
-        "<leader>oc",
-        function()
-          Snacks.terminal.open("opencode")
-        end,
-        desc = "Open Code",
-      },
     },
     opts = {
       dashboard = {
@@ -346,6 +379,17 @@ return {
             {
               text = {
                 { "󱈆  ", hl = "Title" },
+                { "Find Worktree", hl = "SnacksDashboardDesc", width = 55 },
+                { "[t]", hl = "SnacksDashboardKey" },
+              },
+              key = "t",
+              action = function()
+                require("worktree").snacks()
+              end,
+            },
+            {
+              text = {
+                { "  ", hl = "Title" },
                 { "Find Dotfile", hl = "SnacksDashboardDesc", width = 55 },
                 { "[.]", hl = "SnacksDashboardKey" },
               },
@@ -481,27 +525,6 @@ return {
     end,
   },
   {
-    "DavidRR-F/manifest.nvim",
-    opts = {
-      yq = {
-        enabled = true
-      },
-      kustomize = {
-        enabled = true,
-        path = "./deploy/kustomize",
-        args = {
-          enable_helm = true
-        }
-      },
-      helm = {
-        enabled = true
-      },
-      cue = {
-        enabled = false
-      }
-    }
-  },
-  {
     "cbochs/grapple.nvim",
     opts = {
       scope = "git",
@@ -629,21 +652,5 @@ return {
       })
     end,
   },
-  {
-    'kevinhwang91/nvim-ufo',
-    dependencies = 'kevinhwang91/promise-async',
-    config = function()
-      require('ufo').setup({
-        provider_selector = function(_, filetype, _)
-          if filetype == 'markdown' then
-            return { 'indent' }
-          end
-          return { 'treesitter', 'indent' }
-        end
-      })
-      vim.api.nvim_set_hl(0, 'UfoFoldedEllipsis', { fg = '#1e88e5' })
-    end
-  },
   { 'mrjones2014/smart-splits.nvim' },
-  { "tpope/vim-surround" }
 }

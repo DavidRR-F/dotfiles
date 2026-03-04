@@ -2,12 +2,14 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 local smart_ssh = wezterm.plugin.require('https://github.com/DavidRR-F/smart_ssh.wezterm')
+local bookmarks = wezterm.plugin.require('https://github.com/DavidRR-F/bookmarks.wezterm')
 
-local M = {}
+--- @class _Keys
+local _Keys = {}
 
-M.leader = { key = "Space", mods = "CTRL" }
+_Keys.leader = { key = "Space", mods = "CTRL" }
 
-M.general = {
+_Keys.general = {
   {
     key = "F11",
     mods = "NONE",
@@ -28,6 +30,9 @@ M.general = {
   { key = "(",     mods = "LEADER|SHIFT", action = act.SwitchWorkspaceRelative(-1) },
   { key = ")",     mods = "LEADER|SHIFT", action = act.SwitchWorkspaceRelative(1) },
   { key = "&",     mods = "LEADER|SHIFT", action = act.CloseCurrentTab { confirm = true } },
+  { key = "h",     mods = "LEADER",       action = bookmarks.add() },
+  { key = "j",     mods = "LEADER",       action = bookmarks.next() },
+  { key = "k",     mods = "LEADER",       action = bookmarks.prev() },
   {
     key = "!",
     mods = "LEADER|SHIFT",
@@ -38,7 +43,7 @@ M.general = {
   { key = "c",     mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
   { key = "n",     mods = "LEADER", action = act.ActivateTabRelative(1) },
   { key = "p",     mods = "LEADER", action = act.ActivateTabRelative(-1) },
-  { key = "x",     mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
+  { key = "x",     mods = "LEADER", action = act.CloseCurrentPane { confirm = false } },
   { key = "z",     mods = "LEADER", action = act.TogglePaneZoomState },
   { key = "Space", mods = "LEADER", action = act.RotatePanes "Clockwise" },
   { key = "[",     mods = "LEADER", action = act.ActivateCopyMode },
@@ -70,4 +75,4 @@ M.general = {
   },
 }
 
-return M
+return _Keys
