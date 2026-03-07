@@ -1,0 +1,18 @@
+# This is the configuration file for Ghostty.
+
+command = /bin/zsh
+
+theme = catppuccin-mocha
+
+font-family = 0xProto Nerd Font
+font-size = 12
+font-feature = +calt
+
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
+window-decoration = none
+
+macos-titlebar-style = hidden
+gtk-tabs-location = hidden
