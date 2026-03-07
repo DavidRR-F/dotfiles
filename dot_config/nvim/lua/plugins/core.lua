@@ -97,7 +97,7 @@ return {
         "cue",
         "toml",
         "zsh",
-        "vimdoc"
+        "vimdoc",
       },
     },
   },
@@ -106,13 +106,13 @@ return {
     lazy = false,
     init = function()
       vim.g["chezmoi#use_tmp_buffer"] = true
-    end
+    end,
   },
   {
-    'xvzc/chezmoi.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "xvzc/chezmoi.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("chezmoi").setup {
+      require("chezmoi").setup({
         edit = {
           watch = false,
           force = false,
@@ -146,8 +146,8 @@ return {
             },
           },
         },
-      }
-    end
+      })
+    end,
   },
   {
     "jmbuhr/otter.nvim",
@@ -181,32 +181,32 @@ return {
     "DavidRR-F/manifest.nvim",
     opts = {
       yq = {
-        enabled = true
+        enabled = true,
       },
       kustomize = {
         enabled = true,
         path = "./deploy/kustomize",
         args = {
-          enable_helm = true
-        }
+          enable_helm = true,
+        },
       },
       helm = {
-        enabled = true
+        enabled = true,
       },
       cue = {
-        enabled = false
-      }
-    }
+        enabled = false,
+      },
+    },
   },
   {
-    'nvim-mini/mini.nvim',
+    "nvim-mini/mini.nvim",
     version = false,
     config = function()
       require("mini.surround").setup({})
       require("mini.comment").setup({})
       require("mini.icons").setup({})
       require("mini.ai").setup({})
-    end
+    end,
   },
   {
     "folke/snacks.nvim",
@@ -413,7 +413,7 @@ return {
           },
           sections = {
             { section = "header" },
-            { section = "keys",   gap = 1, padding = 1 },
+            { section = "keys", gap = 1, padding = 1 },
             { section = "startup" },
           },
         },
@@ -532,10 +532,10 @@ return {
       status = false,
     },
     keys = {
-      { "<leader>h", "<cmd>Grapple toggle<cr>",          desc = "Tag a file" },
-      { "<leader>H", "<cmd>Grapple toggle_tags<cr>",     desc = "Toggle tags menu" },
-      { "<Tab>",     "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
-      { "<S-Tab>",   "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
+      { "<leader>h", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
+      { "<leader>H", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
+      { "<Tab>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
+      { "<S-Tab>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
     },
   },
   {
@@ -652,5 +652,5 @@ return {
       })
     end,
   },
-  { 'mrjones2014/smart-splits.nvim' },
+  { "mrjones2014/smart-splits.nvim" },
 }
