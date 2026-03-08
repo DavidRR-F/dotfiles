@@ -8,6 +8,18 @@ chezmise() {
   chezmoi add ~/.config/mise/config.toml
 }
 
+__fzf_ssh() {
+  local host
+  host=$(awk '/^Host / {for (i=2;i<=NF;i++) print $i}' ~/.ssh/config \
+    | grep -v '\*' \
+    | fzf)
+
+  if [[ -n "$host" ]]; then
+    BUFFER="ssh $host"
+    zle accept-line
+  fi
+}
+
 __command_hook() {
   local -a cmd_parts
   cmd_parts=(${(z)1})
@@ -55,4 +67,14 @@ __get_share() {
 
 __activate_venv() {
   [[ -f '.venv/bin/activate' ]] && source .venv/bin/activate
+}
+
+__activate_tmux() {
+  if [ -z "$TMUX" ]; then
+    if tmux has-session -t main 2>/dev/null; then
+      exec tmux attach-session -t main
+    else
+      exec tmux new-session -s main
+    fi
+  fi
 }

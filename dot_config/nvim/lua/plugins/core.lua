@@ -274,7 +274,7 @@ return {
         function()
           require("worktree").snacks()
         end,
-        desc = "Toggle Terminal",
+        desc = "Switch Worktree",
       },
       {
         "<leader>f",
@@ -338,6 +338,13 @@ return {
           Snacks.lazygit.open()
         end,
         desc = "Lazy Git",
+      },
+      {
+        "<leader>z",
+        function()
+          Snacks.zen.zoom()
+        end,
+        desc = "Zoom",
       },
     },
     opts = {
@@ -475,6 +482,11 @@ return {
         },
         refresh = 50,
       },
+      zen = {
+        zoom = {
+          show = { statusline = true, tabline = false },
+        },
+      },
     },
   },
   {
@@ -523,20 +535,6 @@ return {
         },
       })
     end,
-  },
-  {
-    "cbochs/grapple.nvim",
-    opts = {
-      scope = "git",
-      icons = true,
-      status = false,
-    },
-    keys = {
-      { "<leader>h", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
-      { "<leader>H", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
-      { "<Tab>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
-      { "<S-Tab>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
-    },
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -618,7 +616,7 @@ return {
           lualine_b = {},
           lualine_c = {},
           lualine_x = {},
-          lualine_y = { "grapple" },
+          lualine_y = {},
           lualine_z = {
             {
               "diff",
@@ -652,5 +650,8 @@ return {
       })
     end,
   },
-  { "mrjones2014/smart-splits.nvim" },
+  {
+    "mrjones2014/smart-splits.nvim",
+    lazy = false,
+  },
 }

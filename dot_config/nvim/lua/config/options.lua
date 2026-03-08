@@ -74,3 +74,5 @@ vim.filetype.add({
     ["helm-values.yaml"] = "helm",
   },
 })
+
+vim.g.smart_splits_multiplexer_integration = "tmux"
